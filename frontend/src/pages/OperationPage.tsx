@@ -1,5 +1,3 @@
-
-import { useState } from "react";
 import {
   BusFront,
   CalendarDays,
@@ -9,15 +7,103 @@ import {
   Clock,
   Route as RouteIcon,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+
+import type { OperationsData } from "../types/operations";
+import { getOperationsOverview } from "../api/operation";
 
 import StatCard from "../components/dashboard/StatCard";
-import { operationsMockData } from "../mocks/operations";
 import AlertItem from "../components/dashboard/AlertItem";
 import RouteStatusTable from "../components/dashboard/RouteStatusTable";
 import DemandCapacityChart from "../components/dashboard/DemandCapacityChart";
 import CampusMap from "../components/map/CampusMap";
 
 export default function OperationsPage() {
+  const [operationsData, setOperationsData] =
+    useState<OperationsData | null>(null);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  const [selectedStopId, setSelectedStopId] = useState<string | null>(
+    null,
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadOperations = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const data = await getOperationsOverview();
+        console.log("Operations API data:", data);
+
+        if (!cancelled) {
+          setOperationsData(data);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(
+            err instanceof Error
+              ? err.message
+              : "Failed to load operations data.",
+          );
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+
+    void loadOperations();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [retryCount]);
+
+  if (loading) {
+    return (
+      <div
+        className="flex min-h-64 items-center justify-center"
+        role="status"
+      >
+        <p className="text-sm text-secondary">
+          Loading operations data...
+        </p>
+      </div>
+    );
+  }
+
+  if (error || !operationsData) {
+    return (
+      <div
+        className="rounded-xl border border-border bg-white p-6"
+        role="alert"
+      >
+        <h2 className="font-semibold text-foreground">
+          Unable to load operations
+        </h2>
+
+        <p className="mt-2 text-sm text-secondary">
+          {error ?? "No operations data was returned."}
+        </p>
+
+        <button
+          type="button"
+          onClick={() => setRetryCount((count) => count + 1)}
+          className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   const {
     vehicles,
     trips,
@@ -26,11 +112,7 @@ export default function OperationsPage() {
     routes,
     stops,
     etas,
-  } = operationsMockData;
-
-  const [selectedStopId, setSelectedStopId] = useState<string | null>(
-    null,
-  );
+  } = operationsData;
 
   const availableBuses = vehicles.filter(
     (vehicle) => vehicle.status === "available",
@@ -94,17 +176,17 @@ export default function OperationsPage() {
           0,
         )
     : 0;
-const nextArrival = selectedStop
-  ? etas
-      .filter((eta) => eta.stopId === selectedStop.id)
-      .sort((a, b) =>
-        a.estimatedArrival.localeCompare(b.estimatedArrival),
-      )[0]
-  : undefined;
+
+  const nextArrival = selectedStop
+    ? etas
+        .filter((eta) => eta.stopId === selectedStop.id)
+        .sort((a, b) =>
+          a.estimatedArrival.localeCompare(b.estimatedArrival),
+        )[0]
+    : undefined;
 
   return (
     <div className="space-y-6">
-
       <section aria-label="Transport metrics">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {statCards.map((card) => (
@@ -130,7 +212,6 @@ const nextArrival = selectedStop
         </div>
 
         <div className="grid min-w-0 grid-cols-1 gap-4 xl:grid-cols-[minmax(0,4fr)_minmax(220px,1fr)]">
- 
           <div className="min-w-0 rounded-xl border border-border bg-white p-3 sm:p-5">
             <div className="mb-4">
               <h3 className="font-semibold text-foreground">
@@ -224,14 +305,17 @@ const nextArrival = selectedStop
                     <span>Next arrival</span>
                   </div>
 
-<p className="mt-2 text-lg font-semibold text-foreground">
-  {nextArrival ? nextArrival.estimatedArrival : "No arrival data"}
-</p>
-{nextArrival && (
-  <p className="mt-1 text-xs text-secondary">
-    Scheduled {nextArrival.scheduledArrival}
-  </p>
-)}
+                  <p className="mt-2 text-lg font-semibold text-foreground">
+                    {nextArrival
+                      ? nextArrival.estimatedArrival
+                      : "No arrival data"}
+                  </p>
+
+                  {nextArrival && (
+                    <p className="mt-1 text-xs text-secondary">
+                      Scheduled {nextArrival.scheduledArrival}
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -287,7 +371,7 @@ const nextArrival = selectedStop
           />
         </div>
       </section>
-\
+
       <section className="rounded-xl border border-border bg-white p-4 sm:p-5">
         <h2 className="mb-4 font-semibold text-foreground">
           Active Alerts

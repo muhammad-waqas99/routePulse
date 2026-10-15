@@ -1,5 +1,5 @@
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import PerformanceLabHeader from "../components/performance-lab/PerformanceLabHeader";
 import PerformanceKpiCards from "../components/performance-lab/PerformanceKpiCards";
@@ -10,21 +10,79 @@ import KeyFindings from "../components/performance-lab/KeyFindings";
 import RunHistory from "../components/performance-lab/RunHistory";
 import RunStatus from "../components/performance-lab/RunStatus";
 
-import { performanceLabMockData } from "../mocks/performanceLab";
-
-const scenarioOptions = [
-  { value: "normal_operations", label: "Normal Operations" },
-  { value: "demand_spike", label: "Demand Spike" },
-  { value: "vehicle_unavailable", label: "Vehicle Unavailable" },
-];
+import { getPerformanceLab } from "../api/evaluation";
+import type {
+  PerformanceLabData,
+ 
+} from "../types/performanceLab";
 
 export default function PerformanceLab() {
-  const [selectedScenarioId, setSelectedScenarioId] =
-    useState("demand_spike");
+  const [data, setData] = useState<PerformanceLabData | null>(null);
 
-  const [selectedRunId, setSelectedRunId] = useState("1042");
+  const [selectedScenarioId, setSelectedScenarioId] = useState("");
+  const [selectedRunId, setSelectedRunId] = useState("");
 
-  const runs = performanceLabMockData.runs;
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchEvaluation() {
+      try {
+        setIsLoading(true);
+        setError(null);
+
+        const evaluationData = await getPerformanceLab();
+
+        if (!isMounted) return;
+
+        setData(evaluationData);
+
+        const firstRun = evaluationData.runs[0];
+
+        if (firstRun) {
+          setSelectedScenarioId(firstRun.scenarioId);
+          setSelectedRunId(firstRun.runId);
+        }
+      } catch (error: unknown) {
+        if (!isMounted) return;
+
+        setError(
+          error instanceof Error
+            ? error.message
+            : "Failed to load evaluation data.",
+        );
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    }
+
+    void fetchEvaluation();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const runs = data?.runs ?? [];
+
+  const scenarioOptions = useMemo(() => {
+    const uniqueScenarios = new Map<string, string>();
+
+    for (const run of runs) {
+      if (!uniqueScenarios.has(run.scenarioId)) {
+        uniqueScenarios.set(run.scenarioId, run.scenarioName);
+      }
+    }
+
+    return Array.from(uniqueScenarios, ([value, label]) => ({
+      value,
+      label,
+    }));
+  }, [runs]);
 
   const scenarioRuns = useMemo(
     () =>
@@ -55,6 +113,41 @@ export default function PerformanceLab() {
 
   const metrics = selectedRun?.metrics;
 
+  if (isLoading) {
+    return (
+      <div
+        className="flex min-h-48 items-center justify-center"
+        role="status"
+        aria-live="polite"
+      >
+        <p className="text-sm text-secondary">
+          Loading evaluation data...
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-4 rounded-xl border border-border p-5 sm:p-6">
+        <h2 className="font-semibold text-foreground">
+          Unable to load Evaluation
+        </h2>
+
+        <p className="break-words text-sm text-secondary">
+          {error}
+        </p>
+
+        <button
+          type="button"
+          onClick={() => window.location.reload()}
+          className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="min-w-0 space-y-6">
@@ -94,6 +187,7 @@ export default function PerformanceLab() {
             </p>
 
             <PerformanceKpiCards metrics={metrics} />
+
           </section>
 
           <PerformanceComparison metrics={metrics} />

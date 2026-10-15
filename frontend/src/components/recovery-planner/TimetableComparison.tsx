@@ -1,7 +1,8 @@
-import type { RecoveryPlanResult } from "../../types/recoveryPlanner";
+
+import type { OptimizationResult } from "../../types/optimization";
 
 interface Props {
-  result: RecoveryPlanResult;
+  result: OptimizationResult;
 }
 
 export default function TimetableComparison({ result }: Props) {
@@ -56,13 +57,14 @@ export default function TimetableComparison({ result }: Props) {
               <h4 className="font-semibold text-foreground">
                 {plan.title}
               </h4>
+
               <span className="text-xs text-secondary">
                 {plan.trips.length} of {result.totalTrips} trips shown
               </span>
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-110 text-left text-sm">
+              <table className="w-full min-w-[440px] text-left text-sm">
                 <thead className="bg-slate-50 text-xs text-secondary">
                   <tr>
                     {["Trip", "Route", "Vehicle", "Departure"].map(
@@ -91,12 +93,15 @@ export default function TimetableComparison({ result }: Props) {
                         <td className="whitespace-nowrap px-3 py-3 font-medium text-foreground sm:px-4">
                           {trip.tripId}
                         </td>
+
                         <td className="whitespace-nowrap px-3 py-3 text-secondary sm:px-4">
                           {trip.routeId}
                         </td>
+
                         <td className="whitespace-nowrap px-3 py-3 text-secondary sm:px-4">
                           {trip.vehicleId}
                         </td>
+
                         <td className="whitespace-nowrap px-3 py-3 sm:px-4">
                           <span
                             className={
@@ -107,6 +112,7 @@ export default function TimetableComparison({ result }: Props) {
                           >
                             {trip.departureTime}
                           </span>
+
                           {changed && (
                             <span className="ml-2 text-xs text-primary">
                               Changed
@@ -116,6 +122,17 @@ export default function TimetableComparison({ result }: Props) {
                       </tr>
                     );
                   })}
+
+                  {plan.trips.length === 0 && (
+                    <tr>
+                      <td
+                        colSpan={4}
+                        className="px-4 py-6 text-center text-sm text-secondary"
+                      >
+                        No trips returned for this plan.
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -124,7 +141,8 @@ export default function TimetableComparison({ result }: Props) {
       </div>
 
       <p className="text-xs text-secondary">
-        Sample shown from a timetable containing {result.totalTrips} trips.
+        Showing {result.originalTrips.length} original trips and{" "}
+        {result.proposedTrips.length} proposed trips returned by the API.
       </p>
     </section>
   );

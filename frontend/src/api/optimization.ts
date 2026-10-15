@@ -1,14 +1,17 @@
+
 import apiClient from "./client";
+
 import type {
-  OptimizeResponse,
-} from "../types/recoveryPlanner";
+  OptimizationRequest,
+  OptimizationResult,
+} from "../types/optimization";
 
 export const runOptimization = async (
-  scenarioId: string
-): Promise<OptimizeResponse> => {
-  const response = await apiClient.post<OptimizeResponse>(
+  payload: OptimizationRequest,
+): Promise<OptimizationResult> => {
+  const response = await apiClient.post<OptimizationResult>(
     "/api/optimize",
-    { scenarioId }
+    payload,
   );
 
   return response.data;

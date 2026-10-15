@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { Bell, Menu } from "lucide-react";
 
-import Sidebar from "./Sidebar";
-import {
-  navigationItems,
-  type PageId,
-} from "../../config/navigation";
+import { navigationItems, type PageId } from "../../config/navigation";
+import { useOperationsOverview } from "../../hooks/useOperationsOverview";
 import OperationsPage from "../../pages/OperationPage";
-import { operationsMockData } from "../../mocks/operations";
-import AlertItem from "../dashboard/AlertItem";
-import RecoveryPlanner from "../../pages/RecoveryPlanner";
 import PerformanceLab from "../../pages/PerformanceLab";
+import RecoveryPlanner from "../../pages/RecoveryPlanner";
+import AlertItem from "../dashboard/AlertItem";
+import Sidebar from "./Sidebar";
 
 export default function AppLayout() {
   const [activePage, setActivePage] = useState<PageId>("operations");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  const activeAlerts = operationsMockData.alerts.filter(
+  const { data: overview } = useOperationsOverview();
+
+  const activeAlerts = (overview?.alerts ?? []).filter(
     (alert) => alert.status === "active",
   );
 
@@ -28,6 +27,7 @@ export default function AppLayout() {
   function handleNavigate(pageId: PageId) {
     setActivePage(pageId);
     setIsSidebarOpen(false);
+    setIsNotificationsOpen(false);
   }
 
   useEffect(() => {
@@ -46,9 +46,7 @@ export default function AppLayout() {
   }, []);
 
   return (
-    
-<div className="flex h-screen overflow-hidden bg-background text-foreground">
-
+    <div className="flex h-dvh overflow-hidden bg-background text-foreground">
       <Sidebar
         activePage={activePage}
         isOpen={isSidebarOpen}
@@ -56,8 +54,8 @@ export default function AppLayout() {
         onNavigate={handleNavigate}
       />
 
-<div className="flex min-h-0 min-w-0 flex-1 flex-col">
-  <header className="sticky top-0 z-30 flex h-18 shrink-0 items-center gap-3 border-b border-border bg-white px-4 sm:px-6 lg:px-8">
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+        <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-3 border-b border-border bg-white px-4 sm:px-6 lg:px-8">
           <button
             type="button"
             aria-label="Open navigation menu"
@@ -70,7 +68,7 @@ export default function AppLayout() {
           </button>
 
           <div className="min-w-0 flex-1">
-            <h2 className="text-lg font-semibold text-foreground">
+            <h2 className="truncate text-lg font-semibold text-foreground">
               {activeItem?.label ?? "Operations"}
             </h2>
 
@@ -131,7 +129,8 @@ export default function AppLayout() {
             )}
           </div>
         </header>
-  <main className="min-h-0 min-w-0 flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+
+        <main className="min-h-0 min-w-0 flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold tracking-tight">
               {activeItem?.label ?? "Operations"}
@@ -149,17 +148,17 @@ export default function AppLayout() {
             </p>
           </div>
 
-
-{activePage === "operations" ? (
-  <OperationsPage />
-) : activePage === "recovery-planner" ? (
-  <RecoveryPlanner
-    onViewPerformance={() => handleNavigate("performance-lab")}
-  />
-) : (
-  <PerformanceLab />
-)}
-
+          {activePage === "operations" ? (
+            <OperationsPage />
+          ) : activePage === "recovery-planner" ? (
+            <RecoveryPlanner
+              onViewPerformance={() =>
+                handleNavigate("performance-lab")
+              }
+            />
+          ) : (
+            <PerformanceLab />
+          )}
         </main>
       </div>
     </div>
