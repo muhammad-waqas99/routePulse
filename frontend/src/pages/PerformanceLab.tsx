@@ -1,4 +1,3 @@
-
 import { useMemo, useState } from "react";
 
 import PerformanceLabHeader from "../components/performance-lab/PerformanceLabHeader";
@@ -9,27 +8,41 @@ import FleetUtilization from "../components/performance-lab/FleetUtilization";
 import KeyFindings from "../components/performance-lab/KeyFindings";
 import RunHistory from "../components/performance-lab/RunHistory";
 import RunStatus from "../components/performance-lab/RunStatus";
+import { ErrorState, LoadingState } from "../components/common/AsyncState";
 
-import { performanceLabMockData } from "../mocks/performanceLab";
-
-const scenarioOptions = [
-  { value: "normal_operations", label: "Normal Operations" },
-  { value: "demand_spike", label: "Demand Spike" },
-  { value: "vehicle_unavailable", label: "Vehicle Unavailable" },
-];
+import { useEvaluationRuns } from "../hooks/useEvaluationRuns";
 
 export default function PerformanceLab() {
-  const [selectedScenarioId, setSelectedScenarioId] =
-    useState("demand_spike");
+  const { data, loading, error, reload } = useEvaluationRuns();
 
-  const [selectedRunId, setSelectedRunId] = useState("1042");
+  const [selectedScenarioId, setSelectedScenarioId] = useState("");
+  const [selectedRunId, setSelectedRunId] = useState("");
 
-  const runs = performanceLabMockData.runs;
+  const runs = useMemo(() => data ?? [], [data]);
+
+  const scenarioOptions = useMemo(() => {
+    const seen = new Map<string, string>();
+
+    for (const run of runs) {
+      if (!seen.has(run.scenarioId)) {
+        seen.set(run.scenarioId, run.scenarioName);
+      }
+    }
+
+    return Array.from(seen, ([value, label]) => ({ value, label }));
+  }, [runs]);
+
+  const defaultRun = useMemo(
+    () =>
+      runs.find((run) => run.scenarioId === "demand_spike") ?? runs[0],
+    [runs],
+  );
+
+  const activeScenarioId = selectedScenarioId || defaultRun?.scenarioId || "";
 
   const scenarioRuns = useMemo(
-    () =>
-      runs.filter((run) => run.scenarioId === selectedScenarioId),
-    [runs, selectedScenarioId],
+    () => runs.filter((run) => run.scenarioId === activeScenarioId),
+    [runs, activeScenarioId],
   );
 
   const selectedRun = useMemo(
@@ -42,9 +55,7 @@ export default function PerformanceLab() {
   function handleScenarioChange(scenarioId: string) {
     setSelectedScenarioId(scenarioId);
 
-    const firstRun = runs.find(
-      (run) => run.scenarioId === scenarioId,
-    );
+    const firstRun = runs.find((run) => run.scenarioId === scenarioId);
 
     setSelectedRunId(firstRun?.runId ?? "");
   }
@@ -53,15 +64,27 @@ export default function PerformanceLab() {
     setSelectedRunId(runId);
   }
 
-  const metrics = selectedRun?.metrics;
+  if (loading) {
+    return <LoadingState label="Loading evaluation runs..." />;
+  }
 
+  if (error || !data) {
+    return (
+      <ErrorState
+        message={error ?? "No evaluation data was returned."}
+        onRetry={reload}
+      />
+    );
+  }
+
+  const metrics = selectedRun?.metrics;
 
   return (
     <div className="min-w-0 space-y-6">
       <PerformanceLabHeader
         scenarios={scenarioOptions}
         runs={scenarioRuns}
-        selectedScenarioId={selectedScenarioId}
+        selectedScenarioId={activeScenarioId}
         selectedRunId={selectedRun?.runId ?? ""}
         onScenarioChange={handleScenarioChange}
         onRunChange={handleRunChange}

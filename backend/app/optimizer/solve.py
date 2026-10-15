@@ -1,158 +1,280 @@
-"""Vehicle assignment and dispatch (greedy baseline optimizer).
+"""Deterministic recovery optimizer.
 
-The game plan specifies OR-Tools CP-SAT as the final solver; this greedy
-dispatcher is the deterministic, dependency-free baseline it recommends
-building first. It:
+Algorithm (documented explicitly so the result is never mistaken for a
+mathematical optimum):
 
-1. starts from the original timetable,
-2. drops trips whose assigned vehicle is unavailable in the scenario,
-3. reassigns those trips to spare compatible vehicles (respecting the
-   availability window, turnaround, and non-overlapping trips),
-4. optionally adds extra dispatches for stops the prediction engine flags as
-   HIGH crowding risk,
-5. returns a Plan for the validator / simulator / API to consume.
+1. **Fleet selection** - pick the highest-capacity eligible vehicles up to the
+   scenario's ``availableVehicles`` count.
+2. **Baseline plan** - the published schedule in ``network.json``, pruned of
+   any trip whose vehicle is unavailable under the scenario. No adaptation.
+3. **Constructive scheduling** - demand batches are processed in chronological
+   order. Each batch first tries to board an already-dispatched trip on its
+   route (if the trip has not passed the stop yet and has spare capacity).
+   Unassigned passengers spawn a new trip on the earliest available vehicle,
+   scheduled so it arrives at the stop just after the batch is created.
+4. **Local search** - a repair pass attempts to cancel trips whose passengers
+   can be re-accommodated on other trips without breaking capacity or timing,
+   which reduces vehicle distance while preserving service.
+
+Hard constraints are *not* enforced here by trust: the resulting plan is handed
+to :mod:`app.validation.constraints` which re-checks it independently.
 """
+
 from __future__ import annotations
 
-from typing import Optional
+import math
 
-from app.prediction.predictor import PredictionOutput
-from app.schemas.network import Network, Route, Trip, Vehicle
-from app.schemas.plan import Plan, TripAssignment
+from app.optimizer.model import (
+    DemandBatch,
+    NetworkModel,
+    Plan,
+    PlannedTrip,
+    build_demand,
+    parse_period,
+    select_fleet,
+)
 from app.schemas.scenario import Scenario
 
-
-def route_duration_min(route: Route) -> float:
-    return sum(route.segment_travel_min)
+DEPARTURE_STEP_MIN = 5
 
 
-def _fits_availability(v: Vehicle, dep: float, end: float) -> bool:
-    return dep >= v.available_from_min and end <= v.available_until_min
+class InfeasibleError(Exception):
+    """Raised when no valid plan can be produced for a scenario."""
 
 
-def _overlaps(busy: dict[str, list[tuple[float, float]]], vid: str, start: float, end: float) -> bool:
-    return any(start < e and s < end for s, e in busy.get(vid, []))
+def _ceil_to_step(value: float, step: int) -> int:
+    return int(math.ceil(value / step) * step)
 
 
-def _can_assign(vid: str, dep: float, end: float, vehicles: dict[str, Vehicle],
-                busy: dict[str, list[tuple[float, float]]]) -> bool:
-    v = vehicles[vid]
-    return _fits_availability(v, dep, end) and not _overlaps(busy, vid, dep, end)
+def _service_window(scenario: Scenario) -> tuple[int, int]:
+    return parse_period(scenario.affectedPeriod)
 
 
-def _mark_busy(busy: dict[str, list[tuple[float, float]]], vid: str,
-               start: float, end: float, turnaround: int) -> None:
-    busy.setdefault(vid, []).append((start, end + turnaround))
+def build_baseline_plan(
+    network: NetworkModel, scenario: Scenario
+) -> Plan:
+    """Return the published timetable, pruned for unavailable vehicles."""
 
+    unavailable = set(scenario.unavailableVehicleIds)
+    trips: list[PlannedTrip] = []
 
-def _find_spare(trip: Trip, route: Route, duration: float,
-                vehicles: dict[str, Vehicle], busy: dict[str, list[tuple[float, float]]],
-                unavailable: set[str]) -> tuple[Optional[str], float]:
-    """Find a spare compatible vehicle for a trip, trying small departure shifts."""
-    for shift in (0, 5, -5, 10, -10, 15, -15):
-        dep = float(trip.planned_departure_min + shift)
-        if not (trip.departure_window_start_min <= dep <= trip.departure_window_end_min):
+    for trip in network.raw.trips:
+        if trip.vehicleId in unavailable:
             continue
-        end = dep + duration
-        for vid, v in vehicles.items():
-            if vid in unavailable or v.vehicle_type not in route.allowed_vehicle_types:
-                continue
-            if _can_assign(vid, dep, end, vehicles, busy):
-                return vid, dep
-    return None, 0.0
-
-
-def _route_serving_stop(routes: dict[str, Route], stop_id: str) -> Optional[Route]:
-    for r in routes.values():
-        if stop_id in r.stop_ids:
-            return r
-    return None
-
-
-def _extra_dispatches(network: Network, scenario: Scenario,
-                      prediction: Optional[PredictionOutput],
-                      busy: dict[str, list[tuple[float, float]]]) -> list[TripAssignment]:
-    """Add dispatches for stops the prediction engine flags as HIGH crowding risk."""
-    if prediction is None:
-        return []
-    unavailable = set(scenario.unavailable_vehicle_ids)
-    vehicles = network.vehicles_by_id
-    routes = network.routes_by_id
-    extra: list[TripAssignment] = []
-    high = sorted(
-        (f for f in prediction.stop_forecasts if f.crowding_risk == "HIGH"),
-        key=lambda f: -f.capacity_shortfall,
-    )
-    for f in high:
-        route = _route_serving_stop(routes, f.stop_id)
-        if route is None:
+        if trip.vehicleId not in network.vehicles:
             continue
-        dep = float(f.time_bucket_min)
-        duration = route_duration_min(route)
-        for vid, v in vehicles.items():
-            if vid in unavailable or v.vehicle_type not in route.allowed_vehicle_types:
-                continue
-            if _can_assign(vid, dep, dep + duration, vehicles, busy):
-                extra.append(TripAssignment(
-                    trip_id=f"X_{f.stop_id}",
-                    route_id=route.route_id,
-                    vehicle_id=vid,
-                    departure_min=int(dep),
-                ))
-                _mark_busy(busy, vid, dep, dep + duration, v.turnaround_min)
-                break
-    return extra
+        from app.optimizer.model import parse_time
+
+        trips.append(
+            PlannedTrip(
+                trip_id=trip.id,
+                route_id=trip.routeId,
+                vehicle_id=trip.vehicleId,
+                departure_min=parse_time(trip.departureTime),
+            )
+        )
+
+    return Plan(plan_id="baseline", label="Baseline (published timetable)", trips=trips)
 
 
-def optimize(network: Network, scenario: Scenario,
-             prediction: Optional[PredictionOutput] = None,
-             time_limit_seconds: Optional[int] = None) -> Plan:
-    """Greedy vehicle-assignment optimizer (baseline).
+def assign_existing_boardings(
+    network: NetworkModel,
+    demand: list[DemandBatch],
+    trips: list[PlannedTrip],
+) -> dict[str, int]:
+    """Greedily assign demand to a fixed set of trips.
 
-    ``prediction`` enables extra dispatches for predicted-crowded stops.
-    ``time_limit_seconds`` is accepted for API parity (the greedy solver is
-    effectively instant and does not use it).
+    Returns a mapping of ``trip_id -> boarded`` for quick reporting. Boardings
+    are written onto the trip objects.
     """
-    unavailable = set(scenario.unavailable_vehicle_ids)
-    vehicles = network.vehicles_by_id
-    routes = network.routes_by_id
-    delays = scenario.vehicle_delays_min
 
-    busy: dict[str, list[tuple[float, float]]] = {}
-    assignments: list[TripAssignment] = []
-    unassigned: list[str] = []
-
-    trips = sorted(network.trips, key=lambda t: t.planned_departure_min)
     for trip in trips:
-        route = routes[trip.route_id]
-        duration = route_duration_min(route)
-        dep = float(trip.planned_departure_min + delays.get(trip.vehicle_id, 0))
-        end = dep + duration
+        trip.boardings = {}
 
-        vid = trip.vehicle_id
-        if vid in unavailable or not _can_assign(vid, dep, end, vehicles, busy):
-            vid = None
+    trips_by_route: dict[str, list[PlannedTrip]] = {}
+    for trip in trips:
+        trips_by_route.setdefault(trip.route_id, []).append(trip)
 
-        if vid is None:
-            vid, dep = _find_spare(trip, route, duration, vehicles, busy, unavailable)
-            if vid is None:
-                unassigned.append(trip.trip_id)
+    for route_trips in trips_by_route.values():
+        route_trips.sort(key=lambda t: t.departure_min)
+
+    boarded: dict[str, int] = {trip.trip_id: 0 for trip in trips}
+
+    for batch in demand:
+        route = network.route(batch.route_id)
+        offset = route.offset_for(batch.stop_id)
+        remaining = batch.count
+
+        for trip in trips_by_route.get(batch.route_id, []):
+            if trip.departure_min + offset < batch.time_min:
                 continue
-            end = dep + duration
+            vehicle = network.vehicle(trip.vehicle_id)
+            free = vehicle.capacity - trip.total_boarded
+            if free <= 0:
+                continue
+            take = min(remaining, free)
+            if take <= 0:
+                continue
+            trip.boardings[batch.stop_id] = trip.boardings.get(batch.stop_id, 0) + take
+            boarded[trip.trip_id] += take
+            remaining -= take
+            if remaining == 0:
+                break
 
-        _mark_busy(busy, vid, dep, end, vehicles[vid].turnaround_min)
-        assignments.append(TripAssignment(
-            trip_id=trip.trip_id, route_id=trip.route_id,
-            vehicle_id=vid, departure_min=int(dep),
-        ))
+    return boarded
 
-    extra = _extra_dispatches(network, scenario, prediction, busy)
 
-    status = "OK" if not unassigned else "PARTIAL"
-    return Plan(
-        plan_type="optimized",
-        assignments=assignments,
-        extra_trips=extra,
-        unassigned_trip_ids=unassigned,
-        solver_status=status,
-    )
+def build_optimized_plan(
+    network: NetworkModel, scenario: Scenario
+) -> Plan:
+    """Construct and locally improve an optimized plan."""
+
+    fleet = select_fleet(network, scenario)
+    if not fleet:
+        raise InfeasibleError("No eligible vehicles are available for this scenario.")
+
+    demand = build_demand(network, scenario)
+    if not demand:
+        raise InfeasibleError("No measurable demand exists for this scenario.")
+
+    window_start, window_end = _service_window(scenario)
+    horizon_end = window_end + scenario.evaluationHorizonMin
+
+    vehicle_free: dict[str, int] = {vehicle.id: window_start for vehicle in fleet}
+    trips: list[PlannedTrip] = []
+    counter = 0
+
+    for batch in demand:
+        route = network.route(batch.route_id)
+        offset = route.offset_for(batch.stop_id)
+        remaining = batch.count
+
+        # 1) try existing trips on this route.
+        for trip in [t for t in trips if t.route_id == batch.route_id]:
+            if trip.departure_min + offset < batch.time_min:
+                continue
+            vehicle = network.vehicle(trip.vehicle_id)
+            free = vehicle.capacity - trip.total_boarded
+            if free <= 0:
+                continue
+            take = min(remaining, free)
+            trip.boardings[batch.stop_id] = (
+                trip.boardings.get(batch.stop_id, 0) + take
+            )
+            remaining -= take
+            if remaining == 0:
+                break
+
+        if remaining == 0:
+            continue
+
+        # 2) dispatch new trips on the earliest available vehicle.
+        for _ in range(len(fleet) + 1):
+            if remaining <= 0:
+                break
+
+            best: tuple[tuple[float, int, str], object, int] | None = None
+            for vehicle in fleet:
+                departure = max(batch.time_min - offset, vehicle_free[vehicle.id])
+                departure = _ceil_to_step(departure, DEPARTURE_STEP_MIN)
+                if departure > window_end:
+                    continue
+                if departure + route.duration_min > horizon_end:
+                    continue
+                key = (departure, -vehicle.capacity, vehicle.id)
+                if best is None or key < best[0]:
+                    best = (key, vehicle, departure)
+
+            if best is None:
+                break
+
+            _, vehicle, departure = best
+            take = min(remaining, vehicle.capacity)
+            counter += 1
+            trip = PlannedTrip(
+                trip_id=f"OPT-{counter:03d}",
+                route_id=batch.route_id,
+                vehicle_id=vehicle.id,
+                departure_min=departure,
+                boardings={batch.stop_id: take},
+            )
+            trips.append(trip)
+            vehicle_free[vehicle.id] = (
+                departure + route.duration_min + network.parameters.turnaroundMin
+            )
+            remaining -= take
+
+    trips.sort(key=lambda t: (t.departure_min, t.route_id, t.trip_id))
+    trips = _local_search_reduce(network, trips)
+    trips.sort(key=lambda t: (t.departure_min, t.route_id, t.trip_id))
+
+    return Plan(plan_id="optimized", label="Optimized plan", trips=trips)
+
+
+def _local_search_reduce(
+    network: NetworkModel,
+    trips: list[PlannedTrip],
+) -> list[PlannedTrip]:
+    """Try to remove trips whose passengers can be served elsewhere.
+
+    A trip is removed only if every passenger it planned to carry can be moved
+    onto other trips without exceeding capacity or arriving before the
+    passenger. This reduces distance/turnaround pressure without harming
+    service; otherwise the trip is kept.
+    """
+
+    changed = True
+    while changed:
+        changed = False
+        for candidate in sorted(trips, key=lambda t: t.total_boarded, reverse=True):
+            others = [t for t in trips if t is not candidate]
+            if _try_reassign(network, candidate, others):
+                trips = others
+                changed = True
+                break
+    return trips
+
+
+def _try_reassign(
+    network: NetworkModel,
+    candidate: PlannedTrip,
+    others: list[PlannedTrip],
+) -> bool:
+    """Check whether ``candidate``'s boardings fit on ``others`` (no mutation)."""
+
+    route = network.route(candidate.route_id)
+    # Work on copies so a failed attempt leaves the plan untouched.
+    planned = {
+        trip.trip_id: dict(trip.boardings) for trip in others
+    }
+
+    for stop_id, count in candidate.boardings.items():
+        offset = route.offset_for(stop_id)
+        remaining = count
+        # Only move passengers to a trip that arrives no earlier than the
+        # candidate did, so we never "un-serve" a passenger who had not yet
+        # arrived when the receiving bus passed the stop.
+        for trip in others:
+            if trip.route_id != candidate.route_id:
+                continue
+            if trip.departure_min < candidate.departure_min:
+                continue
+            vehicle = network.vehicle(trip.vehicle_id)
+            used = sum(planned[trip.trip_id].values())
+            free = vehicle.capacity - used
+            if free <= 0:
+                continue
+            take = min(remaining, free)
+            planned[trip.trip_id][stop_id] = (
+                planned[trip.trip_id].get(stop_id, 0) + take
+            )
+            remaining -= take
+            if remaining == 0:
+                break
+        if remaining > 0:
+            return False
+
+    # Commit the reassigned boardings.
+    for trip in others:
+        trip.boardings = planned[trip.trip_id]
+    return True

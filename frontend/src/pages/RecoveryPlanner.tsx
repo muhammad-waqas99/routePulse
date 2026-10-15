@@ -3,16 +3,18 @@ import {
   RotateCcw,
   ShieldCheck,
   CheckCircle2,
+  AlertTriangle,
 } from "lucide-react";
 
-import { scenarios } from "../config/scenarios";
 import ScenarioSelector from "../components/recovery-planner/ScenarioSelector";
 import ScenarioDetails from "../components/recovery-planner/ScenarioDetails";
 import OptimizationProgress from "../components/recovery-planner/OptimizationProgress";
 import TimetableComparison from "../components/recovery-planner/TimetableComparison";
 import ConstraintValidation from "../components/recovery-planner/ConstraintValidation";
+import { ErrorState, LoadingState } from "../components/common/AsyncState";
 
-import { useMockOptimization } from "../hooks/useMockOptimization";
+import { useScenarios } from "../hooks/useScenarios";
+import { useOptimization } from "../hooks/useOptimization";
 
 import { useState } from "react";
 
@@ -23,22 +25,23 @@ interface RecoveryPlannerProps {
 export default function RecoveryPlanner({
   onViewPerformance,
 }: RecoveryPlannerProps) {
-   
+  const {
+    data: scenarios,
+    loading,
+    error,
+    reload,
+  } = useScenarios();
 
-  const [selectedScenarioId, setSelectedScenarioId] =
-    useState("normal_operations");
+  const [selectedScenarioId, setSelectedScenarioId] = useState("normal_operations");
 
   const {
     stage,
     result,
+    error: optimizationError,
     isRunning,
     run,
     reset,
-  } = useMockOptimization();
-
-  const selectedScenario = scenarios.find(
-    (scenario) => scenario.id === selectedScenarioId,
-  );
+  } = useOptimization();
 
   function handleSelectScenario(scenarioId: string) {
     if (isRunning) return;
@@ -47,13 +50,34 @@ export default function RecoveryPlanner({
     reset();
   }
 
+  if (loading) {
+    return <LoadingState label="Loading scenarios..." />;
+  }
+
+  if (error || !scenarios || scenarios.length === 0) {
+    return (
+      <ErrorState
+        message={error ?? "No scenarios were returned."}
+        onRetry={reload}
+      />
+    );
+  }
+
+  const activeScenarioId = scenarios.some(
+    (scenario) => scenario.id === selectedScenarioId,
+  )
+    ? selectedScenarioId
+    : scenarios[0].id;
+
+  const selectedScenario = scenarios.find(
+    (scenario) => scenario.id === activeScenarioId,
+  );
+
   return (
     <div className="min-w-0 space-y-6">
-
-
       <ScenarioSelector
         scenarios={scenarios}
-        selectedScenarioId={selectedScenarioId}
+        selectedScenarioId={activeScenarioId}
         disabled={isRunning}
         onSelect={handleSelectScenario}
       />
@@ -74,7 +98,7 @@ export default function RecoveryPlanner({
 
         <button
           type="button"
-          onClick={run}
+          onClick={() => void run(activeScenarioId)}
           disabled={isRunning}
           className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white transition hover:opacity-90 disabled:cursor-wait disabled:opacity-70 sm:w-auto"
         >
@@ -88,7 +112,26 @@ export default function RecoveryPlanner({
 
         {isRunning && <OptimizationProgress stage={stage} />}
 
-        {!isRunning && !result && (
+        {optimizationError && (
+          <div
+            role="alert"
+            className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4"
+          >
+            <div className="flex items-start gap-3">
+              <AlertTriangle size={20} className="mt-0.5 shrink-0 text-red-600" />
+              <div>
+                <h3 className="font-semibold text-foreground">
+                  Optimization failed
+                </h3>
+                <p className="mt-1 text-sm text-secondary">
+                  {optimizationError}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {!isRunning && !result && !optimizationError && (
           <div className="mt-6 flex min-h-52 flex-col items-center justify-center rounded-lg border border-dashed border-border px-5 py-8 text-center">
             <div className="rounded-full bg-slate-100 p-3 text-secondary">
               <ShieldCheck size={23} />
@@ -97,7 +140,7 @@ export default function RecoveryPlanner({
               No optimization run yet
             </h3>
             <p className="mt-2 max-w-md text-sm leading-6 text-secondary">
-              Select a scenario and run the demo to see the proposed
+              Select a scenario and run the optimization to see the proposed
               timetable, constraint checks, and evaluation metrics.
             </p>
           </div>
@@ -105,18 +148,33 @@ export default function RecoveryPlanner({
 
         {result && !isRunning && (
           <div className="mt-6 min-w-0 space-y-6">
-            <div className="flex flex-col gap-3 rounded-xl border border-border bg-slate-50 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div
+              className={`flex flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-center sm:justify-between ${
+                result.hardViolationCount === 0
+                  ? "border-border bg-slate-50"
+                  : "border-red-200 bg-red-50"
+              }`}
+            >
               <div className="flex items-start gap-3">
-                <CheckCircle2
-                  size={22}
-                  className="mt-0.5 shrink-0 text-emerald-600"
-                />
+                {result.hardViolationCount === 0 ? (
+                  <CheckCircle2
+                    size={22}
+                    className="mt-0.5 shrink-0 text-emerald-600"
+                  />
+                ) : (
+                  <AlertTriangle
+                    size={22}
+                    className="mt-0.5 shrink-0 text-red-600"
+                  />
+                )}
                 <div>
                   <h3 className="font-semibold text-foreground">
-                    Demo run completed
+                    {result.hardViolationCount === 0
+                      ? "Optimization run completed"
+                      : "Plan has hard constraint violations"}
                   </h3>
                   <p className="mt-1 text-sm text-secondary">
-                    Scenario: {selectedScenario?.name}
+                    Scenario: {result.scenarioName}
                   </p>
                 </div>
               </div>
@@ -126,15 +184,26 @@ export default function RecoveryPlanner({
               </span>
             </div>
 
+            {result.warnings.length > 0 && (
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+                <h3 className="font-semibold text-foreground">Warnings</h3>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-secondary">
+                  {result.warnings.map((warning) => (
+                    <li key={warning}>{warning}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <TimetableComparison result={result} />
             <ConstraintValidation result={result} />
-<button
-  type="button"
-  onClick={onViewPerformance}
-  className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:w-auto"
->
-  View Full Performance
-</button>
+            <button
+              type="button"
+              onClick={onViewPerformance}
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:w-auto"
+            >
+              View Full Performance
+            </button>
 
             <div className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-secondary">
@@ -155,3 +224,4 @@ export default function RecoveryPlanner({
     </div>
   );
 }
+

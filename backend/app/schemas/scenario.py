@@ -1,73 +1,30 @@
-"""Scenario and simulation-input schema.
+"""Scenario schemas.
 
-Includes the records the prediction engine consumes (historical demand, trip
-observations, GPS observations, bus status) and the disruption scenarios that
-drive experiments.
+The frontend `src/types/scenarios.ts` defines the base contract; the backend
+adds optional fields (unavailable vehicle ids, service window) that the UI can
+ignore. Extra keys on the wire are harmless to TypeScript consumers.
 """
+
 from __future__ import annotations
+
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
-
-class PassengerDemand(BaseModel):
-    """A group of passengers arriving at an origin stop bound for a destination."""
-
-    demand_id: str
-    origin_stop_id: str
-    destination_stop_id: str
-    arrival_time_min: int
-    passenger_count: int
-    max_wait_min: int = 25
-    transfer_allowed: bool = True
-
-
-class DemandRecord(BaseModel):
-    """A historical demand observation used to train the demand forecaster."""
-
-    stop_id: str
-    day_type: str = "WEEKDAY"  # "WEEKDAY" | "WEEKEND"
-    time_bucket_min: int  # start of a 5-minute bucket, minutes from midnight
-    passengers: int
-
-
-class TripObservation(BaseModel):
-    """A historical segment travel-time observation used to train the ETA model."""
-
-    route_id: str
-    segment_index: int
-    from_stop_id: str
-    to_stop_id: str
-    travel_time_sec: float
-
-
-class GPSObservation(BaseModel):
-    """A single GPS sample of a vehicle's position along a route."""
-
-    vehicle_id: str
-    timestamp_min: int
-    lat: float
-    lon: float
-    route_id: str
-    segment_index: int
-
-
-class BusStatus(BaseModel):
-    """Current state of a bus (position, capacity, availability)."""
-
-    bus_id: str
-    current_stop_id: str
-    capacity: int
-    available: bool
-    onboard: int = 0
+ScenarioType = Literal["normal", "demand-spike", "vehicle-unavailable"]
+ScenarioCategory = Literal["Normal", "Stress Test", "Disruption"]
 
 
 class Scenario(BaseModel):
-    """A disruption scenario with multipliers and unavailability."""
+    id: str
+    name: str
+    category: ScenarioCategory
+    description: str
+    type: ScenarioType
+    demandMultiplierPercent: int = Field(ge=0)
+    availableVehicles: int = Field(gt=0)
+    affectedPeriod: str
+    evaluationHorizonMin: int = Field(gt=0)
 
-    scenario_id: str
-    seed: int = 42
-    evaluation_horizon_min: int = 180
-    demand_multipliers: dict[str, float] = Field(default_factory=dict)
-    travel_time_multipliers: dict[str, float] = Field(default_factory=dict)
-    unavailable_vehicle_ids: list[str] = Field(default_factory=list)
-    vehicle_delays_min: dict[str, int] = Field(default_factory=dict)
+    # Backend-only operational detail (ignored by the current frontend).
+    unavailableVehicleIds: list[str] = Field(default_factory=list)

@@ -25,7 +25,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     id: "recovery-planner",
-    label: "Semulation Types",
+    label: "Recovery Planner",
     icon: Route,
   },
   {

@@ -11,13 +11,33 @@ import {
 } from "lucide-react";
 
 import StatCard from "../components/dashboard/StatCard";
-import { operationsMockData } from "../mocks/operations";
 import AlertItem from "../components/dashboard/AlertItem";
 import RouteStatusTable from "../components/dashboard/RouteStatusTable";
 import DemandCapacityChart from "../components/dashboard/DemandCapacityChart";
 import CampusMap from "../components/map/CampusMap";
+import { ErrorState, LoadingState } from "../components/common/AsyncState";
+import { useOperationsOverview } from "../hooks/useOperationsOverview";
 
 export default function OperationsPage() {
+  const [selectedStopId, setSelectedStopId] = useState<string | null>(
+    null,
+  );
+
+  const { data, loading, error, reload } = useOperationsOverview();
+
+  if (loading) {
+    return <LoadingState label="Loading operations overview..." />;
+  }
+
+  if (error || !data) {
+    return (
+      <ErrorState
+        message={error ?? "No operations data was returned."}
+        onRetry={reload}
+      />
+    );
+  }
+
   const {
     vehicles,
     trips,
@@ -26,11 +46,7 @@ export default function OperationsPage() {
     routes,
     stops,
     etas,
-  } = operationsMockData;
-
-  const [selectedStopId, setSelectedStopId] = useState<string | null>(
-    null,
-  );
+  } = data;
 
   const availableBuses = vehicles.filter(
     (vehicle) => vehicle.status === "available",
@@ -53,7 +69,7 @@ export default function OperationsPage() {
     {
       title: "Available Buses",
       value: String(availableBuses),
-      description: "Vehicles marked available in sample data",
+      description: "Vehicles marked available",
       icon: BusFront,
     },
     {
@@ -65,7 +81,7 @@ export default function OperationsPage() {
     {
       title: "Passenger Demand",
       value: String(passengerDemand),
-      description: "Total across sample demand records",
+      description: "Total across all demand records",
       icon: Users,
     },
     {
@@ -214,7 +230,7 @@ const nextArrival = selectedStop
                     {passengersWaiting}
                   </p>
                   <p className="mt-1 text-xs text-secondary">
-                    From available sample demand records
+                    From demand records for this stop
                   </p>
                 </div>
 
