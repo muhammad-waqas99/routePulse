@@ -1,5 +1,7 @@
 import { CheckCircle2, LoaderCircle } from "lucide-react";
-import { optimizationStages } from "../../config/optimization";
+import {
+  optimizationStages,
+} from "../../hooks/useMockOptimization";
 import type { RunStage } from "../../types/recoveryPlanner";
 
 interface OptimizationProgressProps {
@@ -23,7 +25,7 @@ export default function OptimizationProgress({
         Preparing recovery plan
       </h3>
       <p className="mt-1 text-sm text-secondary">
-        Processing each stage of the optimization pipeline.
+        Processing each stage of the demo.
       </p>
 
       <div className="mt-5 space-y-4">

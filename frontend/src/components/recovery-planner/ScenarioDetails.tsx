@@ -92,7 +92,8 @@ export default function ScenarioDetails({
       </div>
 
       <p className="mt-4 text-xs leading-5 text-secondary">
-        Scenario configuration provided by the backend.
+        Prototype configuration. These values must eventually come
+        from the backend scenario configuration.
       </p>
     </section>
   );

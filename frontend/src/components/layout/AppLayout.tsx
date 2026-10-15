@@ -7,7 +7,7 @@ import {
   type PageId,
 } from "../../config/navigation";
 import OperationsPage from "../../pages/OperationPage";
-import { useOperationsOverview } from "../../hooks/useOperationsOverview";
+import { operationsMockData } from "../../mocks/operations";
 import AlertItem from "../dashboard/AlertItem";
 import RecoveryPlanner from "../../pages/RecoveryPlanner";
 import PerformanceLab from "../../pages/PerformanceLab";
@@ -17,9 +17,7 @@ export default function AppLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  const { data: overview } = useOperationsOverview();
-
-  const activeAlerts = (overview?.alerts ?? []).filter(
+  const activeAlerts = operationsMockData.alerts.filter(
     (alert) => alert.status === "active",
   );
 
