@@ -32,5 +32,4 @@ def create_app():
 >>>>>>> 5fd910e332bd2dd15be8e0bad5e9bf0fa44b5a52
     return app
 
-
-app = None  # created lazily by an ASGI server via `create_app()`
+app = create_app()
