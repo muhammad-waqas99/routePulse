@@ -1,79 +1,108 @@
-"""Demand events and congestion model for the simulation.
+"""Event types and the priority-queue ordering rules.
 
-Everything here is a pure function of the inputs, so both the baseline and the
-optimized plan are simulated under byte-for-byte identical demand and
-congestion conditions.
+OWNED BY: simulation workstream.
+
+The discrete-event simulator advances a min-heap of events. Events order by
+``(time_min, priority, sequence)``:
+
+* ``time_min`` -- the simulated time (minutes from midnight) at which the event
+  fires.
+* ``priority`` -- a fixed tie-break so that simultaneous events are processed in
+  a documented order (passenger arrivals before vehicle departures, arrivals
+  before departures, etc.).
+* ``sequence`` -- a monotonically increasing counter that makes the ordering of
+  otherwise-identical events deterministic and guarantees FIFO behaviour.
+
+Scheduled events can be cancelled (used when a breakdown invalidates the rest of
+a trip); cancelled events are skipped when popped, so stale events never mutate
+state.
 """
-
 from __future__ import annotations
 
-from dataclasses import dataclass
+import heapq
+from dataclasses import dataclass, field
 
-from app.optimizer.model import DemandBatch
+                                                                               
+             
+                                                                               
+PASSENGER_ARRIVAL = "PASSENGER_ARRIVAL"
+VEHICLE_DEPARTURE = "VEHICLE_DEPARTURE"
+VEHICLE_ARRIVAL = "VEHICLE_ARRIVAL"
+PASSENGER_ALIGHT = "PASSENGER_ALIGHT"
+WAITING_DEADLINE = "WAITING_DEADLINE"
+VEHICLE_BREAKDOWN = "VEHICLE_BREAKDOWN"
+CONNECTION_CHECK = "CONNECTION_CHECK"
 
-# Congestion is modelled deterministically: a trip is delayed proportionally to
-# how busy the demand bucket it departs in is, relative to the busiest bucket.
-MAX_CONGESTION = 0.5
-_DEFAULT_BUCKET_MIN = 15
+                                                              
+                                                                          
+                                                                          
+                                       
+PRIORITY: dict[str, int] = {
+    PASSENGER_ARRIVAL: 0,
+    VEHICLE_ARRIVAL: 1,
+    PASSENGER_ALIGHT: 1,
+    VEHICLE_DEPARTURE: 2,
+    WAITING_DEADLINE: 3,
+    VEHICLE_BREAKDOWN: 4,
+    CONNECTION_CHECK: 5,
+}
+
+_DEFAULT_PRIORITY = 99
 
 
-@dataclass(frozen=True)
-class Passenger:
-    """A single waiting passenger."""
+@dataclass(order=True)
+class Event:
+    """A scheduled simulation event.
 
-    stop_id: str
-    arrival_min: float
-
-
-def expand_passengers(demand: list[DemandBatch]) -> list[Passenger]:
-    """Expand counted demand batches into individual passengers.
-
-    Batch members share the same arrival time. The list is ordered so boarding
-    is FIFO by arrival time then stop id, making the simulation deterministic.
+    Ordering uses only ``(time_min, priority, sequence)``; the descriptive
+    fields never influence ordering.
     """
 
-    passengers: list[Passenger] = []
-    for batch in demand:
-        for _ in range(batch.count):
-            passengers.append(
-                Passenger(stop_id=batch.stop_id, arrival_min=float(batch.time_min))
-            )
-
-    passengers.sort(key=lambda p: (p.arrival_min, p.stop_id))
-    return passengers
+    time_min: float
+    priority: int
+    sequence: int
+    event_type: str = field(compare=False)
+    payload: dict = field(compare=False, default_factory=dict)
 
 
-def demand_buckets(
-    demand: list[DemandBatch], bucket_min: int = _DEFAULT_BUCKET_MIN
-) -> dict[int, int]:
-    """Total demand counted per ``bucket_min`` bucket keyed by bucket start."""
+class EventQueue:
+    """Deterministic min-heap of :class:`Event` objects."""
 
-    buckets: dict[int, int] = {}
-    for batch in demand:
-        key = (batch.time_min // bucket_min) * bucket_min
-        buckets[key] = buckets.get(key, 0) + batch.count
-    return buckets
+    def __init__(self) -> None:
+        self._heap: list[Event] = []
+        self._sequence = 0
+        self._cancelled: set[int] = set()
 
+    def schedule(self, time_min: float, event_type: str, payload: dict | None = None) -> Event:
+        """Schedule an event and return it (so callers may cancel it later)."""
+        event = Event(
+            time_min=float(time_min),
+            priority=PRIORITY.get(event_type, _DEFAULT_PRIORITY),
+            sequence=self._sequence,
+            event_type=event_type,
+            payload=dict(payload or {}),
+        )
+        self._sequence += 1
+        heapq.heappush(self._heap, event)
+        return event
 
-def congestion_factor(
-    demand: list[DemandBatch],
-    departure_min: float,
-    bucket_min: int = _DEFAULT_BUCKET_MIN,
-) -> float:
-    """Return the travel-time multiplier for a trip departing at a time.
+    def cancel(self, event: Event) -> None:
+        """Mark ``event`` as cancelled; it will be skipped when popped."""
+        self._cancelled.add(event.sequence)
 
-    ``1.0`` when there is no demand; up to ``1 + MAX_CONGESTION`` when demand is
-    at its busiest bucket.
-    """
+    def pop(self) -> Event:
+        """Return the next live (uncancelled) event, raising ``IndexError`` if empty."""
+        while self._heap:
+            event = heapq.heappop(self._heap)
+            if event.sequence not in self._cancelled:
+                return event
+        raise IndexError("pop from an empty event queue")
 
-    buckets = demand_buckets(demand, bucket_min)
-    if not buckets:
-        return 1.0
+    def peek_time(self) -> float | None:
+        """Time of the next live event, or ``None`` when the queue is empty."""
+        while self._heap and self._heap[0].sequence in self._cancelled:
+            heapq.heappop(self._heap)
+        return self._heap[0].time_min if self._heap else None
 
-    peak = max(buckets.values())
-    if peak <= 0:
-        return 1.0
-
-    key = (int(departure_min) // bucket_min) * bucket_min
-    bucket_value = buckets.get(key, 0)
-    return 1.0 + MAX_CONGESTION * (bucket_value / peak)
+    def __len__(self) -> int:
+        return len(self._heap)

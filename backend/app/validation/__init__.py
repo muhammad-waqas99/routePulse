@@ -1,1 +1,1 @@
-"""Independent plan validation package."""
+"""Independent feasibility validator (OWNED BY: validation workstream)."""

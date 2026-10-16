@@ -1,1 +1,1 @@
-"""Deterministic simulation package."""
+"""Discrete-event simulator (OWNED BY: simulation workstream)."""

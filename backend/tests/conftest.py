@@ -1,26 +1,22 @@
-"""Shared pytest fixtures."""
-
+"""Test configuration and shared fixtures for the prediction engine."""
 from __future__ import annotations
 
-import pytest
-from fastapi.testclient import TestClient
+import os
+import sys
 
-from app.main import app
-from app.services import run_store
+                                                                             
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import pytest              
 
-@pytest.fixture(autouse=True)
-def clean_run_store():
-    """Start and end each test with an empty run store."""
-
-    run_store.clear()
-    yield
-    run_store.clear()
+from app.schemas.network import Route              
 
 
 @pytest.fixture
-def client():
-    """A TestClient that runs the app lifespan (seeds evaluation runs)."""
-
-    with TestClient(app) as test_client:
-        yield test_client
+def sample_route() -> Route:
+    return Route(
+        route_id="R_TEST",
+        stop_ids=["S0", "S1", "S2"],
+        segment_travel_min=[5.0, 4.0],
+        segment_distance_km=[1.0, 1.0],
+    )

@@ -1,0 +1,177 @@
+[
+  {
+    "bus_id": "BUS01",
+    "current_stop_id": "S01",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS02",
+    "current_stop_id": "S04",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS03",
+    "current_stop_id": "S07",
+    "capacity": 25,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS04",
+    "current_stop_id": "S10",
+    "capacity": 25,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS05",
+    "current_stop_id": "S13",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS06",
+    "current_stop_id": "S16",
+    "capacity": 50,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS07",
+    "current_stop_id": "S19",
+    "capacity": 35,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS08",
+    "current_stop_id": "S22",
+    "capacity": 40,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS09",
+    "current_stop_id": "S25",
+    "capacity": 50,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS10",
+    "current_stop_id": "S28",
+    "capacity": 35,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS11",
+    "current_stop_id": "S01",
+    "capacity": 30,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS12",
+    "current_stop_id": "S04",
+    "capacity": 25,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS13",
+    "current_stop_id": "S07",
+    "capacity": 35,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS14",
+    "current_stop_id": "S10",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS15",
+    "current_stop_id": "S13",
+    "capacity": 30,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS16",
+    "current_stop_id": "S16",
+    "capacity": 30,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS17",
+    "current_stop_id": "S19",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS18",
+    "current_stop_id": "S22",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS19",
+    "current_stop_id": "S25",
+    "capacity": 25,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS20",
+    "current_stop_id": "S28",
+    "capacity": 35,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS21",
+    "current_stop_id": "S01",
+    "capacity": 35,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS22",
+    "current_stop_id": "S01",
+    "capacity": 30,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS23",
+    "current_stop_id": "S01",
+    "capacity": 25,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS24",
+    "current_stop_id": "S01",
+    "capacity": 40,
+    "available": true,
+    "onboard": 0
+  },
+  {
+    "bus_id": "BUS25",
+    "current_stop_id": "S01",
+    "capacity": 45,
+    "available": true,
+    "onboard": 0
+  }
+]

@@ -1,41 +1,72 @@
-"""Optimization endpoint."""
+"""POST /api/v1/optimize — run the optimizer and return a candidate plan.
 
+OWNED BY: API + optimizer workstreams.
+"""
 from __future__ import annotations
 
-import logging
-
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, Field
 
-from app.schemas.optimization import OptimizeRequest, OptimizeResponse
-from app.services.pipeline_service import run_optimization
-from app.services.scenario_service import UnknownScenarioError, list_scenarios
+from app.api import deps
+from app.optimizer.solve import optimize
+from app.schemas.metrics import ValidationReport
+from app.schemas.plan import Plan
+from app.validation.constraints import validate_plan
 
-logger = logging.getLogger("routepulse.optimization")
+router = APIRouter(prefix="/api/v1", tags=["optimization"])
 
-router = APIRouter(prefix="/api", tags=["optimization"])
+
+class OptimizeRequest(BaseModel):
+    """Request body for ``POST /api/v1/optimize``."""
+
+    scenario_id: str
+    time_limit_seconds: int | None = None
+    objective_weights: dict[str, float] | None = None
+
+
+class OptimizeResponse(BaseModel):
+    """A candidate plan plus its independent validation."""
+
+    scenario_id: str
+    plan: Plan
+    feasible: bool
+    solver_status: str
+    validation: ValidationReport
+    notes: list[str] = Field(default_factory=list)
 
 
 @router.post("/optimize", response_model=OptimizeResponse)
-def optimize(request: OptimizeRequest) -> OptimizeResponse:
-    """Run the recovery optimization pipeline for a scenario.
-
-    Returns the computed plan, independent validation, simulated metrics and a
-    comparison against the baseline. Unknown scenarios return 404; an
-    infeasible scenario returns HTTP 200 with ``status == "infeasible"`` and an
-    explanatory ``message``/``warnings``.
-    """
-
+def optimize_endpoint(request: OptimizeRequest) -> OptimizeResponse:
+    """Run the vehicle-assignment optimizer and validate the candidate plan."""
     try:
-        return run_optimization(request.scenarioId)
-    except UnknownScenarioError:
-        allowed = ", ".join(scenario.id for scenario in list_scenarios())
+        network = deps.load_network()
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    try:
+        scenario = deps.load_scenario(request.scenario_id)
+    except KeyError as exc:
         raise HTTPException(
-            status_code=404,
-            detail=f"Unknown scenario '{request.scenarioId}'. Known scenarios: {allowed}.",
-        ) from None
-    except Exception:  # noqa: BLE001 - log and return a safe message
-        logger.exception("Unexpected error while optimizing scenario %s", request.scenarioId)
-        raise HTTPException(
-            status_code=500,
-            detail="An unexpected error occurred while optimizing the scenario.",
-        ) from None
+            status_code=404, detail=f"unknown scenario_id: {request.scenario_id}"
+        ) from exc
+
+    notes: list[str] = []
+    if request.objective_weights:
+        notes.append(
+            "objective_weights are accepted for API parity but the greedy solver does not use them"
+        )
+
+    plan = optimize(
+        network,
+        scenario,
+        time_limit_seconds=request.time_limit_seconds,
+    )
+    demand = deps.load_demand()
+    validation = validate_plan(network, plan, scenario, demand=demand)
+    return OptimizeResponse(
+        scenario_id=request.scenario_id,
+        plan=plan,
+        feasible=validation["feasible"],
+        solver_status=plan.solver_status,
+        validation=validation,
+        notes=notes,
+    )
