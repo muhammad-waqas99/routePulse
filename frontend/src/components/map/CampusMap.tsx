@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { divIcon, latLngBounds } from "leaflet";
 import {
   CircleMarker,
@@ -14,12 +14,17 @@ import {
 import { Minus, Plus, RotateCcw } from "lucide-react";
 
 import { networkMapConfig } from "../../config/networkMap";
-import type { Route, Stop, Vehicle } from "../../types/operations";
+import { getRouteColor, useRoadRouteGeometries } from "../../lib/mapRoutes";
+import { getNextStopArrival } from "../../lib/arrivalEstimates";
+import { humanizeIdentifier, routeLabel } from "../../lib/presentation";
+import type { EtaRecord, Route, Stop, Trip, Vehicle } from "../../types/operations";
 
 interface CampusMapProps {
   stops: Stop[];
   routes: Route[];
   vehicles: Vehicle[];
+  trips: Trip[];
+  etas: EtaRecord[];
   selectedStopId: string | null;
   onStopSelect: (stopId: string) => void;
 }
@@ -29,23 +34,8 @@ interface RouteLinesProps {
   stops: Stop[];
   selectedRouteId: string;
   onRouteSelect: (routeId: string) => void;
+  focused: boolean;
 }
-
-interface OsrmResponse {
-  code: string;
-  routes: {
-    geometry: {
-      coordinates: number[][];
-    };
-  }[];
-}
-
-const routeColors: Record<string, string> = {
-  R1: "#2563EB",
-  R2: "#16A34A",
-  R3: "#D97706",
-  R4: "#9333EA",
-};
 
 
 const busIcon = divIcon({
@@ -88,101 +78,25 @@ function RouteLines({
   stops,
   selectedRouteId,
   onRouteSelect,
+  focused,
 }: RouteLinesProps) {
-  const [routeGeometries, setRouteGeometries] = useState<
-    Record<string, [number, number][]>
-  >({});
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function loadRouteGeometries() {
-      const results = await Promise.all(
-        routes.map(async (route) => {
-          const orderedStops = route.stopIds
-            .map((stopId) => stops.find((stop) => stop.id === stopId))
-            .filter((stop): stop is Stop => Boolean(stop));
-
-          if (orderedStops.length < 2) {
-            return [route.id, []] as const;
-          }
-
-          const coordinates = orderedStops
-            .map((stop) => `${stop.longitude},${stop.latitude}`)
-            .join(";");
-
-          const url =
-            `https://router.project-osrm.org/route/v1/driving/${coordinates}` +
-            "?overview=full&geometries=geojson&steps=false";
-
-          try {
-            const response = await fetch(url);
-
-            if (!response.ok) {
-              throw new Error(`Routing request failed for ${route.id}`);
-            }
-
-            const data = (await response.json()) as OsrmResponse;
-
-            if (data.code !== "Ok" || !data.routes[0]) {
-              throw new Error(`No road route found for ${route.id}`);
-            }
-
-            const positions = data.routes[0].geometry.coordinates.map(
-              ([longitude, latitude]) =>
-                [latitude, longitude] as [number, number],
-            );
-
-            return [route.id, positions] as const;
-          } catch (error) {
-            console.error(
-              `Could not load road geometry for ${route.id}:`,
-              error,
-            );
-
-            return [route.id, []] as const;
-          }
-        }),
-      );
-
-      if (!cancelled) {
-        setRouteGeometries(Object.fromEntries(results));
-      }
-    }
-
-    void loadRouteGeometries();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [routes, stops]);
-
   const visibleRoutes =
     selectedRouteId === "all"
       ? routes
       : routes.filter((route) => route.id === selectedRouteId);
+  const geometries = useRoadRouteGeometries(routes, stops);
 
   return (
     <>
       {visibleRoutes.map((route) => {
-        const positions = routeGeometries[route.id];
+        const positions = geometries[route.id] ?? [];
 
-        if (!positions || positions.length < 2) return null;
+        if (positions.length < 2) return null;
 
-        return (
-          <Polyline
-            key={route.id}
-            positions={positions}
-            pathOptions={{
-              color: routeColors[route.id] ?? "#64748B",
-              weight: 4,
-              opacity: 0.7,
-            }}
-            eventHandlers={{
-              click: () => onRouteSelect(route.id),
-            }}
-          />
-        );
+        const color = getRouteColor(route.id);
+        const displayPositions = positions;
+        const opacity = focused && selectedRouteId !== route.id ? 0.12 : selectedRouteId === "all" ? 0.72 : 0.95;
+        return <Fragment key={route.id}><Polyline positions={displayPositions} pathOptions={{ color: "#FFFFFF", weight: selectedRouteId === route.id ? 9 : 7, opacity: opacity * 0.85 }} eventHandlers={{ click: () => onRouteSelect(route.id) }} /><Polyline positions={displayPositions} pathOptions={{ color, weight: selectedRouteId === route.id ? 5 : 3.5, opacity }} eventHandlers={{ click: () => onRouteSelect(route.id) }} /></Fragment>;
       })}
     </>
   );
@@ -194,16 +108,8 @@ function FitMapToStops({ stops }: { stops: Stop[] }) {
   useEffect(() => {
     if (stops.length === 0) return;
 
-    const bounds = latLngBounds(
-      stops.map(
-        (stop) => [stop.latitude, stop.longitude] as [number, number],
-      ),
-    );
-
-    map.fitBounds(bounds, {
-      padding: [30, 30],
-      maxZoom: 15,
-    });
+    const bounds = latLngBounds(stops.map((stop) => [stop.latitude, stop.longitude] as [number, number]));
+    map.fitBounds(bounds, { padding: [36, 36], maxZoom: 14 });
   }, [map, stops]);
 
   return null;
@@ -225,16 +131,8 @@ function MapControls({ allStops, onReset }: MapControlsProps) {
       return;
     }
 
-    const bounds = latLngBounds(
-      allStops.map(
-        (stop) => [stop.latitude, stop.longitude] as [number, number],
-      ),
-    );
-
-    map.fitBounds(bounds, {
-      padding: [30, 30],
-      maxZoom: 15,
-    });
+    const bounds = latLngBounds(allStops.map((stop) => [stop.latitude, stop.longitude] as [number, number]));
+    map.fitBounds(bounds, { padding: [36, 36], maxZoom: 14 });
   }
 
   return (
@@ -274,6 +172,8 @@ export default function CampusMap({
   stops,
   routes,
   vehicles,
+  trips,
+  etas,
   selectedStopId,
   onStopSelect,
 }: CampusMapProps) {
@@ -286,7 +186,7 @@ export default function CampusMap({
     () =>
       selectedRouteId === "all"
         ? stops
-        : stops.filter((stop) =>
+        : stops.filter((stop) => stop.id === "S01" ||
             routes
               .find((route) => route.id === selectedRouteId)
               ?.stopIds.includes(stop.id),
@@ -295,7 +195,7 @@ export default function CampusMap({
   );
 
   const visibleVehicles = vehicles.filter((vehicle) => {
-    if (vehicle.status !== "in-service" || !vehicle.currentStopId) {
+    if ((vehicle.status !== "in-service" && vehicle.status !== "available") || !vehicle.currentStopId) {
       return false;
     }
 
@@ -303,10 +203,14 @@ export default function CampusMap({
       selectedRouteId === "all" || vehicle.routeId === selectedRouteId
     );
   });
+  const arrivalsByStop = useMemo(
+    () => new Map(stops.map((stop) => [stop.id, getNextStopArrival(stop.id, routes, trips, etas)])),
+    [stops, routes, trips, etas],
+  );
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-start gap-2">
         <button
           type="button"
           onClick={() => setSelectedRouteId("all")}
@@ -319,15 +223,16 @@ export default function CampusMap({
           All
         </button>
 
+        <div className="flex max-h-28 min-w-0 flex-1 flex-wrap gap-2 overflow-y-auto rounded-lg bg-slate-50 p-2">
         {routes.map((route) => {
-          const color = routeColors[route.id] ?? "#64748B";
+          const color = getRouteColor(route.id);
           const isSelected = selectedRouteId === route.id;
 
           return (
             <button
               key={route.id}
               type="button"
-              title={route.name}
+              title={routeLabel(route)}
               onClick={() => setSelectedRouteId(route.id)}
               className="rounded-lg border px-3 py-2 text-sm font-medium transition"
               style={{
@@ -336,13 +241,14 @@ export default function CampusMap({
                 color: isSelected ? "#FFFFFF" : color,
               }}
             >
-              {route.id}
+              {routeLabel(route)}
             </button>
           );
         })}
+        </div>
 
         <span className="ml-auto text-xs text-secondary">
-          {visibleStops.length} stops · {visibleVehicles.length} buses
+          {routes.length} routes · {visibleStops.length} stops · {visibleVehicles.length} buses
         </span>
       </div>
 
@@ -357,6 +263,7 @@ export default function CampusMap({
           maxBounds={networkMapConfig.maxBounds}
           maxBoundsViscosity={1}
           scrollWheelZoom
+          zoomSnap={0.5}
           className="h-full w-full"
         >
           <TileLayer
@@ -373,6 +280,7 @@ export default function CampusMap({
               stops={stops}
               selectedRouteId={selectedRouteId}
               onRouteSelect={setSelectedRouteId}
+              focused={selectedRouteId !== "all"}
             />
           </Pane>
 
@@ -391,8 +299,8 @@ export default function CampusMap({
                 (r) => r.stopIds.includes(stop.id) && stop.id !== "S01",
               );
 
-              const routeColor =
-                routeColors[stopRoute?.id ?? ""] ?? "#64748B";
+              const routeColor = getRouteColor(stopRoute?.id ?? stop.id);
+              const nextArrival = arrivalsByStop.get(stop.id);
 
               return (
                 <div key={stop.id}>
@@ -433,14 +341,11 @@ export default function CampusMap({
                     <Popup>
                       <div>
                         <p className="font-semibold">{stop.name}</p>
-                        <p>
-                          {stop.latitude.toFixed(5)},{" "}
-                          {stop.longitude.toFixed(5)}
-                        </p>
                         {isUniversityTerminal && (
                           <p>University Terminal — all routes end here</p>
                         )}
-                        {stopRoute && <p>Route: {stopRoute.name}</p>}
+                        {stopRoute && <p>Route: {routeLabel(stopRoute)}</p>}
+                        {nextArrival && <p>Next {nextArrival.estimatedArrival}{nextArrival.dayOffset ? ` (+${nextArrival.dayOffset} day)` : ""} · {nextArrival.source === "live" ? "Live" : "Scheduled"} · {routeLabel(routes.find((route) => route.id === nextArrival.routeId) ?? { id: nextArrival.routeId, name: nextArrival.routeId, stopIds: [], status: "active" })}</p>}
                       </div>
                     </Popup>
                   </CircleMarker>
@@ -469,10 +374,9 @@ export default function CampusMap({
               >
                 <Popup>
                   <div>
-                    <p className="font-semibold">{vehicle.id}</p>
-                    <p>Route: {assignedRoute?.name ?? "Unassigned"}</p>
+                    <p className="font-semibold">{humanizeIdentifier(vehicle.id)}</p>
+                    <p>Planned route: {assignedRoute?.name ?? "No route"}</p>
                     <p>Current stop: {currentStop.name}</p>
-                    <p>Destination: IIMB Main Gate</p>
                     <p>Capacity: {vehicle.capacity} passengers</p>
                   </div>
                 </Popup>

@@ -7,64 +7,36 @@ import {
   Clock,
   Route as RouteIcon,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import type { OperationsData } from "../types/operations";
-import { getOperationsOverview } from "../api/operation";
 
 import StatCard from "../components/dashboard/StatCard";
 import AlertItem from "../components/dashboard/AlertItem";
 import RouteStatusTable from "../components/dashboard/RouteStatusTable";
 import DemandCapacityChart from "../components/dashboard/DemandCapacityChart";
+import OperationsOverviewCharts from "../components/dashboard/OperationsOverviewCharts";
 import CampusMap from "../components/map/CampusMap";
+import { getNextStopArrival } from "../lib/arrivalEstimates";
+import { presentAlert, routeLabel } from "../lib/presentation";
 
-export default function OperationsPage() {
-  const [operationsData, setOperationsData] =
-    useState<OperationsData | null>(null);
+interface OperationsPageProps {
+  data: OperationsData | null;
+  loading: boolean;
+  error: string | null;
+  onRetry: () => void;
+}
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [retryCount, setRetryCount] = useState(0);
+export default function OperationsPage({
+  data: operationsData,
+  loading,
+  error,
+  onRetry,
+}: OperationsPageProps) {
 
   const [selectedStopId, setSelectedStopId] = useState<string | null>(
     null,
   );
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const loadOperations = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const data = await getOperationsOverview();
-        console.log("Operations API data:", data);
-
-        if (!cancelled) {
-          setOperationsData(data);
-        }
-      } catch (err) {
-        if (!cancelled) {
-          setError(
-            err instanceof Error
-              ? err.message
-              : "Failed to load operations data.",
-          );
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
-      }
-    };
-
-    void loadOperations();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [retryCount]);
 
   if (loading) {
     return (
@@ -81,24 +53,16 @@ export default function OperationsPage() {
 
   if (error || !operationsData) {
     return (
-      <div
-        className="rounded-xl border border-border bg-white p-6"
-        role="alert"
-      >
-        <h2 className="font-semibold text-foreground">
-          Unable to load operations
-        </h2>
-
-        <p className="mt-2 text-sm text-secondary">
-          {error ?? "No operations data was returned."}
-        </p>
-
-        <button
-          type="button"
-          onClick={() => setRetryCount((count) => count + 1)}
-          className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white"
-        >
-          Retry
+      <div className="rounded-xl border border-danger-border bg-surface p-4 sm:p-6">
+        <div className="flex items-start gap-3" role="alert">
+          <div className="rounded-lg bg-danger-soft px-2.5 py-1 text-xs font-semibold text-danger">Critical alert</div>
+          <div>
+            <h2 className="font-semibold text-foreground">Initial operations data could not load</h2>
+            <p className="mt-2 break-words text-sm text-secondary">{error ?? "The operations API returned no data."}</p>
+          </div>
+        </div>
+        <button type="button" onClick={onRetry} className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white">
+          Retry loading data
         </button>
       </div>
     );
@@ -127,33 +91,32 @@ export default function OperationsPage() {
     0,
   );
 
-  const activeAlerts = alerts.filter(
-    (alert) => alert.status === "active",
-  ).length;
+  const activeSystemAlerts = alerts.filter((alert) => alert.status === "active");
+  const activeAlerts = activeSystemAlerts.length;
 
   const statCards = [
     {
       title: "Available Buses",
       value: String(availableBuses),
-      description: "Vehicles marked available in sample data",
+      description: "Ready for service",
       icon: BusFront,
     },
     {
       title: "Scheduled Trips",
       value: String(scheduledTrips),
-      description: "Trips marked as scheduled",
+      description: "On the timetable",
       icon: CalendarDays,
     },
     {
       title: "Passenger Demand",
       value: String(passengerDemand),
-      description: "Total across sample demand records",
+      description: "Passengers across the network",
       icon: Users,
     },
     {
       title: "Active Alerts",
       value: String(activeAlerts),
-      description: "Alerts currently marked active",
+      description: "Issues needing attention",
       icon: BellRing,
     },
   ];
@@ -178,11 +141,7 @@ export default function OperationsPage() {
     : 0;
 
   const nextArrival = selectedStop
-    ? etas
-        .filter((eta) => eta.stopId === selectedStop.id)
-        .sort((a, b) =>
-          a.estimatedArrival.localeCompare(b.estimatedArrival),
-        )[0]
+    ? getNextStopArrival(selectedStop.id, routes, trips, etas)
     : undefined;
 
   return (
@@ -201,14 +160,13 @@ export default function OperationsPage() {
         </div>
       </section>
 
+      <OperationsOverviewCharts vehicles={vehicles} trips={trips} />
+
       <section className="space-y-4">
         <div>
           <h2 className="text-lg font-semibold text-foreground">
             Campus Network
           </h2>
-          <p className="mt-1 text-sm text-secondary">
-            Routes, stops, and current vehicle activity
-          </p>
         </div>
 
         <div className="grid min-w-0 grid-cols-1 gap-4 xl:grid-cols-[minmax(0,4fr)_minmax(220px,1fr)]">
@@ -226,6 +184,8 @@ export default function OperationsPage() {
               stops={stops}
               routes={routes}
               vehicles={vehicles}
+              trips={trips}
+              etas={etas}
               selectedStopId={selectedStopId}
               onStopSelect={setSelectedStopId}
             />
@@ -253,9 +213,6 @@ export default function OperationsPage() {
             {selectedStop ? (
               <div className="space-y-5">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-secondary">
-                    {selectedStop.id}
-                  </p>
                   <h4 className="mt-1 text-lg font-semibold text-foreground">
                     {selectedStop.name}
                   </h4>
@@ -274,7 +231,7 @@ export default function OperationsPage() {
                           key={route.id}
                           className="rounded-md bg-blue-50 px-2.5 py-1 text-sm font-medium text-primary"
                         >
-                          {route.id}
+                          {routeLabel(route)}
                         </span>
                       ))
                     ) : (
@@ -294,9 +251,6 @@ export default function OperationsPage() {
                   <p className="mt-2 text-2xl font-semibold text-foreground">
                     {passengersWaiting}
                   </p>
-                  <p className="mt-1 text-xs text-secondary">
-                    From available sample demand records
-                  </p>
                 </div>
 
                 <div className="border-t border-border pt-4">
@@ -313,7 +267,7 @@ export default function OperationsPage() {
 
                   {nextArrival && (
                     <p className="mt-1 text-xs text-secondary">
-                      Scheduled {nextArrival.scheduledArrival}
+                      {nextArrival.source === "live" ? "Live" : "Scheduled"} · {routeLabel(routes.find((route) => route.id === nextArrival.routeId) ?? { id: nextArrival.routeId, name: nextArrival.routeId, stopIds: [], status: "active" })}{nextArrival.dayOffset ? ` · +${nextArrival.dayOffset} day` : ""}
                     </p>
                   )}
                 </div>
@@ -368,29 +322,31 @@ export default function OperationsPage() {
             stops={stops}
             vehicles={vehicles}
             routes={routes}
+            trips={trips}
           />
         </div>
       </section>
 
       <section className="rounded-xl border border-border bg-white p-4 sm:p-5">
-        <h2 className="mb-4 font-semibold text-foreground">
-          Active Alerts
-        </h2>
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 className="font-semibold text-foreground">Active operational alerts</h2>
+            <p className="mt-1 text-xs text-secondary">Issues needing attention</p>
+          </div>
+          <span className="rounded-full bg-primary-soft px-2.5 py-1 text-xs font-medium text-primary">{activeAlerts} active</span>
+        </div>
 
         <div className="space-y-3">
-          {alerts
-            .filter((alert) => alert.status === "active")
-            .map((alert) => (
-              <AlertItem key={alert.id} alert={alert} />
-            ))}
+          {activeSystemAlerts.map((alert) => <AlertItem key={alert.id} alert={presentAlert(alert, routes, vehicles, stops)} />)}
 
           {activeAlerts === 0 && (
             <p className="text-sm text-secondary">
-              No active alerts.
+              No active operational issues were returned.
             </p>
           )}
         </div>
       </section>
+
     </div>
   );
 }

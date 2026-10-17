@@ -4,6 +4,8 @@ export interface Route {
   name: string;
   stopIds: string[];
   status: "active" | "delayed" | "disrupted" | "inactive";
+  segmentTravelMin?: number[];
+  segmentDistanceKm?: number[];
 }
 
 export interface Stop {
@@ -60,4 +62,6 @@ export interface OperationsData {
   demand: DemandRecord[];
   etas: EtaRecord[];
   alerts: TransportAlert[];
+  dataSource?: string;
+  notes?: string[];
 }

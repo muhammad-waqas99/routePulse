@@ -8,12 +8,14 @@ export function useOperationsOverview() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const loadOverview = useCallback(() => getOperationsOverview(), []);
+
   const fetchOverview = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const overview = await getOperationsOverview();
+      const overview = await loadOverview();
       setData(overview);
     } catch (error: unknown) {
       setError(
@@ -24,11 +26,18 @@ export function useOperationsOverview() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [loadOverview]);
 
   useEffect(() => {
-    void fetchOverview();
-  }, [fetchOverview]);
+    let active = true;
+    void loadOverview()
+      .then((overview) => { if (active) setData(overview); })
+      .catch((error: unknown) => {
+        if (active) setError(error instanceof Error ? error.message : "Failed to load operations overview.");
+      })
+      .finally(() => { if (active) setIsLoading(false); });
+    return () => { active = false; };
+  }, [loadOverview]);
 
   return {
     data,
