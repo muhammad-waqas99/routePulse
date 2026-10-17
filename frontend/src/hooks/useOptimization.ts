@@ -24,7 +24,7 @@ export function useOptimization() {
     setStage("optimizing");
 
     try {
-      const data = await runOptimization({ scenarioId });
+      const data = await runOptimization(scenarioId);
 
       setResult(data);
       setStage("completed");

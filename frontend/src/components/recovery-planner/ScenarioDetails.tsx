@@ -1,17 +1,11 @@
-import {
-  Clock3,
-  ShieldCheck,
-  TrendingUp,
-  BusFront,
-  RotateCcw,
-} from "lucide-react";
+import { Clock3, ShieldCheck, TrendingUp, BusFront } from "lucide-react";
 import type { Scenario } from "../../types/scenarios";
 
 interface ScenarioDetailsProps {
   scenario: Scenario;
 }
 
-const categoryStyles = {
+const categoryStyles: Record<Scenario["category"], string> = {
   Normal: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
   "Stress Test": "bg-amber-50 text-amber-700 ring-amber-600/20",
   Disruption: "bg-red-50 text-red-700 ring-red-600/20",
@@ -23,25 +17,41 @@ export default function ScenarioDetails({
 }: ScenarioDetailsProps) {
   const details = [
     {
-      label: "Demand Multiplier",
-      value: `+${scenario.demandMultiplierPercent}%`,
+      label: "Stops affected",
+      value: Object.keys(scenario.demandMultipliers).length
+        ? `${Object.keys(scenario.demandMultipliers).length} stops`
+        : "None",
       icon: TrendingUp,
     },
     {
-      label: "Available Vehicles",
-      value: String(scenario.availableVehicles),
+      label: "Vehicles unavailable",
+      value: scenario.unavailableVehicleIds.length
+        ? String(scenario.unavailableVehicleIds.length)
+        : "None",
       icon: BusFront,
     },
     {
-      label: "Affected Period",
-      value: scenario.affectedPeriod,
+      label: "Routes slowed",
+      value: Object.keys(scenario.travelTimeMultipliers).length
+        ? `${Object.keys(scenario.travelTimeMultipliers).length} routes`
+        : "None",
       icon: Clock3,
     },
     {
-      label: "Evaluation Horizon",
+      label: "Duration",
       value: `${scenario.evaluationHorizonMin} min`,
-      icon: RotateCcw,
+      icon: Clock3,
     },
+    ...Object.entries(scenario.demandMultipliers).slice(0, 3).map(([stopId, multiplier]) => ({
+      label: `Demand · ${stopId}`,
+      value: `${multiplier > 1 ? "+" : ""}${Math.round((multiplier - 1) * 100)}%`,
+      icon: TrendingUp,
+    })),
+    ...Object.entries(scenario.travelTimeMultipliers).slice(0, 3).map(([routeId, multiplier]) => ({
+      label: `Travel time · ${routeId}`,
+      value: `${multiplier.toFixed(2)}×`,
+      icon: Clock3,
+    })),
   ];
 
   return (
@@ -70,7 +80,7 @@ export default function ScenarioDetails({
       </div>
 
       <div className="mt-6 grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        {details.map((detail) => {
+        {details.filter((detail) => detail.value !== "None").map((detail) => {
           const Icon = detail.icon;
 
           return (
@@ -91,10 +101,6 @@ export default function ScenarioDetails({
         })}
       </div>
 
-      <p className="mt-4 text-xs leading-5 text-secondary">
-        Prototype configuration. These values must eventually come
-        from the backend scenario configuration.
-      </p>
     </section>
   );
 }

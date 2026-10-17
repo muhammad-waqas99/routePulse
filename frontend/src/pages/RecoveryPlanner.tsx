@@ -17,8 +17,12 @@ import ScenarioDetails from "../components/recovery-planner/ScenarioDetails";
 import OptimizationProgress from "../components/recovery-planner/OptimizationProgress";
 import TimetableComparison from "../components/recovery-planner/TimetableComparison";
 import ConstraintValidation from "../components/recovery-planner/ConstraintValidation";
+import EvaluationDetails from "../components/recovery-planner/EvaluationDetails";
+import SimulationChangeMap from "../components/recovery-planner/SimulationChangeMap";
+import OptimizationMetricsChart from "../components/recovery-planner/OptimizationMetricsChart";
 
 import { useOptimization } from "../hooks/useOptimization"
+import { useOperationsOverview } from "../hooks/useOperationsOverview";
 
 interface RecoveryPlannerProps {
   onViewPerformance: () => void;
@@ -32,6 +36,7 @@ export default function RecoveryPlanner({
   const [scenariosError, setScenariosError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
   const [selectedScenarioId, setSelectedScenarioId] = useState("");
+  const { data: operationsData, isLoading: operationsLoading, error: operationsError } = useOperationsOverview();
 
   const {
     stage,
@@ -62,7 +67,7 @@ export default function RecoveryPlanner({
           }
 
           return (
-            data.find((scenario) => scenario.id === "normal_operations")
+            data.find((scenario) => scenario.id === "normal")
               ?.id ??
             data[0]?.id ??
             ""
@@ -168,9 +173,6 @@ export default function RecoveryPlanner({
             Run Optimization
           </h2>
 
-          <p className="mt-1 text-sm text-secondary">
-            Generate a constraint-aware plan for the selected scenario.
-          </p>
         </div>
 
         <button
@@ -242,13 +244,13 @@ export default function RecoveryPlanner({
           <div className="mt-6 min-w-0 space-y-6">
             <div
               className={`flex flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-center sm:justify-between ${
-                result.status === "optimal"
+                result.status === "feasible"
                   ? "border-emerald-200 bg-emerald-50"
                   : "border-amber-200 bg-amber-50"
               }`}
             >
               <div className="flex min-w-0 items-start gap-3">
-                {result.status === "optimal" ? (
+                {result.status === "feasible" ? (
                   <CheckCircle2
                     size={22}
                     className="mt-0.5 shrink-0 text-emerald-600"
@@ -262,23 +264,13 @@ export default function RecoveryPlanner({
 
                 <div className="min-w-0">
                   <h3 className="font-semibold text-foreground">
-                    {result.status === "optimal"
-                      ? "Optimization completed"
+                    {result.status === "feasible"
+                      ? "Feasible plan evaluated"
                       : "No feasible solution found"}
                   </h3>
 
                   <p className="mt-1 text-sm text-secondary">
                     Scenario: {result.scenarioName}
-                  </p>
-
-                  {result.message && (
-                    <p className="mt-2 break-words text-sm text-secondary">
-                      {result.message}
-                    </p>
-                  )}
-
-                  <p className="mt-2 text-xs text-secondary">
-                    Run ID: {result.runId}
                   </p>
                 </div>
               </div>
@@ -289,22 +281,34 @@ export default function RecoveryPlanner({
             </div>
 
             {result.warnings.length > 0 && (
-              <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-                <h3 className="font-semibold text-amber-900">
-                  Optimization warnings
-                </h3>
+              <details className="rounded-lg border border-warning-border bg-warning-soft/50 p-4">
+                <summary className="cursor-pointer text-sm font-semibold text-warning">
+                  Warnings · {result.warnings.length}
+                </summary>
 
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-amber-800">
-                  {result.warnings.map((warning, index) => (
+                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-secondary">
+                  {result.warnings.slice(0, 6).map((warning, index) => (
                     <li key={`${index}-${warning}`}>{warning}</li>
                   ))}
                 </ul>
-              </div>
+                {result.warnings.length > 6 && <p className="mt-2 text-xs text-secondary">+{result.warnings.length - 6} more</p>}
+              </details>
             )}
+
+            <OptimizationMetricsChart result={result} />
 
             <TimetableComparison result={result} />
 
+            <SimulationChangeMap
+              result={result}
+              data={operationsData}
+              loading={operationsLoading}
+              error={operationsError}
+            />
+
             <ConstraintValidation result={result} />
+
+            <EvaluationDetails result={result} />
 
             <button
               type="button"

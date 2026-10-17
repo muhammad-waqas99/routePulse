@@ -7,10 +7,9 @@ export const scenarios: Scenario[] = [
     category: "Normal",
     description:
       "Baseline transportation demand and vehicle availability.",
-    type: "normal",
-    demandMultiplierPercent: 0,
-    availableVehicles: 4,
-    affectedPeriod: "08:00–10:00",
+    demandMultipliers: {},
+    travelTimeMultipliers: {},
+    unavailableVehicleIds: [],
     evaluationHorizonMin: 120,
   },
   {
@@ -19,10 +18,9 @@ export const scenarios: Scenario[] = [
     category: "Stress Test",
     description:
       "Passenger demand increases during peak periods.",
-    type: "demand-spike",
-    demandMultiplierPercent: 50,
-    availableVehicles: 4,
-    affectedPeriod: "08:00–10:00",
+    demandMultipliers: { campus: 1.5 },
+    travelTimeMultipliers: {},
+    unavailableVehicleIds: [],
     evaluationHorizonMin: 120,
   },
   {
@@ -31,10 +29,9 @@ export const scenarios: Scenario[] = [
     category: "Disruption",
     description:
       "One vehicle becomes unavailable during the operating window.",
-    type: "vehicle-unavailable",
-    demandMultiplierPercent: 0,
-    availableVehicles: 3,
-    affectedPeriod: "08:15–09:45",
+    demandMultipliers: {},
+    travelTimeMultipliers: {},
+    unavailableVehicleIds: ["BUS01"],
     evaluationHorizonMin: 120,
   },
 ];

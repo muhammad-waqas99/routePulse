@@ -65,12 +65,6 @@ export default function OptimizationSummary({ result }: Props) {
           );
         })}
       </div>
-
-      <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-900">
-        Prototype preview: all timetable changes and metric values are
-        simulated mock data, not measured results from a real optimizer
-        or simulation.
-      </p>
     </section>
   );
 }
