@@ -9,16 +9,14 @@ description = "RoutePulse campus transport prediction engine and optimizer"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "pydantic>=2.6",     # shared schemas + prediction engine
-    "fastapi>=0.110",    # API layer (integration workstream)
-    "uvicorn>=0.29",     # API server
-    "numpy>=1.26",       # data / evaluation
-    "pandas>=2.2",       # data / evaluation
+    "pydantic>=2.6",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "numpy>=1.26",
+    "pandas>=2.2",
 ]
 
 [project.optional-dependencies]
-# OR-Tools CP-SAT is only needed by the optimizer workstream.
-optimizer = ["ortools>=9.9"]
 dev = ["pytest>=8.0", "httpx>=0.27"]
 
 [tool.setuptools.packages.find]
