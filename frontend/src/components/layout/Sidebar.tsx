@@ -7,6 +7,7 @@ interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
   onNavigate: (pageId: PageId) => void;
+  status: "loading" | "connected" | "unavailable";
 }
 
 export default function Sidebar({
@@ -14,6 +15,7 @@ export default function Sidebar({
   isOpen,
   onClose,
   onNavigate,
+  status,
 }: SidebarProps) {
   return (
     <>
@@ -91,11 +93,11 @@ export default function Sidebar({
 
 
         <div className="shrink-0 border-t border-border p-4">
-          <div className="rounded-lg border border-success-border bg-success-soft p-3">
+          <div className={`rounded-lg border p-3 ${status === "connected" ? "border-success-border bg-success-soft" : "border-border bg-slate-50"}`}>
             <div className="flex items-center gap-2">
               <Activity
                 size={17}
-                className="text-success"
+                className={status === "connected" ? "text-success" : "text-muted-foreground"}
                 aria-hidden="true"
               />
               <span className="text-sm font-medium text-foreground">
@@ -104,9 +106,9 @@ export default function Sidebar({
             </div>
 
             <div className="mt-2 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-success" />
+              <span className={`h-2 w-2 rounded-full ${status === "connected" ? "bg-success" : status === "loading" ? "bg-amber-500" : "bg-red-500"}`} />
               <span className="text-xs text-muted-foreground">
-                Operational
+                {status === "connected" ? "API connected" : status === "loading" ? "Checking API" : "API unavailable"}
               </span>
             </div>
           </div>

@@ -165,7 +165,6 @@ textarea {
   outline-offset: 2px;
 }
 
-/* Text selection */
 ::selection {
   background: var(--primary-soft);
   color: var(--foreground);

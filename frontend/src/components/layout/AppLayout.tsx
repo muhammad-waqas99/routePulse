@@ -8,17 +8,21 @@ import PerformanceLab from "../../pages/PerformanceLab";
 import RecoveryPlanner from "../../pages/RecoveryPlanner";
 import AlertItem from "../dashboard/AlertItem";
 import Sidebar from "./Sidebar";
+import { presentAlert } from "../../lib/presentation";
 
 export default function AppLayout() {
   const [activePage, setActivePage] = useState<PageId>("operations");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  const { data: overview } = useOperationsOverview();
+  const { data: overview, isLoading: overviewLoading, error: overviewError, refetch } = useOperationsOverview();
 
   const activeAlerts = (overview?.alerts ?? []).filter(
     (alert) => alert.status === "active",
   );
+  const notificationAlerts = overviewError
+    ? [{ id: "operations-load-error", title: "Initial data load failed", description: overviewError, severity: "critical" as const, status: "active" as const }]
+    : activeAlerts;
 
   const activeItem = navigationItems.find(
     (item) => item.id === activePage,
@@ -52,6 +56,7 @@ export default function AppLayout() {
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
         onNavigate={handleNavigate}
+        status={overviewLoading ? "loading" : overviewError ? "unavailable" : "connected"}
       />
 
       <div className="flex min-h-0 min-w-0 flex-1 flex-col">
@@ -89,9 +94,9 @@ export default function AppLayout() {
             >
               <Bell size={20} aria-hidden="true" />
 
-              {activeAlerts.length > 0 && (
+              {notificationAlerts.length > 0 && (
                 <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white">
-                  {activeAlerts.length}
+                  {notificationAlerts.length}
                 </span>
               )}
             </button>
@@ -108,15 +113,19 @@ export default function AppLayout() {
                   </h3>
 
                   <span className="text-xs text-muted-foreground">
-                    {activeAlerts.length} active
+                    {notificationAlerts.length} active
                   </span>
                 </div>
 
                 <div className="max-h-80 overflow-y-auto p-3">
-                  {activeAlerts.length > 0 ? (
+                  {overviewLoading ? (
+                    <p className="py-6 text-center text-sm text-muted-foreground">
+                      Loading alert data...
+                    </p>
+                  ) : notificationAlerts.length > 0 ? (
                     <div className="space-y-3">
-                      {activeAlerts.map((alert) => (
-                        <AlertItem key={alert.id} alert={alert} />
+                      {notificationAlerts.map((alert) => (
+                        <AlertItem key={alert.id} alert={presentAlert(alert, overview?.routes, overview?.vehicles, overview?.stops)} />
                       ))}
                     </div>
                   ) : (
@@ -136,20 +145,15 @@ export default function AppLayout() {
               {activeItem?.label ?? "Operations"}
             </h1>
 
-            <p className="mt-1 text-sm text-muted-foreground">
-              {activePage === "operations" &&
-                "Monitor campus transport operations and network status."}
-
-              {activePage === "recovery-planner" &&
-                "Plan recovery scenarios and review proposed schedules."}
-
-              {activePage === "performance-lab" &&
-                "Compare baseline performance with optimized results."}
-            </p>
           </div>
 
           {activePage === "operations" ? (
-            <OperationsPage />
+            <OperationsPage
+              data={overview}
+              loading={overviewLoading}
+              error={overviewError}
+              onRetry={() => void refetch()}
+            />
           ) : activePage === "recovery-planner" ? (
             <RecoveryPlanner
               onViewPerformance={() =>
