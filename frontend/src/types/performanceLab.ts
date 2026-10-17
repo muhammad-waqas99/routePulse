@@ -1,29 +1,26 @@
-
 export type EvaluationStatus = "completed" | "infeasible";
 
 export type PerformanceMetric = {
   baseline: number;
   optimized: number;
-  unit: "min" | "passengers" | "percent" | "km";
+  unit: string;
   lowerIsBetter: boolean;
 };
 
 export type PerformanceMetrics = {
-  averageWaitingTime: PerformanceMetric;
-  unservedPassengers: PerformanceMetric;
-  missedConnections: PerformanceMetric;
-  etaMae: PerformanceMetric;
-  unservedRate: PerformanceMetric;
-  capacityViolations: PerformanceMetric;
-  vehicleDistance: PerformanceMetric;
+  averageWaitingTime?: PerformanceMetric;
+  unservedPassengers?: PerformanceMetric;
+  capacityViolations?: PerformanceMetric;
+  vehicleDistance?: PerformanceMetric;
+  operatingCost?: PerformanceMetric;
 };
 
 export type PassengerOutcome = {
-  total: number;
-  baselineServed: number;
-  baselineUnserved: number;
-  optimizedServed: number;
-  optimizedUnserved: number;
+  total?: number;
+  baselineServed?: number;
+  baselineUnserved?: number;
+  optimizedServed?: number;
+  optimizedUnserved?: number;
 };
 
 export type FleetUtilization = {
@@ -41,13 +38,7 @@ export type PerformanceRun = {
   metrics?: PerformanceMetrics;
   passengerOutcome?: PassengerOutcome;
   fleetUtilization?: FleetUtilization[];
-  etaWithinThreeMinutes?: {
-    baseline: number;
-    optimized: number;
-  };
   keyFinding?: string;
 };
 
-export type PerformanceLabData = {
-  runs: PerformanceRun[];
-};
+export type PerformanceLabData = { runs: PerformanceRun[] };

@@ -1,10 +1,11 @@
 
 import {
-  Activity,
   ArrowDownRight,
   ArrowUpRight,
   Clock3,
-  GitCompareArrows,
+  CircleDollarSign,
+  Route,
+  ShieldCheck,
   Users,
 } from "lucide-react";
 
@@ -20,14 +21,15 @@ type KpiCardProps = {
   baseline: number;
   unit: string;
   icon: React.ReactNode;
+  lowerIsBetter: boolean;
 };
 
 function formatMetric(value: number, unit: string) {
+  const number = Number.isInteger(value) ? value.toLocaleString() : value.toLocaleString(undefined, { maximumFractionDigits: 1 });
   if (unit === "min") return `${value.toFixed(1)} min`;
   if (unit === "km") return `${value.toFixed(1)} km`;
   if (unit === "percent") return `${value.toFixed(1)}%`;
-
-  return value.toLocaleString();
+  return unit === "cost units" ? `${number} units` : number;
 }
 
 function KpiCard({
@@ -36,12 +38,12 @@ function KpiCard({
   baseline,
   unit,
   icon,
+  lowerIsBetter,
 }: KpiCardProps) {
-  const improvement =
-    baseline === 0 ? null : ((baseline - value) / baseline) * 100;
-
-  const isLower = improvement !== null && improvement > 0;
-  const isHigher = improvement !== null && improvement < 0;
+  const rawChange = baseline === 0 ? null : ((value - baseline) / Math.abs(baseline)) * 100;
+  const improvement = rawChange === null ? null : (lowerIsBetter ? -rawChange : rawChange);
+  const isBetter = improvement !== null && improvement > 0;
+  const isWorse = improvement !== null && improvement < 0;
 
   return (
     <article className="min-w-0 rounded-xl border border-border bg-white p-4 sm:p-5">
@@ -64,24 +66,22 @@ function KpiCard({
       {improvement !== null && (
         <div
           className={`mt-3 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium ${
-            isLower
+            isBetter
               ? "bg-emerald-50 text-emerald-700"
-              : isHigher
+              : isWorse
                 ? "bg-amber-50 text-amber-700"
                 : "bg-slate-100 text-slate-600"
           }`}
         >
-          {isLower ? (
+          {isBetter ? (
             <ArrowDownRight size={14} />
-          ) : isHigher ? (
+          ) : isWorse ? (
             <ArrowUpRight size={14} />
           ) : null}
 
           {improvement === 0
             ? "No change"
-            : `${Math.abs(improvement).toFixed(1)}% ${
-                isLower ? "lower" : "higher"
-              }`}
+            : `${Math.abs(improvement).toFixed(1)}% ${isBetter ? "better" : "trade-off"}`}
         </div>
       )}
     </article>
@@ -103,27 +103,35 @@ export default function PerformanceKpiCards({
       icon: <Users size={19} />,
     },
     {
-      title: "Missed Connections",
-      metric: metrics.missedConnections,
-      icon: <GitCompareArrows size={19} />,
+      title: "Capacity Violations",
+      metric: metrics.capacityViolations,
+      icon: <ShieldCheck size={19} />,
     },
     {
-      title: "ETA Error",
-      metric: metrics.etaMae,
-      icon: <Activity size={19} />,
+      title: "Vehicle Distance",
+      metric: metrics.vehicleDistance,
+      icon: <Route size={19} />,
     },
-  ];
+    {
+      title: "Operating Cost",
+      metric: metrics.operatingCost,
+      icon: <CircleDollarSign size={19} />,
+    },
+  ].filter((card) => card.metric !== undefined);
+
+  if (!cards.length) return null;
 
   return (
-    <section className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <section className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {cards.map(({ title, metric, icon }) => (
         <KpiCard
           key={title}
           title={title}
-          value={metric.optimized}
-          baseline={metric.baseline}
-          unit={metric.unit}
+          value={metric!.optimized}
+          baseline={metric!.baseline}
+          unit={metric!.unit}
           icon={icon}
+          lowerIsBetter={metric!.lowerIsBetter}
         />
       ))}
     </section>

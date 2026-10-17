@@ -2,7 +2,6 @@ import { Activity, AlertTriangle, Database } from "lucide-react";
 
 type RunStatusProps = {
   type: "no-run" | "infeasible" | "no-metrics";
-  runId?: string;
 };
 
 const statusContent = {
@@ -14,9 +13,9 @@ const statusContent = {
     iconClass: "text-secondary",
   },
   infeasible: {
-    title: "Optimization run is infeasible",
+    title: "Candidate needs review",
     description:
-      "A feasible plan was not found or the candidate plan failed validation. Performance metrics are unavailable for this run.",
+      "The candidate did not pass feasibility checks. Available results and constraint findings are shown below.",
     icon: AlertTriangle,
     iconClass: "text-red-600",
   },
@@ -29,7 +28,7 @@ const statusContent = {
   },
 };
 
-export default function RunStatus({ type, runId }: RunStatusProps) {
+export default function RunStatus({ type }: RunStatusProps) {
   const content = statusContent[type];
   const Icon = content.icon;
 
@@ -49,7 +48,6 @@ export default function RunStatus({ type, runId }: RunStatusProps) {
         <div className="min-w-0">
           <h3 className="font-semibold text-foreground">
             {content.title}
-            {runId ? ` · Run #${runId}` : ""}
           </h3>
 
           <p className="mt-1 text-sm leading-6 text-secondary">
