@@ -12,7 +12,7 @@ def urgency(
     waiting_urgency: float = 0.0,
     weights: dict | None = None,
 ) -> float:
-    """P_s = a*Q + b*U + c*R + d*A (see Wild Bugs optimization notes)."""
+    """Compute priority from queue, shortfall, risk, and waiting age."""
     w = {**DEFAULT_WEIGHTS, **(weights or {})}
     return (
         w["queue"] * queue

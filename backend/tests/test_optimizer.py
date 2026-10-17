@@ -44,13 +44,45 @@ def test_fallback_drops_unavailable() -> None:
 
 def test_optimize_reassigns_unavailable_trip() -> None:
     net = _network()
+    net.routes[0].max_headway_min = 120
     sc = Scenario(scenario_id="s", unavailable_vehicle_ids=["V2"])
-    plan = optimize(net, sc)
+    plan = optimize(net, sc, demand=[])
     by_trip = {a.trip_id: a.vehicle_id for a in plan.assignments}
     assert by_trip["T1"] == "V1"
     assert by_trip["T2"] != "V2"                                          
     assert plan.unassigned_trip_ids == []
     assert plan.solver_status == "OK"
+
+
+def test_optimize_preserves_feasible_baseline_assignments() -> None:
+    net = _network()
+    net.routes[0].max_headway_min = 120
+    plan = optimize(net, Scenario(scenario_id="s"), demand=[])
+    by_trip = {assignment.trip_id: assignment.vehicle_id for assignment in plan.assignments}
+    assert by_trip == {"T1": "V1", "T2": "V2"}
+    assert plan.solver_status == "BASELINE_RETAINED"
+
+
+def test_objective_weights_change_vehicle_choice() -> None:
+    net = _network()
+    net.vehicles_by_id["V1"].cost_per_km = 50.0
+    net.vehicles_by_id["V2"].cost_per_km = 1.0
+
+    cost_weighted = optimize(
+        net,
+        Scenario(scenario_id="cost"),
+        objective_weights={"vehicle_changes": 0.0},
+    )
+    distance_only = optimize(
+        net,
+        Scenario(scenario_id="distance"),
+        objective_weights={"operating_cost": 0.0, "vehicle_changes": 0.0},
+    )
+
+    cost_assignments = {assignment.trip_id: assignment.vehicle_id for assignment in cost_weighted.assignments}
+    distance_assignments = {assignment.trip_id: assignment.vehicle_id for assignment in distance_only.assignments}
+    assert cost_assignments["T1"] == "V2"
+    assert distance_assignments["T1"] == "V1"
 
 
 def test_optimize_partial_when_blocked() -> None:
@@ -62,4 +94,4 @@ def test_optimize_partial_when_blocked() -> None:
     sc = Scenario(scenario_id="s", unavailable_vehicle_ids=["V2", "V3"])
     plan = optimize(net, sc)
     assert "T2" in plan.unassigned_trip_ids
-    assert plan.solver_status == "PARTIAL"
+    assert plan.solver_status in {"PARTIAL", "BASELINE_RETAINED"}

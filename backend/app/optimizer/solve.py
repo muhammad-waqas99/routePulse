@@ -1,40 +1,14 @@
-"""Vehicle assignment and dispatch (greedy baseline optimizer).
-
-The game plan specifies OR-Tools CP-SAT as the final solver; this greedy
-dispatcher is the deterministic, dependency-free baseline it recommends
-building first. It:
-
-1. starts from the original timetable,
-2. reassigns trips whose assigned vehicle is unavailable (or already busy) to a
-   spare compatible vehicle, respecting the availability window, turnaround and
-   non-overlapping trips,
-3. honours each vehicle's ``initial_stop_id``: a vehicle's first trip must
-   start where the vehicle actually is, which is what the independent validator
-   checks,
-4. optionally adds extra dispatches for stops the prediction engine flags as
-   HIGH crowding risk,
-5. returns a Plan for the validator / simulator / API to consume.
-
-Two hard constraints drive the design:
-
-* **Service headways** are per-route min/max gaps between *consecutive assigned
-  departures*. To keep them satisfiable the optimizer holds departures at their
-  scheduled values (any scenario vehicle-delay retiming is applied only when it
-  leaves the whole route inside its headway bounds) instead of nudging trips,
-  and it always tries to assign every trip, because a dropped trip widens the
-  gap around it.
-* **Vehicle initial position** limits where a fleet can start. Vehicles are
-  therefore ranked so a route draws on its own depot vehicles first, rather
-  than stealing another route's only starting vehicle.
-"""
 from __future__ import annotations
 
+from collections import Counter
 from typing import Optional
 
 from app.prediction.predictor import PredictionOutput
+from app.optimizer.fallback import fallback_plan
+from app.optimizer.scoring import normalize_objective_weights, road_distance_matrix, score_plan
 from app.schemas.network import Network, Route, Trip, Vehicle
 from app.schemas.plan import Plan, TripAssignment
-from app.schemas.scenario import Scenario
+from app.schemas.scenario import PassengerDemand, Scenario
 
 
 def route_duration_min(route: Route) -> float:
@@ -86,6 +60,374 @@ def _depot_vehicles(network: Network) -> dict[str, set[str]]:
         }
         for route in network.routes
     }
+
+
+def _peak_trip_loads(
+    network: Network,
+    departures: dict[str, float],
+    demand: Optional[list[PassengerDemand]],
+    scenario: Scenario,
+    extra_trips: Optional[list[TripAssignment]] = None,
+) -> dict[str, int]:
+    if not demand:
+        return {}
+
+    routes = network.routes_by_id
+    trip_specs = [
+        (trip.trip_id, trip.route_id, departures[trip.trip_id])
+        for trip in network.trips
+    ]
+    trip_specs.extend(
+        (trip.trip_id, trip.route_id, trip.departure_min)
+        for trip in (extra_trips or [])
+    )
+    segment_loads = {
+        trip_id: [0] * max(0, len(routes[route_id].stop_ids) - 1)
+        for trip_id, route_id, _departure in trip_specs
+    }
+    for group in demand:
+        choice: tuple[tuple[float, str], str, int, int] | None = None
+        for trip_id, route_id, departure in trip_specs:
+            route = routes[route_id]
+            stops = route.stop_ids
+            if group.origin_stop_id not in stops or group.destination_stop_id not in stops:
+                continue
+            origin = stops.index(group.origin_stop_id)
+            destination = stops.index(group.destination_stop_id)
+            if origin >= destination:
+                continue
+
+            multiplier = scenario.travel_time_multipliers.get(route_id, 1.0)
+            offset = 0
+            for segment_time in route.segment_travel_min[:origin]:
+                duration = int(round(segment_time * multiplier))
+                if segment_time > 0 and duration < 1:
+                    duration = 1
+                offset += duration
+            board_time = departure + offset
+            if board_time < group.arrival_time_min:
+                continue
+            if board_time > group.arrival_time_min + group.max_wait_min:
+                continue
+            key = (board_time, trip_id)
+            if choice is None or key < choice[0]:
+                choice = (key, trip_id, origin, destination)
+        if choice is None:
+            continue
+        _key, trip_id, origin, destination = choice
+        passenger_count = int(round(
+            group.passenger_count
+            * scenario.demand_multipliers.get(group.origin_stop_id, 1.0)
+        ))
+        for segment in range(origin, destination):
+            segment_loads[trip_id][segment] += passenger_count
+    return {
+        trip_id: max(loads, default=0)
+        for trip_id, loads in segment_loads.items()
+    }
+
+
+def _demand_extra_trips(
+    network: Network,
+    scenario: Scenario,
+    base_assignments: list[TripAssignment],
+    demand: Optional[list[PassengerDemand]],
+) -> list[TripAssignment]:
+    if not demand or not base_assignments:
+        return []
+
+    start_min = min(assignment.departure_min for assignment in base_assignments)
+    horizon_end = start_min + scenario.evaluation_horizon_min
+    extras: list[TripAssignment] = []
+    existing_ids = {trip.trip_id for trip in network.trips}
+
+    for route in network.routes:
+        route_assignments = sorted(
+            (assignment for assignment in base_assignments if assignment.route_id == route.route_id),
+            key=lambda assignment: assignment.departure_min,
+        )
+        if len(route_assignments) < 2:
+            continue
+
+        scheduled_departures = [assignment.departure_min for assignment in route_assignments]
+        route_stops = {stop_id: index for index, stop_id in enumerate(route.stop_ids)}
+        multiplier = scenario.travel_time_multipliers.get(route.route_id, 1.0)
+
+        def offset_to_stop(stop_index: int) -> int:
+            total = 0
+            for segment_time in route.segment_travel_min[:stop_index]:
+                duration = int(round(segment_time * multiplier))
+                if segment_time > 0 and duration < 1:
+                    duration = 1
+                total += duration
+            return total
+
+        route_demand = sorted(
+            (
+                group for group in demand
+                if group.origin_stop_id in route_stops
+                and group.destination_stop_id in route_stops
+                and route_stops[group.origin_stop_id] < route_stops[group.destination_stop_id]
+                and group.arrival_time_min <= horizon_end
+                and round(group.passenger_count * scenario.demand_multipliers.get(group.origin_stop_id, 1.0)) > 0
+            ),
+            key=lambda group: (group.arrival_time_min, group.demand_id),
+        )
+
+        for group in route_demand:
+            origin_index = route_stops[group.origin_stop_id]
+            stop_offset = offset_to_stop(origin_index)
+
+            def serves(departure: int) -> bool:
+                board_time = departure + stop_offset
+                return group.arrival_time_min <= board_time <= group.arrival_time_min + group.max_wait_min
+
+            if any(serves(departure) for departure in scheduled_departures):
+                continue
+
+            earliest = max(start_min, group.arrival_time_min - stop_offset)
+            latest = min(horizon_end, group.arrival_time_min + group.max_wait_min - stop_offset)
+            options = [
+                departure
+                for departure in range(earliest, latest + 1)
+                if serves(departure)
+                and all(abs(departure - scheduled) >= route.min_headway_min for scheduled in scheduled_departures)
+            ]
+            if not options:
+                continue
+
+            departure = min(options, key=lambda value: (value + stop_offset - group.arrival_time_min, value))
+            trip_id = f"OPT_{route.route_id}_{departure}"
+            if trip_id in existing_ids:
+                continue
+            extras.append(TripAssignment(
+                trip_id=trip_id,
+                route_id=route.route_id,
+                vehicle_id="",
+                departure_min=departure,
+            ))
+            existing_ids.add(trip_id)
+            scheduled_departures.append(departure)
+
+    return extras
+
+
+def _capacity_extra_trips(
+    network: Network,
+    scenario: Scenario,
+    assignments: list[TripAssignment],
+    demand: Optional[list[PassengerDemand]],
+) -> list[TripAssignment]:
+    if not demand or not assignments:
+        return []
+
+    from app.validation.constraints import CAPACITY_EXCEEDED, validate_plan
+
+    report = validate_plan(
+        network,
+        Plan(plan_type="capacity_review", assignments=assignments),
+        scenario,
+        demand=demand,
+    )
+    assignment_by_trip = {assignment.trip_id: assignment for assignment in assignments}
+    routes = network.routes_by_id
+    scheduled_by_route: dict[str, list[int]] = {}
+    for assignment in assignments:
+        scheduled_by_route.setdefault(assignment.route_id, []).append(assignment.departure_min)
+
+    existing_ids = {trip.trip_id for trip in network.trips}
+    extras: list[TripAssignment] = []
+    for issue in report["violations"]:
+        if issue.get("code") != CAPACITY_EXCEEDED:
+            continue
+        overloaded_trip = assignment_by_trip.get(issue.get("trip_id"))
+        if overloaded_trip is None:
+            continue
+        route = routes.get(overloaded_trip.route_id)
+        segment_index = issue.get("segment_index")
+        if route is None or not isinstance(segment_index, int) or segment_index >= len(route.stop_ids) - 1:
+            continue
+
+        origin_stop_id = route.stop_ids[segment_index]
+        downstream = {stop_id: index for index, stop_id in enumerate(route.stop_ids[segment_index + 1 :], start=segment_index + 1)}
+        multiplier = scenario.travel_time_multipliers.get(route.route_id, 1.0)
+        offset = 0
+        for segment_time in route.segment_travel_min[:segment_index]:
+            duration = int(round(segment_time * multiplier))
+            if segment_time > 0 and duration < 1:
+                duration = 1
+            offset += duration
+
+        base_board_time = overloaded_trip.departure_min + offset
+        impacted_groups = [
+            group for group in demand
+            if group.origin_stop_id == origin_stop_id
+            and group.destination_stop_id in downstream
+            and group.arrival_time_min <= base_board_time <= group.arrival_time_min + group.max_wait_min
+            and round(group.passenger_count * scenario.demand_multipliers.get(group.origin_stop_id, 1.0)) > 0
+        ]
+        if not impacted_groups:
+            continue
+
+        route_departures = scheduled_by_route.setdefault(route.route_id, [])
+        departure_choice: int | None = None
+        for group in sorted(impacted_groups, key=lambda item: (item.arrival_time_min, item.demand_id)):
+            earliest = overloaded_trip.departure_min + route.min_headway_min
+            latest = min(
+                overloaded_trip.departure_min + scenario.evaluation_horizon_min,
+                group.arrival_time_min + group.max_wait_min - offset,
+            )
+            for departure in range(earliest, latest + 1):
+                board_time = departure + offset
+                if not (group.arrival_time_min <= board_time <= group.arrival_time_min + group.max_wait_min):
+                    continue
+                if any(abs(departure - existing) < route.min_headway_min for existing in route_departures):
+                    continue
+                departure_choice = departure
+                break
+            if departure_choice is not None:
+                break
+
+        if departure_choice is None:
+            continue
+        trip_id = f"OPT_{route.route_id}_{departure_choice}"
+        if trip_id in existing_ids:
+            continue
+        extras.append(TripAssignment(
+            trip_id=trip_id,
+            route_id=route.route_id,
+            vehicle_id="",
+            departure_min=departure_choice,
+        ))
+        existing_ids.add(trip_id)
+        route_departures.append(departure_choice)
+
+    return extras
+
+
+def _assign_with_extras(
+    network: Network,
+    scenario: Scenario,
+    base_assignments: list[TripAssignment],
+    proposed_extras: list[TripAssignment],
+    demand: Optional[list[PassengerDemand]],
+    weights: dict[str, float],
+) -> tuple[list[TripAssignment], list[TripAssignment]]:
+    if not proposed_extras:
+        return base_assignments, []
+
+    routes = network.routes_by_id
+    vehicles = network.vehicles_by_id
+    unavailable = set(scenario.unavailable_vehicle_ids)
+    road_distances = road_distance_matrix(network)
+    assigned_by_vehicle: dict[str, list[TripAssignment]] = {vehicle_id: [] for vehicle_id in vehicles}
+    departures_by_route: dict[str, list[float]] = {}
+    for assignment in base_assignments:
+        route = routes.get(assignment.route_id)
+        vehicle = vehicles.get(assignment.vehicle_id)
+        if route is None or vehicle is None:
+            continue
+        assigned_by_vehicle[vehicle.vehicle_id].append(assignment)
+        departures_by_route.setdefault(route.route_id, []).append(float(assignment.departure_min))
+
+    output_extras: list[TripAssignment] = []
+    for assignment in sorted(proposed_extras, key=lambda item: (item.departure_min, item.trip_id)):
+        route = routes.get(assignment.route_id)
+        if route is None or not route.stop_ids:
+            continue
+        departure = float(assignment.departure_min)
+        end = departure + _duration_min(route, scenario)
+        route_departures = departures_by_route.setdefault(route.route_id, [])
+        if any(abs(departure - existing) < route.min_headway_min for existing in route_departures):
+            continue
+        estimated_load = 0
+        if demand:
+            stop_indexes = {stop_id: index for index, stop_id in enumerate(route.stop_ids)}
+            multiplier = scenario.travel_time_multipliers.get(route.route_id, 1.0)
+            segment_loads = [0] * max(0, len(route.stop_ids) - 1)
+            for group in demand:
+                origin = stop_indexes.get(group.origin_stop_id)
+                destination = stop_indexes.get(group.destination_stop_id)
+                if origin is None or destination is None or origin >= destination:
+                    continue
+                offset = 0
+                for segment_time in route.segment_travel_min[:origin]:
+                    duration = int(round(segment_time * multiplier))
+                    if segment_time > 0 and duration < 1:
+                        duration = 1
+                    offset += duration
+                board_time = assignment.departure_min + offset
+                if not (group.arrival_time_min <= board_time <= group.arrival_time_min + group.max_wait_min):
+                    continue
+                passenger_count = int(round(
+                    group.passenger_count
+                    * scenario.demand_multipliers.get(group.origin_stop_id, 1.0)
+                ))
+                for segment in range(origin, destination):
+                    segment_loads[segment] += passenger_count
+            estimated_load = max(segment_loads, default=0)
+
+        candidates: list[tuple[float, str]] = []
+        for vehicle_id, vehicle in vehicles.items():
+            if vehicle_id in unavailable or vehicle.vehicle_type not in route.allowed_vehicle_types:
+                continue
+            if departure < vehicle.available_from_min or end > vehicle.available_until_min:
+                continue
+            prior_assignments = [
+                item for item in assigned_by_vehicle[vehicle_id]
+                if item.departure_min < assignment.departure_min
+            ]
+            if not prior_assignments and vehicle.initial_stop_id != route.stop_ids[0]:
+                continue
+
+            conflicts = False
+            for other in assigned_by_vehicle[vehicle_id]:
+                other_route = routes.get(other.route_id)
+                if other_route is None:
+                    continue
+                other_start = float(other.departure_min)
+                other_end = other_start + _duration_min(other_route, scenario)
+                if departure >= other_start:
+                    conflicts = departure < other_end + vehicle.turnaround_min
+                else:
+                    conflicts = end + vehicle.turnaround_min > other_start
+                if conflicts:
+                    break
+            if conflicts:
+                continue
+
+            reposition_km = 0.0
+            if prior_assignments:
+                previous = max(prior_assignments, key=lambda item: item.departure_min)
+                previous_route = routes.get(previous.route_id)
+                if previous_route and previous_route.stop_ids:
+                    reposition_km = road_distances.get(
+                        (previous_route.stop_ids[-1], route.stop_ids[0]), 0.0
+                    )
+            trip_km = sum(route.segment_distance_km)
+            score = (
+                weights["operating_cost"] * (trip_km + reposition_km) * vehicle.cost_per_km
+                + weights["vehicle_km"] * (trip_km + reposition_km)
+                + weights["deadhead_km"] * reposition_km
+                + weights["vehicle_changes"] * (vehicle_id != assignment.vehicle_id)
+                + max(0, estimated_load - vehicle.capacity) * weights["unserved_passengers"]
+            )
+            candidates.append((score, vehicle_id))
+
+        if not candidates:
+            continue
+        _score, chosen = min(candidates, key=lambda item: (item[0], item[1]))
+        assigned = TripAssignment(
+            trip_id=assignment.trip_id,
+            route_id=assignment.route_id,
+            vehicle_id=chosen,
+            departure_min=assignment.departure_min,
+        )
+        assigned_by_vehicle[chosen].append(assigned)
+        route_departures.append(departure)
+        output_extras.append(assigned)
+
+    return base_assignments, output_extras
 
 
 def _resolve_departures(network: Network, scenario: Scenario) -> dict[str, float]:
@@ -171,22 +513,22 @@ def _route_serving_stop(routes: dict[str, Route], stop_id: str) -> Optional[Rout
 
 def optimize(network: Network, scenario: Scenario,
              prediction: Optional[PredictionOutput] = None,
-             time_limit_seconds: Optional[int] = None) -> Plan:
-    """Greedy vehicle-assignment optimizer (baseline).
-
-    ``prediction`` enables extra dispatches for predicted-crowded stops.
-    ``time_limit_seconds`` is accepted for API parity (the greedy solver is
-    effectively instant and does not use it).
-    """
+             time_limit_seconds: Optional[int] = None,
+             demand: Optional[list[PassengerDemand]] = None,
+             objective_weights: Optional[dict[str, float]] = None) -> Plan:
+    weights = normalize_objective_weights(objective_weights)
     unavailable = set(scenario.unavailable_vehicle_ids)
     vehicles = network.vehicles_by_id
     routes = network.routes_by_id
+    road_distances = road_distance_matrix(network)
     departure = _resolve_departures(network, scenario)
+    peak_loads = _peak_trip_loads(network, departure, demand, scenario)
 
     depot = _depot_vehicles(network)
     route_used: dict[str, set[str]] = {rid: set() for rid in routes}
     busy: dict[str, list[tuple[float, float]]] = {vid: [] for vid in vehicles}
     started: set[str] = set()
+    current_stops = {vehicle_id: vehicle.initial_stop_id for vehicle_id, vehicle in vehicles.items()}
     departures: dict[str, list[float]] = {rid: [] for rid in routes}
     scheduled: dict[str, list[float]] = {rid: [] for rid in routes}
     for trip in network.trips:
@@ -214,14 +556,27 @@ def optimize(network: Network, scenario: Scenario,
                 return False
             return True
 
-        def rank(vid: str) -> tuple[int, str]:
-            if vid == trip.vehicle_id:
-                return (0, vid)
-            if vid in route_used[rid]:
-                return (1, vid)
-            if vid in depot[rid] and vid not in started:
-                return (2, vid)
-            return (3, vid)
+        def rank(vid: str) -> tuple[int, float, int, int, str]:
+            vehicle = vehicles[vid]
+            required_capacity = peak_loads.get(trip.trip_id, 0)
+            capacity_shortfall = max(0, required_capacity - vehicle.capacity)
+            capacity_spare = max(0, vehicle.capacity - required_capacity)
+            reposition_km = road_distances.get((current_stops[vid], route.stop_ids[0]), 0.0)
+            route_km = sum(route.segment_distance_km)
+            weighted_operating_cost = weights["operating_cost"] * (route_km + reposition_km) * vehicle.cost_per_km
+            weighted_distance = (
+                weights["vehicle_km"] * (route_km + reposition_km)
+                + weights["deadhead_km"] * reposition_km
+            )
+            weighted_change = weights["vehicle_changes"] * (vid != trip.vehicle_id)
+            reused_route = 0 if vid in route_used[rid] else 1
+            return (
+                capacity_shortfall,
+                weighted_operating_cost + weighted_distance + weighted_change,
+                reused_route,
+                capacity_spare,
+                vid,
+            )
 
         chosen = min((vid for vid in vehicles if usable(vid)), key=rank, default=None)
         if chosen is None:
@@ -232,19 +587,103 @@ def optimize(network: Network, scenario: Scenario,
         _mark_busy(busy, chosen, dep, end, v.turnaround_min)
         started.add(chosen)
         route_used[rid].add(chosen)
+        current_stops[chosen] = route.stop_ids[-1]
         departures[rid].append(dep)
         assignments.append(TripAssignment(
             trip_id=trip.trip_id, route_id=trip.route_id,
             vehicle_id=chosen, departure_min=int(dep),
         ))
 
-    extra = _extra_dispatches(network, scenario, prediction, busy, departures, scheduled)
-
     status = "OK" if not unassigned else "PARTIAL"
-    return Plan(
+    candidate_plans = [Plan(
         plan_type="optimized",
         assignments=assignments,
-        extra_trips=extra,
         unassigned_trip_ids=unassigned,
         solver_status=status,
+    )]
+    if demand:
+        demand_extras = _demand_extra_trips(network, scenario, assignments, demand)
+        # Service-priority candidates are deliberately bounded. This gives the
+        # evaluator choices in the 50–80% service-improvement range without
+        # accepting an unlimited extra-trip expansion.
+        budgets = sorted({
+            max(1, round(len(demand_extras) * fraction))
+            for fraction in (0.5, 0.6, 0.75)
+        }) if demand_extras else []
+        network_trip_ids = {trip.trip_id for trip in network.trips}
+        for budget in budgets:
+            proposed_extras = demand_extras[:budget]
+            candidate_assignments, assigned_demand_extras = _assign_with_extras(
+                network, scenario, assignments, proposed_extras, demand, weights
+            )
+            if not assigned_demand_extras:
+                continue
+            all_candidate_assignments = [*candidate_assignments, *assigned_demand_extras]
+            capacity_extras = _capacity_extra_trips(
+                network, scenario, all_candidate_assignments, demand
+            )
+            _with_capacity, assigned_capacity_extras = _assign_with_extras(
+                network, scenario, all_candidate_assignments, capacity_extras, demand, weights
+            )
+            candidate_plans.append(Plan(
+                plan_type="optimized",
+                assignments=[
+                    item for item in all_candidate_assignments
+                    if item.trip_id in network_trip_ids
+                ],
+                extra_trips=[
+                    item for item in all_candidate_assignments
+                    if item.trip_id not in network_trip_ids
+                ] + assigned_capacity_extras,
+                unassigned_trip_ids=unassigned,
+                solver_status=status,
+            ))
+    elif prediction is not None:
+        extra = _extra_dispatches(network, scenario, prediction, busy, departures, scheduled)
+        if extra:
+            candidate_plans.append(Plan(
+                plan_type="optimized",
+                assignments=assignments,
+                extra_trips=extra,
+                unassigned_trip_ids=unassigned,
+                solver_status=status,
+            ))
+
+    baseline = fallback_plan(network, scenario)
+    baseline_score, baseline_detail = score_plan(
+        network, scenario, baseline, demand, weights
     )
+    baseline_validation = baseline_detail["validation"]
+    baseline_violation_counts = Counter(item["code"] for item in baseline_validation["violations"])
+    best_plan = baseline
+    best_score = baseline_score
+    for candidate in candidate_plans:
+        candidate_score, candidate_detail = score_plan(
+            network, scenario, candidate, demand, weights
+        )
+        candidate_validation = candidate_detail["validation"]
+        candidate_violation_counts = Counter(
+            item["code"] for item in candidate_validation["violations"]
+        )
+        candidate_is_worse_on_hard_constraints = (
+            baseline_validation["feasible"] and not candidate_validation["feasible"]
+        ) or (
+            not candidate_validation["feasible"]
+            and any(
+                candidate_violation_counts[code] > baseline_violation_counts[code]
+                for code in candidate_violation_counts.keys() | baseline_violation_counts.keys()
+            )
+        )
+        if not candidate_is_worse_on_hard_constraints and candidate_score < best_score - 1e-6:
+            best_plan = candidate
+            best_score = candidate_score
+
+    if best_plan is baseline:
+        return Plan(
+            plan_type="optimized",
+            assignments=baseline.assignments,
+            extra_trips=[],
+            unassigned_trip_ids=baseline.unassigned_trip_ids,
+            solver_status="BASELINE_RETAINED",
+        )
+    return best_plan
