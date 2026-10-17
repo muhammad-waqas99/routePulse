@@ -1,1 +1,1 @@
-"""Evaluation and comparison (OWNED BY: evaluation workstream)."""
+"""Evaluation and baseline comparisons."""

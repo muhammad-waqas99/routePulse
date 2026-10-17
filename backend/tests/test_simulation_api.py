@@ -166,12 +166,17 @@ def test_get_unknown_run_returns_404(client: TestClient) -> None:
 
 
 def test_optimize_endpoint(client: TestClient) -> None:
-    response = client.post("/api/v1/optimize", json={"scenario_id": "normal"})
+    response = client.post("/api/v1/optimize", json={
+        "scenario_id": "normal",
+        "objective_weights": {"operating_cost": 0.0},
+        "time_limit_seconds": 2,
+    })
     assert response.status_code == 200
     body = response.json()
     assert body["plan"]["plan_type"] == "optimized"
     assert len(body["plan"]["assignments"]) == 1
     assert "feasible" in body
+    assert any("does not support a time limit" in note for note in body["notes"])
 
 
 def test_optimize_unknown_scenario_returns_404(client: TestClient) -> None:

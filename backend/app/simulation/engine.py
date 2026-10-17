@@ -5,7 +5,7 @@ Two simulators live here:
 * :class:`Simulator` -- the original minimal *time-stepped* demo (kept for the
   dispatcher demo and its tests).
 * :class:`DiscreteEventSimulator` and :func:`simulate` -- the plan-executing
-  discrete-event engine from ``Wild Bugs.md``. It consumes a :class:`Plan` and
+  discrete-event engine. It consumes a :class:`Plan` and
   a :class:`Scenario`, validates the plan independently, then advances a
   ``heapq`` event queue (passenger arrivals, vehicle departures/arrivals,
   waiting deadlines, breakdowns) to produce auditable outcome metrics.

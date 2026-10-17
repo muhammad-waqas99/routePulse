@@ -41,7 +41,7 @@ class VehicleHistoryEntry(BaseModel):
 
 
 class PassengerOutcomeSummary(BaseModel):
-    """Disaggregated passenger accounting (see ``Wild Bugs.md``)."""
+    """Disaggregated passenger accounting from the simulation run."""
 
     total_demand: int = 0
     served: int = 0

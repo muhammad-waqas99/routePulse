@@ -1,8 +1,6 @@
 """Boarding/alighting policy.
 
-OWNED BY: simulation workstream.
-
-Deterministic policy (documented in ``Wild Bugs.md``):
+Deterministic boarding policy:
 
 * Passengers wait at a stop in FCFS order: earlier ``arrival_time_min`` first,
   breaking ties by ``demand_id``.

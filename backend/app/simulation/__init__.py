@@ -1,1 +1,1 @@
-"""Discrete-event simulator (OWNED BY: simulation workstream)."""
+"""Discrete-event transport simulator."""

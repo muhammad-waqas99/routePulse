@@ -1,6 +1,5 @@
 """GET /api/v1/runs/{run_id} — retrieve a stored simulation run.
 
-OWNED BY: API workstream.
 """
 from __future__ import annotations
 

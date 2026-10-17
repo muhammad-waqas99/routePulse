@@ -1,6 +1,5 @@
 """GET /api/v1/scenarios and POST /api/v1/scenarios/{id}/run.
 
-OWNED BY: API workstream.
 """
 from __future__ import annotations
 
@@ -98,7 +97,7 @@ def run_scenario(scenario_id: str, request: RunRequest) -> RunResponse:
             )
 
     if request.include_optimized:
-        candidate_plan = optimize(network, scenario)
+        candidate_plan = optimize(network, scenario, demand=demand)
         candidate_validation = validate_plan(
             network, candidate_plan, scenario, demand=demand
         )

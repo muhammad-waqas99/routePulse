@@ -1,7 +1,5 @@
 """Event types and the priority-queue ordering rules.
 
-OWNED BY: simulation workstream.
-
 The discrete-event simulator advances a min-heap of events. Events order by
 ``(time_min, priority, sequence)``:
 

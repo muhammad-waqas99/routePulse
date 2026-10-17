@@ -250,6 +250,28 @@ def test_intermediate_segment_capacity_exceeded() -> None:
     assert violation["capacity"] == 30
 
 
+def test_capacity_shortfall_is_resolved_by_later_service_within_wait_limit() -> None:
+    net = _network(capacity=30, vehicles=["V1", "V2"])
+    net.trips = [
+        _trip("T1", 60, vehicle="V1"),
+        _trip("T2", 75, window=(70, 80), vehicle="V2"),
+    ]
+    plan = Plan(plan_type="baseline", assignments=[
+        TripAssignment(trip_id="T1", route_id="R1", vehicle_id="V1", departure_min=60),
+        TripAssignment(trip_id="T2", route_id="R1", vehicle_id="V2", departure_min=75),
+    ])
+    demand = [
+        PassengerDemand(demand_id="D1", origin_stop_id="S1", destination_stop_id="S3",
+                        arrival_time_min=55, passenger_count=20),
+        PassengerDemand(demand_id="D2", origin_stop_id="S2", destination_stop_id="S4",
+                        arrival_time_min=55, passenger_count=20),
+    ]
+
+    report = validate_plan(net, plan, demand=demand)
+
+    assert "CAPACITY_EXCEEDED" not in _codes(report)
+
+
 def test_boarding_and_alighting_keeps_load_within_capacity() -> None:
     net = _network(capacity=30)
     net.trips = [_trip("T1", 60)]

@@ -1,7 +1,5 @@
 """POST /api/v1/validate — independently validate a proposed plan.
 
-OWNED BY: validation + API workstreams.
-
 Accepts a scenario ID and a proposed plan, resolves the canonical network and
 scenario from ``data/``, runs the independent validator
 (:func:`app.validation.constraints.validate_plan`) and returns the structured

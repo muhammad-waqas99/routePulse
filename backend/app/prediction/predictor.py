@@ -3,7 +3,7 @@
 Combines demand forecasting, ETA estimation, and overload risk into the single
 output contract consumed by the optimizer and API.
 
-The separation of concerns (from `Wild Bugs.md`): the prediction engine
+The separation of concerns is that the prediction engine
 estimates *what will happen*; the optimizer decides *what to do about it*.
 """
 from __future__ import annotations

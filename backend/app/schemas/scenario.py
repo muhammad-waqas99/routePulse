@@ -66,7 +66,7 @@ class Scenario(BaseModel):
 
     scenario_id: str
     seed: int = 42
-    evaluation_horizon_min: int = 180
+    evaluation_horizon_min: int = 720
     demand_multipliers: dict[str, float] = Field(default_factory=dict)
     travel_time_multipliers: dict[str, float] = Field(default_factory=dict)
     unavailable_vehicle_ids: list[str] = Field(default_factory=list)

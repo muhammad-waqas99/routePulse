@@ -1,6 +1,5 @@
 """POST /api/v1/evaluate — compare baseline and candidate plans.
 
-OWNED BY: API + evaluation workstreams.
 """
 from __future__ import annotations
 
@@ -11,6 +10,7 @@ from app.api import deps
 from app.evaluation.comparison import compare_runs
 from app.evaluation.store import get_evaluation, list_evaluations, save_evaluation
 from app.optimizer.fallback import fallback_plan
+from app.optimizer.scoring import normalize_objective_weights
 from app.optimizer.solve import optimize
 from app.schemas.plan import Plan
 from app.schemas.scenario import PassengerDemand
@@ -35,6 +35,8 @@ class EvaluateRequest(BaseModel):
     baseline_plan: Plan | None = None
     candidate_plan: Plan | None = None
     demand: list[PassengerDemand] | None = None
+    time_limit_seconds: int | None = Field(default=None, gt=0)
+    objective_weights: dict[str, float] | None = None
 
 
 class EvaluateResponse(BaseModel):
@@ -129,7 +131,23 @@ def evaluate_endpoint(request: EvaluateRequest) -> EvaluateResponse:
     )
     save_run(baseline_result.model_dump())
 
-    candidate_plan = request.candidate_plan or optimize(network, scenario)
+    candidate_plan = request.candidate_plan
+    if candidate_plan is None:
+        try:
+            weights = normalize_objective_weights(request.objective_weights)
+            candidate_plan = optimize(
+                network,
+                scenario,
+                time_limit_seconds=request.time_limit_seconds,
+                demand=demand,
+                objective_weights=weights,
+            )
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+        if request.time_limit_seconds is not None:
+            notes.append("The current greedy optimizer does not support a time limit; this value was not applied.")
+        if candidate_plan.solver_status == "BASELINE_RETAINED":
+            notes.append("The candidate did not improve the weighted operating objective; the baseline assignment was retained.")
     candidate_validation = validate_plan(
         network, candidate_plan, scenario, demand=demand
     )

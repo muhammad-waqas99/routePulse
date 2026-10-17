@@ -1,7 +1,7 @@
 """Result and audit-record schemas.
 
 These capture the metrics and independent validation report produced after a
-simulation run (see `Wild Bugs.md` "Results and audit records").
+simulation run.
 """
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 class Metrics(BaseModel):
     """Outcome metrics from a simulation run.
 
-    The first six fields are the canonical contract from ``Wild Bugs.md``.
+    The first six fields are the base simulator metrics.
     ``eta_mae_min`` is ``None`` when no ETA predictions were supplied (see
     ``eta_observations``); predictions are never fabricated just to populate it.
     The remaining fields are simulator extensions with defaults so existing

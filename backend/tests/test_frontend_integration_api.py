@@ -56,7 +56,8 @@ def test_operations_overview_returns_configured_snapshot(tmp_path: Path, monkeyp
     assert body["stops"][0]["latitude"] == 1.0
     assert body["vehicles"][0]["currentStopId"] == "S2"
     assert body["etas"] == []
-    assert body["alerts"] == []
+    assert len(body["alerts"]) == 1
+    assert body["alerts"][0]["title"] == "Passenger load checks unavailable"
 
 
 def test_evaluation_history_endpoints_return_real_evaluation(tmp_path: Path, monkeypatch) -> None:

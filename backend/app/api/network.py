@@ -1,6 +1,5 @@
 """GET /api/v1/network — return stops, routes, vehicles, and scheduled trips.
 
-OWNED BY: API workstream.
 """
 from __future__ import annotations
 

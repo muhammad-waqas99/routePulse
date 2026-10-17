@@ -10,6 +10,9 @@ import json
 from fastapi import APIRouter, HTTPException
 
 from app.api import deps
+from app.optimizer.fallback import fallback_plan
+from app.schemas.scenario import Scenario
+from app.validation.constraints import validate_plan
 
 router = APIRouter(prefix="/api/v1", tags=["operations"])
 
@@ -80,14 +83,61 @@ def get_operations_overview() -> dict:
         for trip in network.trips
     ]
 
+    demand_groups = deps.load_demand()
     demand_records: dict[tuple[str, int], int] = {}
-    for demand in deps.load_demand() or []:
-        key = (demand.origin_stop_id, demand.arrival_time_min)
-        demand_records[key] = demand_records.get(key, 0) + demand.passenger_count
+    for group in demand_groups or []:
+        key = (group.origin_stop_id, group.arrival_time_min)
+        demand_records[key] = demand_records.get(key, 0) + group.passenger_count
     demand = [
         {"stopId": stop_id, "time": _clock(minutes), "passengerCount": count}
         for (stop_id, minutes), count in sorted(demand_records.items())
     ]
+
+    alerts = []
+    for vehicle_id, item in status_by_vehicle.items():
+        if not bool(item.get("available", True)):
+            alerts.append({
+                "id": f"vehicle-unavailable-{vehicle_id}",
+                "title": "Vehicle unavailable",
+                "description": f"{vehicle_id} is marked unavailable in the configured bus status snapshot.",
+                "severity": "critical",
+                "status": "active",
+                "vehicleId": vehicle_id,
+            })
+
+    if demand_groups is not None:
+        normal_scenario = Scenario(scenario_id="normal")
+        baseline_plan = fallback_plan(network, normal_scenario)
+        load_report = validate_plan(network, baseline_plan, normal_scenario, demand=demand_groups)
+        capacity_alerts: dict[str, dict] = {}
+        for violation in load_report["violations"]:
+            if violation.get("code") != "CAPACITY_EXCEEDED":
+                continue
+            trip_id = str(violation.get("trip_id", "unknown"))
+            alert = capacity_alerts.get(trip_id)
+            actual_load = int(violation.get("actual_load", 0))
+            if alert is None or actual_load > alert["actual_load"]:
+                route_id = str(violation.get("route_id", "unknown"))
+                vehicle_id = str(violation.get("vehicle_id", "unknown"))
+                capacity_alerts[trip_id] = {
+                    "id": f"capacity-{trip_id}",
+                    "title": "Passenger load exceeds bus capacity",
+                    "description": f"{trip_id} on {route_id} has an estimated {actual_load} passengers against {int(violation.get('capacity', 0))} seats.",
+                    "severity": "warning",
+                    "status": "active",
+                    "routeId": route_id,
+                    "vehicleId": vehicle_id,
+                    "actual_load": actual_load,
+                }
+        alerts.extend({key: value for key, value in alert.items() if key != "actual_load"} for alert in capacity_alerts.values())
+    else:
+        alerts.append({
+            "id": "demand-data-unavailable",
+            "title": "Passenger load checks unavailable",
+            "description": "The demand dataset could not be loaded, so bus-capacity alerts were not evaluated.",
+            "severity": "warning",
+            "status": "active",
+        })
 
     return {
         "routes": routes,
@@ -96,7 +146,7 @@ def get_operations_overview() -> dict:
         "trips": trips,
         "demand": demand,
         "etas": [],
-        "alerts": [],
+        "alerts": alerts,
         "dataSource": "synthetic snapshot",
-        "notes": ["Vehicle positions and demand are configured sample data, not live telemetry.", "ETA predictions and operational alerts are not available."],
+        "notes": ["Vehicle positions and demand are configured sample data, not live telemetry.", "Live ETA telemetry is unavailable; arrival times use timetable estimates."],
     }

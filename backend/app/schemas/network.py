@@ -1,8 +1,7 @@
 """Network schema: stops, routes, vehicles, and scheduled trips.
 
-These models are the canonical contract shared by the optimizer, simulator,
-validator, API, and frontend. Use IDs rather than embedding entire objects
-inside other records (see `Wild Bugs.md`).
+These models are shared by the optimizer, simulator, validator, API, and
+frontend. Related records refer to entities by ID.
 """
 from __future__ import annotations
 

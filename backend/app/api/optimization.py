@@ -1,6 +1,5 @@
 """POST /api/v1/optimize — run the optimizer and return a candidate plan.
 
-OWNED BY: API + optimizer workstreams.
 """
 from __future__ import annotations
 
@@ -8,6 +7,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from app.api import deps
+from app.optimizer.scoring import normalize_objective_weights
 from app.optimizer.solve import optimize
 from app.schemas.metrics import ValidationReport
 from app.schemas.plan import Plan
@@ -20,7 +20,7 @@ class OptimizeRequest(BaseModel):
     """Request body for ``POST /api/v1/optimize``."""
 
     scenario_id: str
-    time_limit_seconds: int | None = None
+    time_limit_seconds: int | None = Field(default=None, gt=0)
     objective_weights: dict[str, float] | None = None
 
 
@@ -50,17 +50,26 @@ def optimize_endpoint(request: OptimizeRequest) -> OptimizeResponse:
         ) from exc
 
     notes: list[str] = []
-    if request.objective_weights:
-        notes.append(
-            "objective_weights are accepted for API parity but the greedy solver does not use them"
-        )
+    try:
+        weights = normalize_objective_weights(request.objective_weights)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    if request.time_limit_seconds is not None:
+        notes.append("The current greedy optimizer does not support a time limit; this value was not applied.")
 
-    plan = optimize(
-        network,
-        scenario,
-        time_limit_seconds=request.time_limit_seconds,
-    )
     demand = deps.load_demand()
+    try:
+        plan = optimize(
+            network,
+            scenario,
+            time_limit_seconds=request.time_limit_seconds,
+            demand=demand,
+            objective_weights=weights,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    if plan.solver_status == "BASELINE_RETAINED":
+        notes.append("The candidate did not improve the weighted operating objective; the baseline assignment was retained.")
     validation = validate_plan(network, plan, scenario, demand=demand)
     return OptimizeResponse(
         scenario_id=request.scenario_id,

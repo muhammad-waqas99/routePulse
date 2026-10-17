@@ -6,7 +6,7 @@ Deterministic, explainable baseline:
 
 Optionally blends a recent observation via exponential smoothing and applies a
 scenario demand multiplier. The historical-mean baseline is always available
-for comparison (see `Wild Bugs.md`).
+for comparison across runs.
 """
 from __future__ import annotations
 

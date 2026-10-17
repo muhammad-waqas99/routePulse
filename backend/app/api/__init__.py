@@ -1,1 +1,1 @@
-"""API layer (OWNED BY: integration/API workstream)."""
+"""HTTP API routes."""

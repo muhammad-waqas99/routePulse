@@ -1,10 +1,8 @@
 """Independent feasibility validator.
 
-OWNED BY: validation workstream (P0 — never cut).
-
-``validate_plan()`` must NOT rely on the optimizer's own feasibility status. It
+``validate_plan()`` does not rely on the optimizer's own feasibility status. It
 independently recomputes every hard constraint and returns structured
-violations. Required checks (from ``Wild Bugs.md``):
+violations. It checks:
 
 - every scheduled trip has exactly one valid vehicle assignment
 - vehicle types match route requirements
@@ -137,60 +135,93 @@ def _check_capacity(
     trip_specs: dict[str, tuple[Route, Vehicle, float]],
     demand: list[PassengerDemand],
     violations: list[dict],
+    scenario: Scenario,
 ) -> None:
-    """Deterministically allocate demand to trips and check every segment.
-
-    Allocation policy (deterministic, documented): each demand group boards the
-    earliest-departing assigned trip whose route visits its origin *before* its
-    destination, that departs at or after the arrival time and within the
-    group's ``max_wait_min``. Groups with no eligible trip are simply unserved
-    (that is an outcome metric, not a hard-constraint violation). On-board load
-    is accumulated only across the segments actually traversed, so boarding and
-    alighting both affect the segment loads.
-
-    ``trip_specs`` maps ``trip_id -> (route, vehicle, departure_min)``.
-    """
-    loads: dict[str, list[int]] = {
-        trip_id: [0] * max(0, len(route.stop_ids) - 1)
-        for trip_id, (route, _vehicle, _dep) in trip_specs.items()
-    }
-
-    for group in demand:
-        chosen = None
-        for trip_id, (route, _vehicle, departure) in trip_specs.items():
-            stops = route.stop_ids
-            if group.origin_stop_id not in stops or group.destination_stop_id not in stops:
-                continue
-            i = stops.index(group.origin_stop_id)
-            j = stops.index(group.destination_stop_id)
-            if i >= j:
-                continue
-            if departure < group.arrival_time_min:
-                continue
-            if departure > group.arrival_time_min + group.max_wait_min:
-                continue
-            key = (departure, trip_id)
-            if chosen is None or key < chosen[0]:
-                chosen = (key, trip_id, i, j)
-        if chosen is None:
+    groups_by_stop: dict[str, list[tuple[int, PassengerDemand]]] = {}
+    remaining: dict[int, int] = {}
+    for index, group in enumerate(demand):
+        count = int(round(
+            group.passenger_count
+            * scenario.demand_multipliers.get(group.origin_stop_id, 1.0)
+        ))
+        if count <= 0:
             continue
-        _key, trip_id, i, j = chosen
-        for segment in range(i, j):
-            loads[trip_id][segment] += group.passenger_count
+        remaining[index] = count
+        groups_by_stop.setdefault(group.origin_stop_id, []).append((index, group))
 
-    for trip_id, segments in loads.items():
-        route, vehicle, _dep = trip_specs[trip_id]
-        for segment_index, load in enumerate(segments):
-            if load > vehicle.capacity:
-                violations.append(_violation(
+    for groups in groups_by_stop.values():
+        groups.sort(key=lambda item: (item[1].arrival_time_min, item[1].demand_id))
+
+    visits: list[tuple[float, str, int, Route, Vehicle]] = []
+    for trip_id, (route, vehicle, departure) in trip_specs.items():
+        multiplier = scenario.travel_time_multipliers.get(route.route_id, 1.0)
+        elapsed = 0.0
+        for stop_index, _stop_id in enumerate(route.stop_ids):
+            visits.append((departure + elapsed, trip_id, stop_index, route, vehicle))
+            if stop_index < len(route.segment_travel_min):
+                segment_time = route.segment_travel_min[stop_index]
+                duration = int(round(segment_time * multiplier))
+                if segment_time > 0 and duration < 1:
+                    duration = 1
+                elapsed += duration
+
+    visits.sort(key=lambda item: (item[0], item[1], item[2]))
+    onboard: dict[str, list[tuple[int, int]]] = {trip_id: [] for trip_id in trip_specs}
+    capacity_shortfalls: dict[int, dict] = {}
+
+    for visit_time, trip_id, stop_index, route, vehicle in visits:
+        passengers = onboard[trip_id]
+        passengers[:] = [item for item in passengers if item[0] != stop_index]
+        current_load = sum(count for _destination, count in passengers)
+        available_seats = max(0, vehicle.capacity - current_load)
+        if stop_index >= len(route.stop_ids) - 1:
+            continue
+
+        stop_id = route.stop_ids[stop_index]
+        downstream = {
+            stop: index for index, stop in enumerate(route.stop_ids[stop_index + 1 :], start=stop_index + 1)
+        }
+        eligible_groups: list[tuple[int, PassengerDemand, int]] = []
+        for group_index, group in groups_by_stop.get(stop_id, []):
+            destination_index = downstream.get(group.destination_stop_id)
+            if (
+                destination_index is not None
+                and remaining.get(group_index, 0) > 0
+                and group.arrival_time_min <= visit_time
+                and visit_time <= group.arrival_time_min + group.max_wait_min
+            ):
+                eligible_groups.append((group_index, group, destination_index))
+
+        eligible_passengers = sum(remaining[group_index] for group_index, _, _ in eligible_groups)
+        if current_load + eligible_passengers > vehicle.capacity:
+            for group_index, _, _ in eligible_groups:
+                capacity_shortfalls[group_index] = _violation(
                     CAPACITY_EXCEEDED,
                     trip_id=trip_id,
-                    vehicle_id=vehicle.vehicle_id,
                     route_id=route.route_id,
-                    segment_index=segment_index,
-                    actual_load=load,
+                    vehicle_id=vehicle.vehicle_id,
+                    segment_index=stop_index,
+                    actual_load=current_load + eligible_passengers,
                     capacity=vehicle.capacity,
-                ))
+                )
+
+        for group_index, group, destination_index in eligible_groups:
+            if available_seats <= 0:
+                break
+            boarded = min(remaining[group_index], available_seats)
+            remaining[group_index] -= boarded
+            available_seats -= boarded
+            passengers.append((destination_index, boarded))
+
+    findings: dict[tuple[str, int, str], dict] = {}
+    for group_index, finding in capacity_shortfalls.items():
+        if remaining.get(group_index, 0) <= 0:
+            continue
+        key = (finding["trip_id"], finding["segment_index"], finding["vehicle_id"])
+        current = findings.get(key)
+        if current is None or finding["actual_load"] > current["actual_load"]:
+            findings[key] = finding
+    violations.extend(findings.values())
 
 
 def _check_transfers(
@@ -467,7 +498,7 @@ def validate_plan(
             for trip_id in trip_times
             if trip_id in trip_info
         }
-        _check_capacity(capacity_specs, demand, violations)
+        _check_capacity(capacity_specs, demand, violations, scenario)
 
                                                                               
     if connections:
