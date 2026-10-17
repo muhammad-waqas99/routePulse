@@ -1,0 +1,29 @@
+{
+  "institution": "Georgia Institute of Technology",
+  "city": "Atlanta",
+  "state": "Georgia",
+  "country": "United States",
+  "campus_latitude": 33.7760948,
+  "campus_longitude": -84.3988077,
+  "campus_center_source": "OpenStreetMap/Nominatim Georgia Tech campus relation 3341535",
+  "campus_terminal_latitude": 33.776095,
+  "campus_terminal_longitude": -84.399189,
+  "operating_radius_km": 10.0,
+  "random_seed": 42,
+  "counts": {
+    "stops": 40,
+    "routes": 10,
+    "vehicles": 25,
+    "trips": 200,
+    "demand_groups": 900,
+    "scenarios": 5
+  },
+  "road_geometry_source": "OSRM public routing demo server",
+  "road_geometry_retrieved_utc": "2026-10-17T11:03:10.418543+00:00",
+  "stop_source": "OpenStreetMap contributors via Overpass API (openstreetmap.fr)",
+  "stop_source_retrieved_utc": "2026-10-17T10:59:54.063079+00:00",
+  "stop_source_license": "Open Database License (ODbL) 1.0",
+  "unnamed_stop_label_source": "OpenStreetMap Nominatim reverse geocoding of the bus-stop node coordinates",
+  "operational_status_note": "Demand, travel history, GPS snapshots, timetables, and vehicle status are deterministic synthetic scenario fixtures based on this real OSM geography; they are not live service data.",
+  "max_stop_snap_distance_m": 52.6
+}

@@ -2,570 +2,555 @@
   "stops": [
     {
       "stop_id": "S01",
-      "name": "Krannert Center",
-      "lat": 34.289236,
-      "lon": -85.18628,
+      "name": "Georgia Tech Campus Terminal",
+      "lat": 33.776095,
+      "lon": -84.399189,
       "zone": "HUB"
     },
     {
       "stop_id": "S02",
-      "name": "Memorial Library",
-      "lat": 34.288486,
-      "lon": -85.184644,
-      "zone": "ACADEMIC"
+      "name": "Peachtree Rd & Lindbergh Dr",
+      "lat": 33.822888,
+      "lon": -84.387672,
+      "zone": "N"
     },
     {
       "stop_id": "S03",
-      "name": "Evans Hall",
-      "lat": 34.290089,
-      "lon": -85.182645,
-      "zone": "ACADEMIC"
+      "name": "Peachtree Rd NW & Terrace Dr NE",
+      "lat": 33.8213,
+      "lon": -84.388009,
+      "zone": "N"
     },
     {
       "stop_id": "S04",
-      "name": "McAllister Hall",
-      "lat": 34.289054,
-      "lon": -85.180833,
-      "zone": "ACADEMIC"
+      "name": "Peachtree Rd NE & Peachtree Battle Ave",
+      "lat": 33.819533,
+      "lon": -84.388517,
+      "zone": "N"
     },
     {
       "stop_id": "S05",
-      "name": "Hermann Hall",
-      "lat": 34.289007,
-      "lon": -85.179846,
-      "zone": "ACADEMIC"
+      "name": "Northside Dr@Trabert Ave",
+      "lat": 33.794281,
+      "lon": -84.407288,
+      "zone": "N"
     },
     {
       "stop_id": "S06",
-      "name": "Moon Building",
-      "lat": 34.288813,
-      "lon": -85.178084,
-      "zone": "ACADEMIC"
+      "name": "Lindbergh Drive bus stop",
+      "lat": 33.821359,
+      "lon": -84.369295,
+      "zone": "NE"
     },
     {
       "stop_id": "S07",
-      "name": "Cook Building",
-      "lat": 34.288448,
-      "lon": -85.177977,
-      "zone": "ACADEMIC"
+      "name": "North Highland Avenue Northeast bus stop",
+      "lat": 33.791926,
+      "lon": -84.353648,
+      "zone": "NE"
     },
     {
       "stop_id": "S08",
-      "name": "Laughlin Hall",
-      "lat": 34.28864,
-      "lon": -85.172553,
-      "zone": "ACADEMIC"
+      "name": "Arts Center Way Northeast bus stop",
+      "lat": 33.789055,
+      "lon": -84.386334,
+      "zone": "NE"
     },
     {
       "stop_id": "S09",
-      "name": "Blackstone Hall",
-      "lat": 34.290432,
-      "lon": -85.185946,
-      "zone": "ACADEMIC"
+      "name": "10th St NE & Williams St",
+      "lat": 33.781522,
+      "lon": -84.390229,
+      "zone": "NE"
     },
     {
       "stop_id": "S10",
-      "name": "Green Hall",
-      "lat": 34.290309,
-      "lon": -85.184705,
-      "zone": "ACADEMIC"
+      "name": "Briarcliff Rd NE & 1256",
+      "lat": 33.787965,
+      "lon": -84.339607,
+      "zone": "E"
     },
     {
       "stop_id": "S11",
-      "name": "Ford Dining Hall",
-      "lat": 34.290377,
-      "lon": -85.182921,
-      "zone": "DINING"
+      "name": "DeKalb Avenue Northeast & Haralson Avenue Northeast",
+      "lat": 33.759892,
+      "lon": -84.349656,
+      "zone": "E"
     },
     {
       "stop_id": "S12",
-      "name": "Kilpatrick Commons",
-      "lat": 34.290134,
-      "lon": -85.181536,
-      "zone": "DINING"
+      "name": "Moreland Ave & Euclid Ave",
+      "lat": 33.764959,
+      "lon": -84.349386,
+      "zone": "E"
     },
     {
       "stop_id": "S13",
-      "name": "Ford Auditorium",
-      "lat": 34.290969,
-      "lon": -85.180037,
-      "zone": "LANDMARK"
+      "name": "Briarcliff Rd & Saint Charles Pl NE",
+      "lat": 33.775631,
+      "lon": -84.348517,
+      "zone": "E"
     },
     {
       "stop_id": "S14",
-      "name": "Frost Memorial Chapel",
-      "lat": 34.289899,
-      "lon": -85.178691,
-      "zone": "LANDMARK"
+      "name": "Clifton - CDC",
+      "lat": 33.799592,
+      "lon": -84.325126,
+      "zone": "E"
     },
     {
       "stop_id": "S15",
-      "name": "Barnwell Chapel",
-      "lat": 34.289524,
-      "lon": -85.178154,
-      "zone": "LANDMARK"
+      "name": "Clifton - Nursing",
+      "lat": 33.798303,
+      "lon": -84.323559,
+      "zone": "E"
     },
     {
       "stop_id": "S16",
-      "name": "Morgan Hall",
-      "lat": 34.288666,
-      "lon": -85.172545,
-      "zone": "RESIDENTIAL"
+      "name": "Clifton - Emory Hospital",
+      "lat": 33.792003,
+      "lon": -84.320974,
+      "zone": "E"
     },
     {
       "stop_id": "S17",
-      "name": "Thomas Berry Hall",
-      "lat": 34.292281,
-      "lon": -85.187893,
-      "zone": "RESIDENTIAL"
+      "name": "Clifton - Fishburne",
+      "lat": 33.790574,
+      "lon": -84.320963,
+      "zone": "E"
     },
     {
       "stop_id": "S18",
-      "name": "Dana Hall",
-      "lat": 34.292127,
-      "lon": -85.184369,
-      "zone": "RESIDENTIAL"
+      "name": "United Ave @ Home Ave SE",
+      "lat": 33.729437,
+      "lon": -84.364479,
+      "zone": "SE"
     },
     {
       "stop_id": "S19",
-      "name": "Centennial Hall",
-      "lat": 34.290419,
-      "lon": -85.183066,
-      "zone": "RESIDENTIAL"
+      "name": "Cherokee Ave & Ormond St",
+      "lat": 33.731229,
+      "lon": -84.373632,
+      "zone": "SE"
     },
     {
       "stop_id": "S20",
-      "name": "Lemley Hall",
-      "lat": 34.291971,
-      "lon": -85.179613,
-      "zone": "RESIDENTIAL"
+      "name": "Cherokee Ave SE & Bass St SE",
+      "lat": 33.734757,
+      "lon": -84.373637,
+      "zone": "SE"
     },
     {
       "stop_id": "S21",
-      "name": "North Spires Hall",
-      "lat": 34.292217,
-      "lon": -85.179508,
-      "zone": "RESIDENTIAL"
+      "name": "Georgia Ave SE & Hill St SE",
+      "lat": 33.736712,
+      "lon": -84.378286,
+      "zone": "SE"
     },
     {
       "stop_id": "S22",
-      "name": "South Spires Hall",
-      "lat": 34.292413,
-      "lon": -85.179425,
-      "zone": "RESIDENTIAL"
+      "name": "West End Station",
+      "lat": 33.736289,
+      "lon": -84.413263,
+      "zone": "S"
     },
     {
       "stop_id": "S23",
-      "name": "Cage Center",
-      "lat": 34.292738,
-      "lon": -85.179287,
-      "zone": "ATHLETICS"
+      "name": "Ralph D Abernathy Blvd @ Ira St",
+      "lat": 33.737012,
+      "lon": -84.39979,
+      "zone": "S"
     },
     {
       "stop_id": "S24",
-      "name": "Richards Gymnasium",
-      "lat": 34.289524,
-      "lon": -85.178154,
-      "zone": "ATHLETICS"
+      "name": "Georgia Ave & Hank Aaron Dr",
+      "lat": 33.736842,
+      "lon": -84.387705,
+      "zone": "S"
     },
     {
       "stop_id": "S25",
-      "name": "Valhalla Stadium",
-      "lat": 34.294112,
-      "lon": -85.18633,
-      "zone": "ATHLETICS"
+      "name": "Postell Street Bus Loop",
+      "lat": 33.756341,
+      "lon": -84.403571,
+      "zone": "S"
     },
     {
       "stop_id": "S26",
-      "name": "Clara Bowl",
-      "lat": 34.294274,
-      "lon": -85.185041,
-      "zone": "ATHLETICS"
+      "name": "Waterbury Drive Northwest bus stop",
+      "lat": 33.755049,
+      "lon": -84.447383,
+      "zone": "SW"
     },
     {
       "stop_id": "S27",
-      "name": "Mount Berry Square",
-      "lat": 34.29366,
-      "lon": -85.182538,
-      "zone": "HUB"
+      "name": "Lucile Avenue Southwest bus stop",
+      "lat": 33.742281,
+      "lon": -84.423869,
+      "zone": "SW"
     },
     {
       "stop_id": "S28",
-      "name": "Oak Hill Museum",
-      "lat": 34.293276,
-      "lon": -85.179059,
-      "zone": "LANDMARK"
+      "name": "Joseph E. Lowery Boulevard bus stop",
+      "lat": 33.742469,
+      "lon": -84.417627,
+      "zone": "SW"
     },
     {
       "stop_id": "S29",
-      "name": "Admissions Welcome Center",
-      "lat": 34.293463,
-      "lon": -85.17898,
-      "zone": "ENTRY"
+      "name": "Fair Street Southwest bus stop",
+      "lat": 33.749064,
+      "lon": -84.419264,
+      "zone": "SW"
     },
     {
       "stop_id": "S30",
-      "name": "Main Gate",
-      "lat": 34.293808,
-      "lon": -85.178835,
-      "zone": "ENTRY"
+      "name": "Hollywood Road Northwest bus stop",
+      "lat": 33.78788,
+      "lon": -84.464237,
+      "zone": "W"
     },
     {
       "stop_id": "S31",
-      "name": "West Gate",
-      "lat": 34.294645,
-      "lon": -85.178515,
-      "zone": "ENTRY"
+      "name": "Cato Street Northwest bus stop",
+      "lat": 33.781216,
+      "lon": -84.455786,
+      "zone": "W"
     },
     {
       "stop_id": "S32",
-      "name": "East Gate",
-      "lat": 34.29478,
-      "lon": -85.178465,
-      "zone": "ENTRY"
+      "name": "Hollywood Road Northwest bus stop",
+      "lat": 33.778128,
+      "lon": -84.452992,
+      "zone": "W"
     },
     {
       "stop_id": "S33",
-      "name": "Health & Wellness Center",
-      "lat": 34.29554,
-      "lon": -85.186167,
-      "zone": "SERVICE"
+      "name": "Margaret Place Northwest bus stop",
+      "lat": 33.777244,
+      "lon": -84.450425,
+      "zone": "W"
     },
     {
       "stop_id": "S34",
-      "name": "Campus Safety Office",
-      "lat": 34.294838,
-      "lon": -85.184481,
-      "zone": "SERVICE"
+      "name": "West Paces Ferry Road Northwest bus stop",
+      "lat": 33.849164,
+      "lon": -84.429483,
+      "zone": "N"
     },
     {
       "stop_id": "S35",
-      "name": "Student Mail Center",
-      "lat": 34.295289,
-      "lon": -85.182939,
-      "zone": "SERVICE"
+      "name": "Defoors Ferry Rd at Bohler Rd",
+      "lat": 33.813268,
+      "lon": -84.425581,
+      "zone": "NW"
     },
     {
       "stop_id": "S36",
-      "name": "Science Annex",
-      "lat": 34.295227,
-      "lon": -85.180934,
-      "zone": "ACADEMIC"
+      "name": "17th Street Northwest bus stop",
+      "lat": 33.791406,
+      "lon": -84.407345,
+      "zone": "NW"
     },
     {
       "stop_id": "S37",
-      "name": "Fine Arts Building",
-      "lat": 34.295315,
-      "lon": -85.17828,
-      "zone": "ACADEMIC"
+      "name": "Fifth Street Northwest bus stop",
+      "lat": 33.77686,
+      "lon": -84.389821,
+      "zone": "E"
     },
     {
       "stop_id": "S38",
-      "name": "Lecture Hall A",
-      "lat": 34.295493,
-      "lon": -85.178063,
-      "zone": "ACADEMIC"
+      "name": "Village Smoke",
+      "lat": 33.770166,
+      "lon": -84.391824,
+      "zone": "SE"
     },
     {
       "stop_id": "S39",
-      "name": "Lecture Hall B",
-      "lat": 34.295649,
-      "lon": -85.176425,
-      "zone": "ACADEMIC"
+      "name": "Ferst Drive Northwest bus stop",
+      "lat": 33.775079,
+      "lon": -84.402575,
+      "zone": "W"
     },
     {
       "stop_id": "S40",
-      "name": "Transit Hub",
-      "lat": 34.295259,
-      "lon": -85.174952,
-      "zone": "HUB"
+      "name": "Tech Parkway Northwest bus stop",
+      "lat": 33.772711,
+      "lon": -84.397396,
+      "zone": "S"
     }
   ],
   "routes": [
     {
       "route_id": "R01",
       "stop_ids": [
-        "S01",
         "S02",
         "S03",
         "S04",
-        "S05"
+        "S05",
+        "S01"
       ],
       "segment_travel_min": [
-        4.2,
-        4.2,
-        4.2,
-        4.4
+        0.8,
+        0.8,
+        10.8,
+        7.5
       ],
       "segment_distance_km": [
-        0.23,
-        0.658,
-        0.253,
-        0.64
+        0.196,
+        0.202,
+        4.122,
+        2.45
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R02",
       "stop_ids": [
-        "S04",
         "S06",
+        "S07",
         "S08",
-        "S10",
-        "S12",
-        "S14"
+        "S09",
+        "S01"
       ],
       "segment_travel_min": [
-        4.2,
-        4.2,
-        4.2,
-        4.2,
-        4.2
+        12.8,
+        12.9,
+        3.3,
+        5.2
       ],
       "segment_distance_km": [
-        0.404,
-        2.084,
-        2.805,
-        0.578,
-        0.619
+        5.085,
+        4.521,
+        1.238,
+        1.463
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R03",
-      "stop_ids": [
-        "S07",
-        "S10",
-        "S13",
-        "S16",
-        "S19"
-      ],
-      "segment_travel_min": [
-        6.0,
-        6.0,
-        6.0,
-        6.0
-      ],
-      "segment_distance_km": [
-        0.757,
-        0.712,
-        5.352,
-        2.656
-      ],
-      "allowed_vehicle_types": [
-        "shuttle"
-      ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
-    },
-    {
-      "route_id": "R04",
       "stop_ids": [
         "S10",
         "S11",
         "S12",
         "S13",
-        "S14",
-        "S15"
+        "S01"
       ],
       "segment_travel_min": [
-        5.0,
-        5.0,
-        5.0,
-        5.0,
-        5.0
+        8.0,
+        3.4,
+        5.2,
+        15.3
       ],
       "segment_distance_km": [
-        0.71,
-        0.458,
-        0.565,
-        3.14,
-        0.074
+        3.407,
+        1.054,
+        1.764,
+        6.129
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
+    },
+    {
+      "route_id": "R04",
+      "stop_ids": [
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S01"
+      ],
+      "segment_travel_min": [
+        0.8,
+        2.4,
+        0.8,
+        23.5
+      ],
+      "segment_distance_km": [
+        0.206,
+        0.767,
+        0.16,
+        9.694
+      ],
+      "allowed_vehicle_types": [
+        "shuttle"
+      ],
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R05",
       "stop_ids": [
-        "S13",
-        "S15",
-        "S17",
+        "S18",
         "S19",
-        "S21"
+        "S20",
+        "S21",
+        "S01"
       ],
       "segment_travel_min": [
-        6.8,
-        6.8,
-        6.8,
-        6.6
+        3.5,
+        1.0,
+        1.5,
+        15.9
       ],
       "segment_distance_km": [
-        0.411,
-        1.65,
-        1.13,
-        0.725
+        1.068,
+        0.391,
+        0.635,
+        7.411
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R06",
       "stop_ids": [
-        "S16",
-        "S19",
         "S22",
+        "S23",
+        "S24",
         "S25",
-        "S28",
-        "S31"
+        "S01"
       ],
       "segment_travel_min": [
-        3.0,
-        3.0,
-        3.0,
-        3.0,
-        3.0
+        3.7,
+        2.7,
+        8.1,
+        11.7
       ],
       "segment_distance_km": [
-        2.656,
-        0.748,
-        4.013,
-        1.758,
-        0.16
+        1.659,
+        1.201,
+        3.525,
+        3.882
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R07",
       "stop_ids": [
-        "S19",
-        "S20",
-        "S21",
-        "S22",
-        "S23"
+        "S26",
+        "S27",
+        "S28",
+        "S29",
+        "S01"
       ],
       "segment_travel_min": [
-        4.8,
-        4.8,
-        4.8,
-        4.6
+        6.7,
+        2.0,
+        2.7,
+        14.0
       ],
       "segment_distance_km": [
-        0.696,
-        0.029,
-        0.023,
-        0.038
+        3.067,
+        0.821,
+        0.966,
+        5.859
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R08",
       "stop_ids": [
-        "S22",
-        "S24",
-        "S26",
-        "S28",
         "S30",
-        "S32"
+        "S31",
+        "S32",
+        "S33",
+        "S01"
       ],
       "segment_travel_min": [
-        4.8,
-        4.8,
-        4.8,
-        4.8,
-        4.8
+        3.8,
+        1.1,
+        0.8,
+        15.7
       ],
       "segment_distance_km": [
-        0.581,
-        1.827,
-        1.87,
-        0.062,
-        0.113
+        1.284,
+        0.452,
+        0.264,
+        6.483
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R09",
       "stop_ids": [
-        "S25",
-        "S28",
-        "S31",
         "S34",
-        "S37"
+        "S35",
+        "S05",
+        "S36",
+        "S01"
       ],
       "segment_travel_min": [
-        6.8,
-        6.8,
-        6.8,
-        6.6
+        13.1,
+        10.1,
+        1.6,
+        7.8
       ],
       "segment_distance_km": [
-        1.76,
-        0.16,
-        3.946,
-        2.192
+        4.926,
+        3.608,
+        0.449,
+        2.497
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     },
     {
       "route_id": "R10",
       "stop_ids": [
-        "S28",
-        "S29",
-        "S30",
-        "S31",
-        "S32",
-        "S33"
+        "S37",
+        "S38",
+        "S39",
+        "S40",
+        "S01"
       ],
       "segment_travel_min": [
-        6.0,
-        6.0,
-        6.0,
-        6.0,
-        6.0
+        3.4,
+        6.5,
+        2.9,
+        5.6
       ],
       "segment_distance_km": [
-        0.022,
-        0.04,
-        0.097,
-        0.016,
-        3.821
+        1.248,
+        2.114,
+        1.168,
+        1.519
       ],
       "allowed_vehicle_types": [
         "shuttle"
       ],
-      "min_headway_min": 20,
-      "max_headway_min": 60
+      "min_headway_min": 5,
+      "max_headway_min": 40
     }
   ],
   "vehicles": [
@@ -574,8 +559,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S01",
+      "available_until_min": 1200,
+      "initial_stop_id": "S02",
       "turnaround_min": 5,
       "cost_per_km": 21.52
     },
@@ -584,8 +569,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S04",
+      "available_until_min": 1200,
+      "initial_stop_id": "S02",
       "turnaround_min": 5,
       "cost_per_km": 30.05
     },
@@ -594,8 +579,8 @@
       "capacity": 25,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S07",
+      "available_until_min": 1200,
+      "initial_stop_id": "S02",
       "turnaround_min": 5,
       "cost_per_km": 27.52
     },
@@ -604,8 +589,8 @@
       "capacity": 25,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S10",
+      "available_until_min": 1200,
+      "initial_stop_id": "S06",
       "turnaround_min": 5,
       "cost_per_km": 27.54
     },
@@ -614,8 +599,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S13",
+      "available_until_min": 1200,
+      "initial_stop_id": "S06",
       "turnaround_min": 5,
       "cost_per_km": 28.51
     },
@@ -624,8 +609,8 @@
       "capacity": 50,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S16",
+      "available_until_min": 1200,
+      "initial_stop_id": "S06",
       "turnaround_min": 5,
       "cost_per_km": 22.76
     },
@@ -634,8 +619,8 @@
       "capacity": 35,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S19",
+      "available_until_min": 1200,
+      "initial_stop_id": "S10",
       "turnaround_min": 5,
       "cost_per_km": 24.09
     },
@@ -644,8 +629,8 @@
       "capacity": 40,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S22",
+      "available_until_min": 1200,
+      "initial_stop_id": "S10",
       "turnaround_min": 5,
       "cost_per_km": 18.05
     },
@@ -654,8 +639,8 @@
       "capacity": 50,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S25",
+      "available_until_min": 1200,
+      "initial_stop_id": "S10",
       "turnaround_min": 5,
       "cost_per_km": 30.26
     },
@@ -664,8 +649,8 @@
       "capacity": 35,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S28",
+      "available_until_min": 1200,
+      "initial_stop_id": "S14",
       "turnaround_min": 5,
       "cost_per_km": 31.61
     },
@@ -674,8 +659,8 @@
       "capacity": 30,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S01",
+      "available_until_min": 1200,
+      "initial_stop_id": "S14",
       "turnaround_min": 5,
       "cost_per_km": 25.11
     },
@@ -684,8 +669,8 @@
       "capacity": 25,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S04",
+      "available_until_min": 1200,
+      "initial_stop_id": "S14",
       "turnaround_min": 5,
       "cost_per_km": 30.19
     },
@@ -694,8 +679,8 @@
       "capacity": 35,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S07",
+      "available_until_min": 1200,
+      "initial_stop_id": "S18",
       "turnaround_min": 5,
       "cost_per_km": 29.78
     },
@@ -704,8 +689,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S10",
+      "available_until_min": 1200,
+      "initial_stop_id": "S18",
       "turnaround_min": 5,
       "cost_per_km": 26.53
     },
@@ -714,8 +699,8 @@
       "capacity": 30,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S13",
+      "available_until_min": 1200,
+      "initial_stop_id": "S18",
       "turnaround_min": 5,
       "cost_per_km": 23.23
     },
@@ -724,8 +709,8 @@
       "capacity": 30,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S16",
+      "available_until_min": 1200,
+      "initial_stop_id": "S22",
       "turnaround_min": 5,
       "cost_per_km": 25.55
     },
@@ -734,8 +719,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S19",
+      "available_until_min": 1200,
+      "initial_stop_id": "S22",
       "turnaround_min": 5,
       "cost_per_km": 30.86
     },
@@ -744,8 +729,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S22",
+      "available_until_min": 1200,
+      "initial_stop_id": "S26",
       "turnaround_min": 5,
       "cost_per_km": 22.54
     },
@@ -754,8 +739,8 @@
       "capacity": 25,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S25",
+      "available_until_min": 1200,
+      "initial_stop_id": "S26",
       "turnaround_min": 5,
       "cost_per_km": 19.57
     },
@@ -764,8 +749,8 @@
       "capacity": 35,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S28",
+      "available_until_min": 1200,
+      "initial_stop_id": "S30",
       "turnaround_min": 5,
       "cost_per_km": 30.3
     },
@@ -774,8 +759,8 @@
       "capacity": 35,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S01",
+      "available_until_min": 1200,
+      "initial_stop_id": "S30",
       "turnaround_min": 5,
       "cost_per_km": 21.35
     },
@@ -784,8 +769,8 @@
       "capacity": 30,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S04",
+      "available_until_min": 1200,
+      "initial_stop_id": "S34",
       "turnaround_min": 5,
       "cost_per_km": 30.29
     },
@@ -794,8 +779,8 @@
       "capacity": 25,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S07",
+      "available_until_min": 1200,
+      "initial_stop_id": "S34",
       "turnaround_min": 5,
       "cost_per_km": 19.2
     },
@@ -804,8 +789,8 @@
       "capacity": 40,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S13",
+      "available_until_min": 1200,
+      "initial_stop_id": "S37",
       "turnaround_min": 5,
       "cost_per_km": 29.42
     },
@@ -814,8 +799,8 @@
       "capacity": 45,
       "vehicle_type": "shuttle",
       "available_from_min": 420,
-      "available_until_min": 1320,
-      "initial_stop_id": "S25",
+      "available_until_min": 1200,
+      "initial_stop_id": "S37",
       "turnaround_min": 5,
       "cost_per_km": 28.72
     }
@@ -832,1594 +817,1594 @@
     {
       "trip_id": "T0002",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 454,
+      "departure_window_start_min": 449,
+      "departure_window_end_min": 459
     },
     {
       "trip_id": "T0003",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 488,
+      "departure_window_start_min": 483,
+      "departure_window_end_min": 493
     },
     {
       "trip_id": "T0004",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "planned_departure_min": 522,
+      "departure_window_start_min": 517,
+      "departure_window_end_min": 527
     },
     {
       "trip_id": "T0005",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 556,
+      "departure_window_start_min": 551,
+      "departure_window_end_min": 561
     },
     {
       "trip_id": "T0006",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 590,
+      "departure_window_start_min": 585,
+      "departure_window_end_min": 595
     },
     {
       "trip_id": "T0007",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "planned_departure_min": 624,
+      "departure_window_start_min": 619,
+      "departure_window_end_min": 629
     },
     {
       "trip_id": "T0008",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 658,
+      "departure_window_start_min": 653,
+      "departure_window_end_min": 663
     },
     {
       "trip_id": "T0009",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 692,
+      "departure_window_start_min": 687,
+      "departure_window_end_min": 697
     },
     {
       "trip_id": "T0010",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "planned_departure_min": 726,
+      "departure_window_start_min": 721,
+      "departure_window_end_min": 731
     },
     {
       "trip_id": "T0011",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 760,
+      "departure_window_start_min": 755,
+      "departure_window_end_min": 765
     },
     {
       "trip_id": "T0012",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 794,
+      "departure_window_start_min": 789,
+      "departure_window_end_min": 799
     },
     {
       "trip_id": "T0013",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "planned_departure_min": 828,
+      "departure_window_start_min": 823,
+      "departure_window_end_min": 833
     },
     {
       "trip_id": "T0014",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 862,
+      "departure_window_start_min": 857,
+      "departure_window_end_min": 867
     },
     {
       "trip_id": "T0015",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 896,
+      "departure_window_start_min": 891,
+      "departure_window_end_min": 901
     },
     {
       "trip_id": "T0016",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "planned_departure_min": 930,
+      "departure_window_start_min": 925,
+      "departure_window_end_min": 935
     },
     {
       "trip_id": "T0017",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 964,
+      "departure_window_start_min": 959,
+      "departure_window_end_min": 969
     },
     {
       "trip_id": "T0018",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS03",
+      "planned_departure_min": 998,
+      "departure_window_start_min": 993,
+      "departure_window_end_min": 1003
     },
     {
       "trip_id": "T0019",
       "route_id": "R01",
       "vehicle_id": "BUS01",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "planned_departure_min": 1032,
+      "departure_window_start_min": 1027,
+      "departure_window_end_min": 1037
     },
     {
       "trip_id": "T0020",
       "route_id": "R01",
-      "vehicle_id": "BUS01",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS02",
+      "planned_departure_min": 1066,
+      "departure_window_start_min": 1061,
+      "departure_window_end_min": 1071
     },
     {
       "trip_id": "T0021",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 422,
+      "departure_window_start_min": 417,
+      "departure_window_end_min": 427
     },
     {
       "trip_id": "T0022",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 456,
+      "departure_window_start_min": 451,
+      "departure_window_end_min": 461
     },
     {
       "trip_id": "T0023",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 490,
+      "departure_window_start_min": 485,
+      "departure_window_end_min": 495
     },
     {
       "trip_id": "T0024",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 524,
+      "departure_window_start_min": 519,
+      "departure_window_end_min": 529
     },
     {
       "trip_id": "T0025",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 558,
+      "departure_window_start_min": 553,
+      "departure_window_end_min": 563
     },
     {
       "trip_id": "T0026",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 592,
+      "departure_window_start_min": 587,
+      "departure_window_end_min": 597
     },
     {
       "trip_id": "T0027",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 626,
+      "departure_window_start_min": 621,
+      "departure_window_end_min": 631
     },
     {
       "trip_id": "T0028",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 660,
+      "departure_window_start_min": 655,
+      "departure_window_end_min": 665
     },
     {
       "trip_id": "T0029",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 694,
+      "departure_window_start_min": 689,
+      "departure_window_end_min": 699
     },
     {
       "trip_id": "T0030",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 728,
+      "departure_window_start_min": 723,
+      "departure_window_end_min": 733
     },
     {
       "trip_id": "T0031",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 762,
+      "departure_window_start_min": 757,
+      "departure_window_end_min": 767
     },
     {
       "trip_id": "T0032",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 796,
+      "departure_window_start_min": 791,
+      "departure_window_end_min": 801
     },
     {
       "trip_id": "T0033",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 830,
+      "departure_window_start_min": 825,
+      "departure_window_end_min": 835
     },
     {
       "trip_id": "T0034",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 864,
+      "departure_window_start_min": 859,
+      "departure_window_end_min": 869
     },
     {
       "trip_id": "T0035",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 898,
+      "departure_window_start_min": 893,
+      "departure_window_end_min": 903
     },
     {
       "trip_id": "T0036",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 932,
+      "departure_window_start_min": 927,
+      "departure_window_end_min": 937
     },
     {
       "trip_id": "T0037",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 966,
+      "departure_window_start_min": 961,
+      "departure_window_end_min": 971
     },
     {
       "trip_id": "T0038",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS06",
+      "planned_departure_min": 1000,
+      "departure_window_start_min": 995,
+      "departure_window_end_min": 1005
     },
     {
       "trip_id": "T0039",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS04",
+      "planned_departure_min": 1034,
+      "departure_window_start_min": 1029,
+      "departure_window_end_min": 1039
     },
     {
       "trip_id": "T0040",
       "route_id": "R02",
-      "vehicle_id": "BUS02",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS05",
+      "planned_departure_min": 1068,
+      "departure_window_start_min": 1063,
+      "departure_window_end_min": 1073
     },
     {
       "trip_id": "T0041",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 424,
+      "departure_window_start_min": 419,
+      "departure_window_end_min": 429
     },
     {
       "trip_id": "T0042",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 458,
+      "departure_window_start_min": 453,
+      "departure_window_end_min": 463
     },
     {
       "trip_id": "T0043",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 492,
+      "departure_window_start_min": 487,
+      "departure_window_end_min": 497
     },
     {
       "trip_id": "T0044",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 526,
+      "departure_window_start_min": 521,
+      "departure_window_end_min": 531
     },
     {
       "trip_id": "T0045",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 560,
+      "departure_window_start_min": 555,
+      "departure_window_end_min": 565
     },
     {
       "trip_id": "T0046",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 594,
+      "departure_window_start_min": 589,
+      "departure_window_end_min": 599
     },
     {
       "trip_id": "T0047",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 628,
+      "departure_window_start_min": 623,
+      "departure_window_end_min": 633
     },
     {
       "trip_id": "T0048",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 662,
+      "departure_window_start_min": 657,
+      "departure_window_end_min": 667
     },
     {
       "trip_id": "T0049",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 696,
+      "departure_window_start_min": 691,
+      "departure_window_end_min": 701
     },
     {
       "trip_id": "T0050",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 730,
+      "departure_window_start_min": 725,
+      "departure_window_end_min": 735
     },
     {
       "trip_id": "T0051",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 764,
+      "departure_window_start_min": 759,
+      "departure_window_end_min": 769
     },
     {
       "trip_id": "T0052",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 798,
+      "departure_window_start_min": 793,
+      "departure_window_end_min": 803
     },
     {
       "trip_id": "T0053",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 832,
+      "departure_window_start_min": 827,
+      "departure_window_end_min": 837
     },
     {
       "trip_id": "T0054",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 866,
+      "departure_window_start_min": 861,
+      "departure_window_end_min": 871
     },
     {
       "trip_id": "T0055",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 900,
+      "departure_window_start_min": 895,
+      "departure_window_end_min": 905
     },
     {
       "trip_id": "T0056",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 934,
+      "departure_window_start_min": 929,
+      "departure_window_end_min": 939
     },
     {
       "trip_id": "T0057",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 968,
+      "departure_window_start_min": 963,
+      "departure_window_end_min": 973
     },
     {
       "trip_id": "T0058",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS09",
+      "planned_departure_min": 1002,
+      "departure_window_start_min": 997,
+      "departure_window_end_min": 1007
     },
     {
       "trip_id": "T0059",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS07",
+      "planned_departure_min": 1036,
+      "departure_window_start_min": 1031,
+      "departure_window_end_min": 1041
     },
     {
       "trip_id": "T0060",
       "route_id": "R03",
-      "vehicle_id": "BUS03",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS08",
+      "planned_departure_min": 1070,
+      "departure_window_start_min": 1065,
+      "departure_window_end_min": 1075
     },
     {
       "trip_id": "T0061",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 426,
+      "departure_window_start_min": 421,
+      "departure_window_end_min": 431
     },
     {
       "trip_id": "T0062",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 460,
+      "departure_window_start_min": 455,
+      "departure_window_end_min": 465
     },
     {
       "trip_id": "T0063",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 494,
+      "departure_window_start_min": 489,
+      "departure_window_end_min": 499
     },
     {
       "trip_id": "T0064",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 528,
+      "departure_window_start_min": 523,
+      "departure_window_end_min": 533
     },
     {
       "trip_id": "T0065",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 562,
+      "departure_window_start_min": 557,
+      "departure_window_end_min": 567
     },
     {
       "trip_id": "T0066",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 596,
+      "departure_window_start_min": 591,
+      "departure_window_end_min": 601
     },
     {
       "trip_id": "T0067",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 630,
+      "departure_window_start_min": 625,
+      "departure_window_end_min": 635
     },
     {
       "trip_id": "T0068",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 664,
+      "departure_window_start_min": 659,
+      "departure_window_end_min": 669
     },
     {
       "trip_id": "T0069",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 698,
+      "departure_window_start_min": 693,
+      "departure_window_end_min": 703
     },
     {
       "trip_id": "T0070",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 732,
+      "departure_window_start_min": 727,
+      "departure_window_end_min": 737
     },
     {
       "trip_id": "T0071",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 766,
+      "departure_window_start_min": 761,
+      "departure_window_end_min": 771
     },
     {
       "trip_id": "T0072",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 800,
+      "departure_window_start_min": 795,
+      "departure_window_end_min": 805
     },
     {
       "trip_id": "T0073",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 834,
+      "departure_window_start_min": 829,
+      "departure_window_end_min": 839
     },
     {
       "trip_id": "T0074",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 868,
+      "departure_window_start_min": 863,
+      "departure_window_end_min": 873
     },
     {
       "trip_id": "T0075",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 902,
+      "departure_window_start_min": 897,
+      "departure_window_end_min": 907
     },
     {
       "trip_id": "T0076",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 936,
+      "departure_window_start_min": 931,
+      "departure_window_end_min": 941
     },
     {
       "trip_id": "T0077",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 970,
+      "departure_window_start_min": 965,
+      "departure_window_end_min": 975
     },
     {
       "trip_id": "T0078",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS12",
+      "planned_departure_min": 1004,
+      "departure_window_start_min": 999,
+      "departure_window_end_min": 1009
     },
     {
       "trip_id": "T0079",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS10",
+      "planned_departure_min": 1038,
+      "departure_window_start_min": 1033,
+      "departure_window_end_min": 1043
     },
     {
       "trip_id": "T0080",
       "route_id": "R04",
-      "vehicle_id": "BUS04",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS11",
+      "planned_departure_min": 1072,
+      "departure_window_start_min": 1067,
+      "departure_window_end_min": 1077
     },
     {
       "trip_id": "T0081",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 428,
+      "departure_window_start_min": 423,
+      "departure_window_end_min": 433
     },
     {
       "trip_id": "T0082",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 462,
+      "departure_window_start_min": 457,
+      "departure_window_end_min": 467
     },
     {
       "trip_id": "T0083",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 496,
+      "departure_window_start_min": 491,
+      "departure_window_end_min": 501
     },
     {
       "trip_id": "T0084",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 530,
+      "departure_window_start_min": 525,
+      "departure_window_end_min": 535
     },
     {
       "trip_id": "T0085",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 564,
+      "departure_window_start_min": 559,
+      "departure_window_end_min": 569
     },
     {
       "trip_id": "T0086",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 598,
+      "departure_window_start_min": 593,
+      "departure_window_end_min": 603
     },
     {
       "trip_id": "T0087",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 632,
+      "departure_window_start_min": 627,
+      "departure_window_end_min": 637
     },
     {
       "trip_id": "T0088",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 666,
+      "departure_window_start_min": 661,
+      "departure_window_end_min": 671
     },
     {
       "trip_id": "T0089",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 700,
+      "departure_window_start_min": 695,
+      "departure_window_end_min": 705
     },
     {
       "trip_id": "T0090",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 734,
+      "departure_window_start_min": 729,
+      "departure_window_end_min": 739
     },
     {
       "trip_id": "T0091",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 768,
+      "departure_window_start_min": 763,
+      "departure_window_end_min": 773
     },
     {
       "trip_id": "T0092",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 802,
+      "departure_window_start_min": 797,
+      "departure_window_end_min": 807
     },
     {
       "trip_id": "T0093",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 836,
+      "departure_window_start_min": 831,
+      "departure_window_end_min": 841
     },
     {
       "trip_id": "T0094",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 870,
+      "departure_window_start_min": 865,
+      "departure_window_end_min": 875
     },
     {
       "trip_id": "T0095",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 904,
+      "departure_window_start_min": 899,
+      "departure_window_end_min": 909
     },
     {
       "trip_id": "T0096",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 938,
+      "departure_window_start_min": 933,
+      "departure_window_end_min": 943
     },
     {
       "trip_id": "T0097",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 972,
+      "departure_window_start_min": 967,
+      "departure_window_end_min": 977
     },
     {
       "trip_id": "T0098",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS15",
+      "planned_departure_min": 1006,
+      "departure_window_start_min": 1001,
+      "departure_window_end_min": 1011
     },
     {
       "trip_id": "T0099",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS13",
+      "planned_departure_min": 1040,
+      "departure_window_start_min": 1035,
+      "departure_window_end_min": 1045
     },
     {
       "trip_id": "T0100",
       "route_id": "R05",
-      "vehicle_id": "BUS05",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS14",
+      "planned_departure_min": 1074,
+      "departure_window_start_min": 1069,
+      "departure_window_end_min": 1079
     },
     {
       "trip_id": "T0101",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 430,
+      "departure_window_start_min": 425,
+      "departure_window_end_min": 435
     },
     {
       "trip_id": "T0102",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 464,
+      "departure_window_start_min": 459,
+      "departure_window_end_min": 469
     },
     {
       "trip_id": "T0103",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 498,
+      "departure_window_start_min": 493,
+      "departure_window_end_min": 503
     },
     {
       "trip_id": "T0104",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 532,
+      "departure_window_start_min": 527,
+      "departure_window_end_min": 537
     },
     {
       "trip_id": "T0105",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 566,
+      "departure_window_start_min": 561,
+      "departure_window_end_min": 571
     },
     {
       "trip_id": "T0106",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 600,
+      "departure_window_start_min": 595,
+      "departure_window_end_min": 605
     },
     {
       "trip_id": "T0107",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 634,
+      "departure_window_start_min": 629,
+      "departure_window_end_min": 639
     },
     {
       "trip_id": "T0108",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 668,
+      "departure_window_start_min": 663,
+      "departure_window_end_min": 673
     },
     {
       "trip_id": "T0109",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 702,
+      "departure_window_start_min": 697,
+      "departure_window_end_min": 707
     },
     {
       "trip_id": "T0110",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 736,
+      "departure_window_start_min": 731,
+      "departure_window_end_min": 741
     },
     {
       "trip_id": "T0111",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 770,
+      "departure_window_start_min": 765,
+      "departure_window_end_min": 775
     },
     {
       "trip_id": "T0112",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 804,
+      "departure_window_start_min": 799,
+      "departure_window_end_min": 809
     },
     {
       "trip_id": "T0113",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 838,
+      "departure_window_start_min": 833,
+      "departure_window_end_min": 843
     },
     {
       "trip_id": "T0114",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 872,
+      "departure_window_start_min": 867,
+      "departure_window_end_min": 877
     },
     {
       "trip_id": "T0115",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 906,
+      "departure_window_start_min": 901,
+      "departure_window_end_min": 911
     },
     {
       "trip_id": "T0116",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 940,
+      "departure_window_start_min": 935,
+      "departure_window_end_min": 945
     },
     {
       "trip_id": "T0117",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 974,
+      "departure_window_start_min": 969,
+      "departure_window_end_min": 979
     },
     {
       "trip_id": "T0118",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 1008,
+      "departure_window_start_min": 1003,
+      "departure_window_end_min": 1013
     },
     {
       "trip_id": "T0119",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS16",
+      "planned_departure_min": 1042,
+      "departure_window_start_min": 1037,
+      "departure_window_end_min": 1047
     },
     {
       "trip_id": "T0120",
       "route_id": "R06",
-      "vehicle_id": "BUS06",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS17",
+      "planned_departure_min": 1076,
+      "departure_window_start_min": 1071,
+      "departure_window_end_min": 1081
     },
     {
       "trip_id": "T0121",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 432,
+      "departure_window_start_min": 427,
+      "departure_window_end_min": 437
     },
     {
       "trip_id": "T0122",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 466,
+      "departure_window_start_min": 461,
+      "departure_window_end_min": 471
     },
     {
       "trip_id": "T0123",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 500,
+      "departure_window_start_min": 495,
+      "departure_window_end_min": 505
     },
     {
       "trip_id": "T0124",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 534,
+      "departure_window_start_min": 529,
+      "departure_window_end_min": 539
     },
     {
       "trip_id": "T0125",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 568,
+      "departure_window_start_min": 563,
+      "departure_window_end_min": 573
     },
     {
       "trip_id": "T0126",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 602,
+      "departure_window_start_min": 597,
+      "departure_window_end_min": 607
     },
     {
       "trip_id": "T0127",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 636,
+      "departure_window_start_min": 631,
+      "departure_window_end_min": 641
     },
     {
       "trip_id": "T0128",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 670,
+      "departure_window_start_min": 665,
+      "departure_window_end_min": 675
     },
     {
       "trip_id": "T0129",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 704,
+      "departure_window_start_min": 699,
+      "departure_window_end_min": 709
     },
     {
       "trip_id": "T0130",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 738,
+      "departure_window_start_min": 733,
+      "departure_window_end_min": 743
     },
     {
       "trip_id": "T0131",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 772,
+      "departure_window_start_min": 767,
+      "departure_window_end_min": 777
     },
     {
       "trip_id": "T0132",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 806,
+      "departure_window_start_min": 801,
+      "departure_window_end_min": 811
     },
     {
       "trip_id": "T0133",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 840,
+      "departure_window_start_min": 835,
+      "departure_window_end_min": 845
     },
     {
       "trip_id": "T0134",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 874,
+      "departure_window_start_min": 869,
+      "departure_window_end_min": 879
     },
     {
       "trip_id": "T0135",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 908,
+      "departure_window_start_min": 903,
+      "departure_window_end_min": 913
     },
     {
       "trip_id": "T0136",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 942,
+      "departure_window_start_min": 937,
+      "departure_window_end_min": 947
     },
     {
       "trip_id": "T0137",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 976,
+      "departure_window_start_min": 971,
+      "departure_window_end_min": 981
     },
     {
       "trip_id": "T0138",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 1010,
+      "departure_window_start_min": 1005,
+      "departure_window_end_min": 1015
     },
     {
       "trip_id": "T0139",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS18",
+      "planned_departure_min": 1044,
+      "departure_window_start_min": 1039,
+      "departure_window_end_min": 1049
     },
     {
       "trip_id": "T0140",
       "route_id": "R07",
-      "vehicle_id": "BUS07",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS19",
+      "planned_departure_min": 1078,
+      "departure_window_start_min": 1073,
+      "departure_window_end_min": 1083
     },
     {
       "trip_id": "T0141",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 434,
+      "departure_window_start_min": 429,
+      "departure_window_end_min": 439
     },
     {
       "trip_id": "T0142",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 468,
+      "departure_window_start_min": 463,
+      "departure_window_end_min": 473
     },
     {
       "trip_id": "T0143",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 502,
+      "departure_window_start_min": 497,
+      "departure_window_end_min": 507
     },
     {
       "trip_id": "T0144",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 536,
+      "departure_window_start_min": 531,
+      "departure_window_end_min": 541
     },
     {
       "trip_id": "T0145",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 570,
+      "departure_window_start_min": 565,
+      "departure_window_end_min": 575
     },
     {
       "trip_id": "T0146",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 604,
+      "departure_window_start_min": 599,
+      "departure_window_end_min": 609
     },
     {
       "trip_id": "T0147",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 638,
+      "departure_window_start_min": 633,
+      "departure_window_end_min": 643
     },
     {
       "trip_id": "T0148",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 672,
+      "departure_window_start_min": 667,
+      "departure_window_end_min": 677
     },
     {
       "trip_id": "T0149",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 706,
+      "departure_window_start_min": 701,
+      "departure_window_end_min": 711
     },
     {
       "trip_id": "T0150",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 740,
+      "departure_window_start_min": 735,
+      "departure_window_end_min": 745
     },
     {
       "trip_id": "T0151",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 774,
+      "departure_window_start_min": 769,
+      "departure_window_end_min": 779
     },
     {
       "trip_id": "T0152",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 808,
+      "departure_window_start_min": 803,
+      "departure_window_end_min": 813
     },
     {
       "trip_id": "T0153",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 842,
+      "departure_window_start_min": 837,
+      "departure_window_end_min": 847
     },
     {
       "trip_id": "T0154",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 876,
+      "departure_window_start_min": 871,
+      "departure_window_end_min": 881
     },
     {
       "trip_id": "T0155",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 910,
+      "departure_window_start_min": 905,
+      "departure_window_end_min": 915
     },
     {
       "trip_id": "T0156",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 944,
+      "departure_window_start_min": 939,
+      "departure_window_end_min": 949
     },
     {
       "trip_id": "T0157",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 978,
+      "departure_window_start_min": 973,
+      "departure_window_end_min": 983
     },
     {
       "trip_id": "T0158",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 1012,
+      "departure_window_start_min": 1007,
+      "departure_window_end_min": 1017
     },
     {
       "trip_id": "T0159",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS20",
+      "planned_departure_min": 1046,
+      "departure_window_start_min": 1041,
+      "departure_window_end_min": 1051
     },
     {
       "trip_id": "T0160",
       "route_id": "R08",
-      "vehicle_id": "BUS08",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS21",
+      "planned_departure_min": 1080,
+      "departure_window_start_min": 1075,
+      "departure_window_end_min": 1085
     },
     {
       "trip_id": "T0161",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 436,
+      "departure_window_start_min": 431,
+      "departure_window_end_min": 441
     },
     {
       "trip_id": "T0162",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 470,
+      "departure_window_start_min": 465,
+      "departure_window_end_min": 475
     },
     {
       "trip_id": "T0163",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 504,
+      "departure_window_start_min": 499,
+      "departure_window_end_min": 509
     },
     {
       "trip_id": "T0164",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 538,
+      "departure_window_start_min": 533,
+      "departure_window_end_min": 543
     },
     {
       "trip_id": "T0165",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 572,
+      "departure_window_start_min": 567,
+      "departure_window_end_min": 577
     },
     {
       "trip_id": "T0166",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 606,
+      "departure_window_start_min": 601,
+      "departure_window_end_min": 611
     },
     {
       "trip_id": "T0167",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 540,
-      "departure_window_start_min": 535,
-      "departure_window_end_min": 545
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 640,
+      "departure_window_start_min": 635,
+      "departure_window_end_min": 645
     },
     {
       "trip_id": "T0168",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 674,
+      "departure_window_start_min": 669,
+      "departure_window_end_min": 679
     },
     {
       "trip_id": "T0169",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 708,
+      "departure_window_start_min": 703,
+      "departure_window_end_min": 713
     },
     {
       "trip_id": "T0170",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 742,
+      "departure_window_start_min": 737,
+      "departure_window_end_min": 747
     },
     {
       "trip_id": "T0171",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 776,
+      "departure_window_start_min": 771,
+      "departure_window_end_min": 781
     },
     {
       "trip_id": "T0172",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 810,
+      "departure_window_start_min": 805,
+      "departure_window_end_min": 815
     },
     {
       "trip_id": "T0173",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 844,
+      "departure_window_start_min": 839,
+      "departure_window_end_min": 849
     },
     {
       "trip_id": "T0174",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 878,
+      "departure_window_start_min": 873,
+      "departure_window_end_min": 883
     },
     {
       "trip_id": "T0175",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 912,
+      "departure_window_start_min": 907,
+      "departure_window_end_min": 917
     },
     {
       "trip_id": "T0176",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 946,
+      "departure_window_start_min": 941,
+      "departure_window_end_min": 951
     },
     {
       "trip_id": "T0177",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 1050,
-      "departure_window_start_min": 1045,
-      "departure_window_end_min": 1055
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 980,
+      "departure_window_start_min": 975,
+      "departure_window_end_min": 985
     },
     {
       "trip_id": "T0178",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 1014,
+      "departure_window_start_min": 1009,
+      "departure_window_end_min": 1019
     },
     {
       "trip_id": "T0179",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
+      "vehicle_id": "BUS22",
+      "planned_departure_min": 1048,
+      "departure_window_start_min": 1043,
+      "departure_window_end_min": 1053
     },
     {
       "trip_id": "T0180",
       "route_id": "R09",
-      "vehicle_id": "BUS09",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS23",
+      "planned_departure_min": 1082,
+      "departure_window_start_min": 1077,
+      "departure_window_end_min": 1087
     },
     {
       "trip_id": "T0181",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 420,
-      "departure_window_start_min": 415,
-      "departure_window_end_min": 425
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 438,
+      "departure_window_start_min": 433,
+      "departure_window_end_min": 443
     },
     {
       "trip_id": "T0182",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 440,
-      "departure_window_start_min": 435,
-      "departure_window_end_min": 445
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 472,
+      "departure_window_start_min": 467,
+      "departure_window_end_min": 477
     },
     {
       "trip_id": "T0183",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 460,
-      "departure_window_start_min": 455,
-      "departure_window_end_min": 465
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 506,
+      "departure_window_start_min": 501,
+      "departure_window_end_min": 511
     },
     {
       "trip_id": "T0184",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 480,
-      "departure_window_start_min": 475,
-      "departure_window_end_min": 485
-    },
-    {
-      "trip_id": "T0185",
-      "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 500,
-      "departure_window_start_min": 495,
-      "departure_window_end_min": 505
-    },
-    {
-      "trip_id": "T0186",
-      "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 520,
-      "departure_window_start_min": 515,
-      "departure_window_end_min": 525
-    },
-    {
-      "trip_id": "T0187",
-      "route_id": "R10",
-      "vehicle_id": "BUS10",
+      "vehicle_id": "BUS25",
       "planned_departure_min": 540,
       "departure_window_start_min": 535,
       "departure_window_end_min": 545
     },
     {
+      "trip_id": "T0185",
+      "route_id": "R10",
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 574,
+      "departure_window_start_min": 569,
+      "departure_window_end_min": 579
+    },
+    {
+      "trip_id": "T0186",
+      "route_id": "R10",
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 608,
+      "departure_window_start_min": 603,
+      "departure_window_end_min": 613
+    },
+    {
+      "trip_id": "T0187",
+      "route_id": "R10",
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 642,
+      "departure_window_start_min": 637,
+      "departure_window_end_min": 647
+    },
+    {
       "trip_id": "T0188",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 600,
-      "departure_window_start_min": 595,
-      "departure_window_end_min": 605
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 676,
+      "departure_window_start_min": 671,
+      "departure_window_end_min": 681
     },
     {
       "trip_id": "T0189",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 660,
-      "departure_window_start_min": 655,
-      "departure_window_end_min": 665
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 710,
+      "departure_window_start_min": 705,
+      "departure_window_end_min": 715
     },
     {
       "trip_id": "T0190",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 720,
-      "departure_window_start_min": 715,
-      "departure_window_end_min": 725
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 744,
+      "departure_window_start_min": 739,
+      "departure_window_end_min": 749
     },
     {
       "trip_id": "T0191",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 780,
-      "departure_window_start_min": 775,
-      "departure_window_end_min": 785
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 778,
+      "departure_window_start_min": 773,
+      "departure_window_end_min": 783
     },
     {
       "trip_id": "T0192",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 840,
-      "departure_window_start_min": 835,
-      "departure_window_end_min": 845
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 812,
+      "departure_window_start_min": 807,
+      "departure_window_end_min": 817
     },
     {
       "trip_id": "T0193",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 900,
-      "departure_window_start_min": 895,
-      "departure_window_end_min": 905
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 846,
+      "departure_window_start_min": 841,
+      "departure_window_end_min": 851
     },
     {
       "trip_id": "T0194",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 960,
-      "departure_window_start_min": 955,
-      "departure_window_end_min": 965
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 880,
+      "departure_window_start_min": 875,
+      "departure_window_end_min": 885
     },
     {
       "trip_id": "T0195",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 990,
-      "departure_window_start_min": 985,
-      "departure_window_end_min": 995
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 914,
+      "departure_window_start_min": 909,
+      "departure_window_end_min": 919
     },
     {
       "trip_id": "T0196",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 1020,
-      "departure_window_start_min": 1015,
-      "departure_window_end_min": 1025
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 948,
+      "departure_window_start_min": 943,
+      "departure_window_end_min": 953
     },
     {
       "trip_id": "T0197",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
+      "vehicle_id": "BUS24",
+      "planned_departure_min": 982,
+      "departure_window_start_min": 977,
+      "departure_window_end_min": 987
+    },
+    {
+      "trip_id": "T0198",
+      "route_id": "R10",
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 1016,
+      "departure_window_start_min": 1011,
+      "departure_window_end_min": 1021
+    },
+    {
+      "trip_id": "T0199",
+      "route_id": "R10",
+      "vehicle_id": "BUS24",
       "planned_departure_min": 1050,
       "departure_window_start_min": 1045,
       "departure_window_end_min": 1055
     },
     {
-      "trip_id": "T0198",
-      "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 1080,
-      "departure_window_start_min": 1075,
-      "departure_window_end_min": 1085
-    },
-    {
-      "trip_id": "T0199",
-      "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 1140,
-      "departure_window_start_min": 1135,
-      "departure_window_end_min": 1145
-    },
-    {
       "trip_id": "T0200",
       "route_id": "R10",
-      "vehicle_id": "BUS10",
-      "planned_departure_min": 1200,
-      "departure_window_start_min": 1195,
-      "departure_window_end_min": 1205
+      "vehicle_id": "BUS25",
+      "planned_departure_min": 1084,
+      "departure_window_start_min": 1079,
+      "departure_window_end_min": 1089
     }
   ]
 }

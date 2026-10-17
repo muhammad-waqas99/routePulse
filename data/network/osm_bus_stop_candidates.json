@@ -1,0 +1,3297 @@
+{
+  "source": "OpenStreetMap contributors via Overpass API (openstreetmap.fr)",
+  "license": "Open Database License (ODbL) 1.0",
+  "retrieved_utc": "2026-10-17T10:59:54.063079+00:00",
+  "query": "[out:json][timeout:30];node(33.68,-84.51,33.86,-84.28)[highway=bus_stop];out body;",
+  "elements": [
+    {
+      "type": "node",
+      "id": 68143895,
+      "lat": 33.7835005,
+      "lon": -84.3019948,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Clairemont Ave & Garden Ln",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "904705",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 68332596,
+      "lat": 33.797219,
+      "lon": -84.322412,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Gatewood (SB)",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 68450234,
+      "lat": 33.7903775,
+      "lon": -84.3066399,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "North Decatur - McDonalds",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 259219727,
+      "lat": 33.7536471,
+      "lon": -84.3854531,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 493166432,
+      "lat": 33.8132349,
+      "lon": -84.4256998,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Defoors Ferry Rd at Bohler Rd",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 494343813,
+      "lat": 33.7582762,
+      "lon": -84.3982788,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bus Drop Zone",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 535070508,
+      "lat": 33.7769436,
+      "lon": -84.3898189,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 535078576,
+      "lat": 33.7767743,
+      "lon": -84.3897366,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 553496163,
+      "lat": 33.7731027,
+      "lon": -84.396937,
+      "tags": {
+        "bus": "yes",
+        "covered": "no",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 553496173,
+      "lat": 33.7727455,
+      "lon": -84.3969437,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 567065888,
+      "lat": 33.7932812,
+      "lon": -84.3514991,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 567065889,
+      "lat": 33.7928817,
+      "lon": -84.3517995,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 567065912,
+      "lat": 33.7919687,
+      "lon": -84.353662,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 801683358,
+      "lat": 33.7919145,
+      "lon": -84.3148528,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "North Decatur - Haygood",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 883878277,
+      "lat": 33.7756713,
+      "lon": -84.2817893,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avondale",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "904264"
+      }
+    },
+    {
+      "type": "node",
+      "id": 938504619,
+      "lat": 33.8000484,
+      "lon": -84.3243182,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - 1599 Building",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003004113,
+      "lat": 33.7818737,
+      "lon": -84.299128,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairemont-Michigan(NB)",
+        "public_transport": "stop_position",
+        "towards": "VA; Chamblee; Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003004115,
+      "lat": 33.7821739,
+      "lon": -84.299655,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairemont-Wilton (SB)",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003033551,
+      "lat": 33.7799538,
+      "lon": -84.2970188,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairmont Oaks(NB)",
+        "public_transport": "stop_position",
+        "towards": "VA;Chamblee;Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003033555,
+      "lat": 33.7798839,
+      "lon": -84.2969724,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairmont Oaks(SB)",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003033558,
+      "lat": 33.7847505,
+      "lon": -84.3038126,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairemont-Scott(NB)",
+        "public_transport": "stop_position",
+        "towards": "VA; Chamblee; Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1003033610,
+      "lat": 33.7850086,
+      "lon": -84.3041491,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clairemont-Scott(SB)",
+        "public_transport": "stop_position",
+        "survey:date": "2020-12-30",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1005854258,
+      "lat": 33.7790578,
+      "lon": -84.2965523,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Clairemont Ave & Williams St",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "904744",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1107032414,
+      "lat": 33.7946772,
+      "lon": -84.3210984,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Woodruff Admin",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1107044592,
+      "lat": 33.7969119,
+      "lon": -84.32219,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Gatewood (NB)",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1107044613,
+      "lat": 33.797878,
+      "lon": -84.3231858,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - 1525 Building",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1107044617,
+      "lat": 33.7983027,
+      "lon": -84.3235589,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Nursing",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1107044655,
+      "lat": 33.7995922,
+      "lon": -84.3251264,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - CDC",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1117896068,
+      "lat": 33.7755554,
+      "lon": -84.28213,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1117896070,
+      "lat": 33.7756078,
+      "lon": -84.2819757,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569001,
+      "lat": 33.7912116,
+      "lon": -84.2995799,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Decatur Rd & N Superior Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "903615"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569030,
+      "lat": 33.7923184,
+      "lon": -84.2825157,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569036,
+      "lat": 33.7929578,
+      "lon": -84.2805082,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Decatur Rd & Winn Way",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "903697"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569039,
+      "lat": 33.7932969,
+      "lon": -84.2892252,
+      "tags": {
+        "highway": "bus_stop",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569048,
+      "lat": 33.7907101,
+      "lon": -84.3025008,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "N Decatur Rd & Clairmont Cir",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "903502",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569055,
+      "lat": 33.7900677,
+      "lon": -84.2800371,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Winn Way & Bill Thrasher Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905669"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569061,
+      "lat": 33.7936146,
+      "lon": -84.2940599,
+      "tags": {
+        "highway": "bus_stop",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569072,
+      "lat": 33.7904227,
+      "lon": -84.3067842,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "North Decatur - Kinkos",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569089,
+      "lat": 33.7908617,
+      "lon": -84.3014172,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Decatur Rd & Clairmont Cir",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "903614",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569103,
+      "lat": 33.7920582,
+      "lon": -84.314486,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "North Decatur - Haygood",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569134,
+      "lat": 33.7905539,
+      "lon": -84.3174044,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "North Decatur - Burlington",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569144,
+      "lat": 33.7904738,
+      "lon": -84.3041075,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "N Decatur Rd & Webster Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905435",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569150,
+      "lat": 33.7924254,
+      "lon": -84.2864518,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569151,
+      "lat": 33.7921148,
+      "lon": -84.3118281,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Decatur Rd & Princeton Way",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905437"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569154,
+      "lat": 33.7918889,
+      "lon": -84.2809799,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Winn Way & Rufus Evans Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "211727"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569157,
+      "lat": 33.7937572,
+      "lon": -84.2908346,
+      "tags": {
+        "bench": "no",
+        "highway": "bus_stop",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569158,
+      "lat": 33.7913268,
+      "lon": -84.3164187,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Decatur Rd NE & Ridgewood Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "901840"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1125569161,
+      "lat": 33.7777275,
+      "lon": -84.2805226,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "N Arcadia Ave & E Ponce De Leon Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "904820"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1258967860,
+      "lat": 33.7573377,
+      "lon": -84.3821714,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "GSU Panther Express University Commons",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1258967938,
+      "lat": 33.7565087,
+      "lon": -84.3886982,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "GSU Panther Express Aderhold Learning Center",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1273536541,
+      "lat": 33.8491733,
+      "lon": -84.4294467,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223850,
+      "lat": 33.6859696,
+      "lon": -84.4518829,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223854,
+      "lat": 33.6859049,
+      "lon": -84.4522136,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223857,
+      "lat": 33.685526,
+      "lon": -84.445363,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223860,
+      "lat": 33.6853612,
+      "lon": -84.4495187,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223863,
+      "lat": 33.6882001,
+      "lon": -84.4545935,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223909,
+      "lat": 33.6856304,
+      "lon": -84.4475484,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223911,
+      "lat": 33.6850041,
+      "lon": -84.4500337,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1744223914,
+      "lat": 33.6860308,
+      "lon": -84.4472872,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1889956273,
+      "lat": 33.7896115,
+      "lon": -84.3209423,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Gambrell Hall",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1889974762,
+      "lat": 33.792278,
+      "lon": -84.3209795,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Clinic",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1889974782,
+      "lat": 33.7940811,
+      "lon": -84.321009,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Egleston",
+        "public_transport": "stop_position",
+        "towards": "Emory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1890035582,
+      "lat": 33.7920028,
+      "lon": -84.3209743,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Emory Hospital",
+        "public_transport": "stop_position",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2071293635,
+      "lat": 33.7796012,
+      "lon": -84.4025354,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129705315,
+      "lat": 33.7884897,
+      "lon": -84.3068333,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Clairemont Ave & Clairmont Run",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905912",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2271253371,
+      "lat": 33.7737297,
+      "lon": -84.3636369,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "source": "local_knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2271253372,
+      "lat": 33.7734488,
+      "lon": -84.3652999,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2271253373,
+      "lat": 33.7739207,
+      "lon": -84.3554386,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "source": "local_knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819215,
+      "lat": 33.8184863,
+      "lon": -84.3520363,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819220,
+      "lat": 33.8189971,
+      "lon": -84.3529517,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819226,
+      "lat": 33.8149207,
+      "lon": -84.3529999,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819231,
+      "lat": 33.8147923,
+      "lon": -84.3522267,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819234,
+      "lat": 33.8139755,
+      "lon": -84.3535278,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400819336,
+      "lat": 33.8214377,
+      "lon": -84.3692884,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "902144",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2400833808,
+      "lat": 33.821336,
+      "lon": -84.3664707,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228373,
+      "lat": 33.7733317,
+      "lon": -84.3992324,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228375,
+      "lat": 33.7734644,
+      "lon": -84.3991199,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228377,
+      "lat": 33.7750625,
+      "lon": -84.4022817,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228381,
+      "lat": 33.7767202,
+      "lon": -84.3877313,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref:signed": "no",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228382,
+      "lat": 33.7768029,
+      "lon": -84.3917044,
+      "tags": {
+        "bus": "yes",
+        "check_date:shelter": "2024-10-01",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228388,
+      "lat": 33.776972,
+      "lon": -84.3916853,
+      "tags": {
+        "bus": "yes",
+        "check_date:shelter": "2024-10-01",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228395,
+      "lat": 33.7781464,
+      "lon": -84.4018781,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228402,
+      "lat": 33.7784353,
+      "lon": -84.4006763,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228403,
+      "lat": 33.7785729,
+      "lon": -84.3871838,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2430228407,
+      "lat": 33.7808545,
+      "lon": -84.3861841,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref:signed": "no",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2485004319,
+      "lat": 33.7698774,
+      "lon": -84.3918251,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2485004321,
+      "lat": 33.7702285,
+      "lon": -84.3918228,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Village Smoke",
+        "name:tr": "E sigara dükkanı",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2485004323,
+      "lat": 33.77182,
+      "lon": -84.3919193,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2485004324,
+      "lat": 33.772295,
+      "lon": -84.3954427,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2485004325,
+      "lat": 33.7723088,
+      "lon": -84.3956353,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2908405848,
+      "lat": 33.7932599,
+      "lon": -84.3219762,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726346,
+      "lat": 33.7739965,
+      "lon": -84.3920748,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726347,
+      "lat": 33.7740068,
+      "lon": -84.3919013,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726349,
+      "lat": 33.7749928,
+      "lon": -84.3920619,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726350,
+      "lat": 33.7749947,
+      "lon": -84.3918851,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726353,
+      "lat": 33.7767204,
+      "lon": -84.3921918,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3158726358,
+      "lat": 33.7782206,
+      "lon": -84.4041061,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3165241510,
+      "lat": 33.7727829,
+      "lon": -84.3973484,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3165241511,
+      "lat": 33.77949,
+      "lon": -84.4041146,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3470657702,
+      "lat": 33.7959361,
+      "lon": -84.3878714,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peachtree St NE & Peachtree Cir NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "902456"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3470657703,
+      "lat": 33.7956199,
+      "lon": -84.3875964,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peachtree St NW & Peachtree Cir NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "902492",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3749962300,
+      "lat": 33.7801875,
+      "lon": -84.3990041,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3749962301,
+      "lat": 33.7816019,
+      "lon": -84.4040445,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4081910056,
+      "lat": 33.8229902,
+      "lon": -84.3876228,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peachtree Rd & Lindbergh Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "900641",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4081910222,
+      "lat": 33.8227362,
+      "lon": -84.3873975,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "110",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4081910696,
+      "lat": 33.8215351,
+      "lon": -84.3880707,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peachtree Rd NW & Terrace Dr NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "900642"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4081910860,
+      "lat": 33.8212766,
+      "lon": -84.3878963,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peachtree Rd NW & Terrace Dr NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "900659",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4223007997,
+      "lat": 33.8492957,
+      "lon": -84.3218726,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "description": "Route 39, Southbound to Lindbergh.",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291461492,
+      "lat": 33.798667,
+      "lon": -84.324036,
+      "tags": {
+        "addr:city": "Atlanta",
+        "addr:street": "Clifton RD",
+        "bus": "yes",
+        "covered": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton Rd & Houston Mill Rd",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "902016",
+        "source": "Survey",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291577791,
+      "lat": 33.793413,
+      "lon": -84.321139,
+      "tags": {
+        "addr:street": "Clifton RD NE",
+        "bus": "yes",
+        "covered": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton Rd & Woodruff Cir",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "901952",
+        "shelter": "yes",
+        "source": "Survey",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291609601,
+      "lat": 33.7905737,
+      "lon": -84.3210748,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton - Fishburne",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "901953",
+        "towards": "Decatur"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291612160,
+      "lat": 33.7879882,
+      "lon": -84.339699,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Briarcliff Rd NE & 1256",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "902054",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291612161,
+      "lat": 33.7771848,
+      "lon": -84.3474009,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Briarcliff Rd NE & Saint Louis Pl NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905022",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291629996,
+      "lat": 33.7650696,
+      "lon": -84.3493857,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Moreland Ave & Euclid Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900052",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291629997,
+      "lat": 33.7725077,
+      "lon": -84.3490757,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291629998,
+      "lat": 33.7648567,
+      "lon": -84.349072,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Moreland Ave & McLendon Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900055"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291629999,
+      "lat": 33.7721892,
+      "lon": -84.3488924,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "towards": "Lindberg Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291630000,
+      "lat": 33.7755897,
+      "lon": -84.348444,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Briarcliff Rd & Saint Charles Pl NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905145",
+        "towards": "Lindberg Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291630001,
+      "lat": 33.7622249,
+      "lon": -84.3493667,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Moreland Ave & 299",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900053",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291630002,
+      "lat": 33.7690779,
+      "lon": -84.3491154,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Moreland Ave & Druid Pl",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900050",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291630003,
+      "lat": 33.7739692,
+      "lon": -84.3491107,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291635009,
+      "lat": 33.7600196,
+      "lon": -84.3497552,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "DeKalb Avenue Northeast & Haralson Avenue Northeast",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900766",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291635010,
+      "lat": 33.7587356,
+      "lon": -84.3516679,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "towards": "Inman Park Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4543290471,
+      "lat": 33.8273988,
+      "lon": -84.3298671,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "check_date:bench": "2024-06-22",
+        "covered": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4792625851,
+      "lat": 33.8251435,
+      "lon": -84.290572,
+      "tags": {
+        "bench": "yes",
+        "description": "Stop for Route 30 toward Lindburgh station.",
+        "highway": "bus_stop",
+        "name": "Vista Grove Bus Stop",
+        "operator": "MARTA",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4792625852,
+      "lat": 33.8248772,
+      "lon": -84.2902068,
+      "tags": {
+        "bench": "no",
+        "description": "Stop for route 30 to Northlake Mall",
+        "highway": "bus_stop",
+        "operator": "MARTA",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5033031411,
+      "lat": 33.7813992,
+      "lon": -84.389315,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5033031412,
+      "lat": 33.7816628,
+      "lon": -84.3902252,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "10th St NE & Williams St",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "905030"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5409442385,
+      "lat": 33.7714689,
+      "lon": -84.392184,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5595712917,
+      "lat": 33.7148232,
+      "lon": -84.3205482,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5661053833,
+      "lat": 33.7944922,
+      "lon": -84.4072942,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Northside Dr@Trabert Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5661053834,
+      "lat": 33.7938123,
+      "lon": -84.4077752,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Northside Dr@Trabert Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "MARTA",
+        "public_transport": "platform",
+        "ref": "210379",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5674286269,
+      "lat": 33.7767328,
+      "lon": -84.3920134,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5859956285,
+      "lat": 33.8588349,
+      "lon": -84.501205,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6017757520,
+      "lat": 33.7750702,
+      "lon": -84.4026797,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6239791261,
+      "lat": 33.8490646,
+      "lon": -84.3216984,
+      "tags": {
+        "bus": "yes",
+        "description": "Route 39, Northbound to Doraville",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6541182751,
+      "lat": 33.7170055,
+      "lon": -84.4259679,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6546148355,
+      "lat": 33.8232822,
+      "lon": -84.3695414,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "902145",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6546245429,
+      "lat": 33.8232816,
+      "lon": -84.3701489,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6568869368,
+      "lat": 33.7006794,
+      "lon": -84.3505718,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6786367185,
+      "lat": 33.7646494,
+      "lon": -84.393444,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ivan Allen Junior Blvd Northwest & Lovejoy Street",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "210833",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6997894173,
+      "lat": 33.7993353,
+      "lon": -84.3246104,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Clifton Rd NE & 1599",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "901494"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7057284377,
+      "lat": 33.7497115,
+      "lon": -84.3853114,
+      "tags": {
+        "highway": "bus_stop",
+        "ref": "210431"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7057284384,
+      "lat": 33.7473586,
+      "lon": -84.3875121,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373195,
+      "lat": 33.7294184,
+      "lon": -84.3645519,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "United Ave @ Home Ave SE",
+        "network": "MARTA",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373206,
+      "lat": 33.7312304,
+      "lon": -84.3735488,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Cherokee Ave & Ormond St",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "116084"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373207,
+      "lat": 33.7323592,
+      "lon": -84.3735502,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Cherokee Ave & Grant Park Pl",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "116072"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373208,
+      "lat": 33.733641,
+      "lon": -84.3735517,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Cherokee Ave SE & Augusta Ave SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "116128"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373209,
+      "lat": 33.7347568,
+      "lon": -84.3735556,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Cherokee Ave SE & Bass St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "116086"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373210,
+      "lat": 33.736685,
+      "lon": -84.3742295,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Cherokee Ave SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "212210"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373211,
+      "lat": 33.7367202,
+      "lon": -84.3762318,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Grant St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "907866"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373212,
+      "lat": 33.7367921,
+      "lon": -84.3782859,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Hill St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "212211"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373213,
+      "lat": 33.7368111,
+      "lon": -84.3797597,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Grant Ter SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "116116"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373214,
+      "lat": 33.7368375,
+      "lon": -84.3821117,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Ami St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "115130"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373215,
+      "lat": 33.7368567,
+      "lon": -84.3838187,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Martin St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "115132"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373219,
+      "lat": 33.7368932,
+      "lon": -84.3862112,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave SE & Fraser St SE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "115136"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373222,
+      "lat": 33.736957,
+      "lon": -84.3877038,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Georgia Ave & Hank Aaron Dr",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "211714"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373235,
+      "lat": 33.7369291,
+      "lon": -84.3932586,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ralph David Abernathy Boulevard @ Central Avenue",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373237,
+      "lat": 33.7370785,
+      "lon": -84.3997871,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ralph D Abernathy Blvd @ Ira St",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105373238,
+      "lat": 33.7371365,
+      "lon": -84.4020818,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ralph D Abernathy Blvd @ McDaniel St SW",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7105376795,
+      "lat": 33.7360634,
+      "lon": -84.4134333,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "West End Station",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7627188985,
+      "lat": 33.819517,
+      "lon": -84.388419,
+      "tags": {
+        "addr:housenumber": "2337",
+        "addr:street": "Peachtree Road Northeast",
+        "bus": "yes",
+        "fixme": "move the address from bus stop to the building",
+        "highway": "bus_stop",
+        "name": "Peachtree Rd NE & Peachtree Battle Ave",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900457"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8941537717,
+      "lat": 33.7669277,
+      "lon": -84.3874324,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Megabus & Flixbus",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9531189130,
+      "lat": 33.7566499,
+      "lon": -84.4043557,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Electric Avenue Bus Loop",
+        "public_transport": "platform",
+        "ref": "901263"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9531189133,
+      "lat": 33.7565312,
+      "lon": -84.4035621,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Postell Street Bus Loop",
+        "public_transport": "platform",
+        "ref": "901262"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9563647492,
+      "lat": 33.7717945,
+      "lon": -84.3868619,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "907473",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9568824604,
+      "lat": 33.7372669,
+      "lon": -84.4080527,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9613549580,
+      "lat": 33.7716954,
+      "lon": -84.3872814,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "600013"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9613570698,
+      "lat": 33.789686,
+      "lon": -84.3871757,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref": "920907",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9613570699,
+      "lat": 33.7897067,
+      "lon": -84.3870196,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "check_date:shelter": "2026-06-08",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref": "32",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9613570700,
+      "lat": 33.7889635,
+      "lon": -84.3868908,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-04-30",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "901789",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9613570701,
+      "lat": 33.7893491,
+      "lon": -84.3864751,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "213110"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9627612087,
+      "lat": 33.7623279,
+      "lon": -84.3406557,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "904464"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9880094803,
+      "lat": 33.7883387,
+      "lon": -84.3251203,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10047842897,
+      "lat": 33.8408022,
+      "lon": -84.3213748,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "BRIARWOOD RD@BRIARWOOD IND CT",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "operator": "Metro Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "900098",
+        "ref:signed": "no",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10722958582,
+      "lat": 33.7182157,
+      "lon": -84.368444,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11237184591,
+      "lat": 33.8397757,
+      "lon": -84.3202182,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "NORTHEAST EXPY@BRIARWOOD RD NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "network:wikipedia": "en:Metropolitan Atlanta Rapid Transit Authority",
+        "operator": "Metropolitan Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "901660",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "no",
+        "wheelchair:description": "Possible access from briarwood road sidewalk, but stop is on grass and may be difficult to access"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11238091415,
+      "lat": 33.8442959,
+      "lon": -84.3264506,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Approximate position from memory, move to exact position.",
+        "highway": "bus_stop",
+        "name": "BRIARWOOD RD NE@BUFORD HWY NE",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "operator": "Metro Atlanta Rapid Transit Authority",
+        "public_transport": "platform",
+        "ref": "211213",
+        "ref:signed": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409097139,
+      "lat": 33.7771006,
+      "lon": -84.4503837,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409097140,
+      "lat": 33.7772355,
+      "lon": -84.4503598,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409097141,
+      "lat": 33.7776623,
+      "lon": -84.451784,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409097142,
+      "lat": 33.7777957,
+      "lon": -84.4517856,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760206,
+      "lat": 33.7780346,
+      "lon": -84.4531332,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760207,
+      "lat": 33.7818963,
+      "lon": -84.4566182,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760208,
+      "lat": 33.7819329,
+      "lon": -84.4564103,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760209,
+      "lat": 33.7852611,
+      "lon": -84.4613863,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760210,
+      "lat": 33.7812087,
+      "lon": -84.4557214,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760211,
+      "lat": 33.780957,
+      "lon": -84.455792,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760212,
+      "lat": 33.7853177,
+      "lon": -84.4612733,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760213,
+      "lat": 33.7796948,
+      "lon": -84.4551762,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760214,
+      "lat": 33.783567,
+      "lon": -84.4595519,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760215,
+      "lat": 33.7879207,
+      "lon": -84.4644373,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760216,
+      "lat": 33.7800442,
+      "lon": -84.4554864,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760217,
+      "lat": 33.7828573,
+      "lon": -84.4585757,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760218,
+      "lat": 33.7829626,
+      "lon": -84.4589045,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760219,
+      "lat": 33.7781681,
+      "lon": -84.452959,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760220,
+      "lat": 33.7825444,
+      "lon": -84.4581949,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760221,
+      "lat": 33.7786643,
+      "lon": -84.4538439,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11409760222,
+      "lat": 33.7878989,
+      "lon": -84.4642177,
+      "tags": {
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11667060478,
+      "lat": 33.8258462,
+      "lon": -84.3524526,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "fixme": "Route 39 stop, fill in details",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11667060479,
+      "lat": 33.8249064,
+      "lon": -84.3583044,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "no",
+        "fixme": "Route 39 stop, fill in details",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11667060480,
+      "lat": 33.8259934,
+      "lon": -84.3639328,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "fixme": "Route 39 stop, fill in details",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11678500705,
+      "lat": 33.7745792,
+      "lon": -84.2970103,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "904262"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11678808126,
+      "lat": 33.7646469,
+      "lon": -84.3127882,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "904323"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742215835,
+      "lat": 33.8258972,
+      "lon": -84.3621585,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "900542",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742641864,
+      "lat": 33.8522177,
+      "lon": -84.4814504,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742667444,
+      "lat": 33.8487909,
+      "lon": -84.4944879,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "920584",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742669812,
+      "lat": 33.849175,
+      "lon": -84.4898612,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742691756,
+      "lat": 33.8466684,
+      "lon": -84.5043876,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11742692480,
+      "lat": 33.8447425,
+      "lon": -84.4998021,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "920585",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869673655,
+      "lat": 33.8465168,
+      "lon": -84.5046265,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869743654,
+      "lat": 33.8442027,
+      "lon": -84.4999316,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869743655,
+      "lat": 33.8487844,
+      "lon": -84.4918731,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869755969,
+      "lat": 33.8521315,
+      "lon": -84.481274,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869776377,
+      "lat": 33.7895113,
+      "lon": -84.4032188,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869808658,
+      "lat": 33.7910469,
+      "lon": -84.396882,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869812193,
+      "lat": 33.7913669,
+      "lon": -84.4073274,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869821094,
+      "lat": 33.7911065,
+      "lon": -84.3990303,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869822213,
+      "lat": 33.7910715,
+      "lon": -84.394562,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869831535,
+      "lat": 33.7882891,
+      "lon": -84.3857298,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "902514",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869834956,
+      "lat": 33.7882806,
+      "lon": -84.3848008,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11869901642,
+      "lat": 33.7825074,
+      "lon": -84.368316,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11916320273,
+      "lat": 33.7460837,
+      "lon": -84.4069364,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11916320274,
+      "lat": 33.7488377,
+      "lon": -84.4048351,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11916320275,
+      "lat": 33.7490195,
+      "lon": -84.4192635,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12020741858,
+      "lat": 33.819976,
+      "lon": -84.3038838,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12078527720,
+      "lat": 33.7762501,
+      "lon": -84.3845843,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref": "902391",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12102647522,
+      "lat": 33.8260444,
+      "lon": -84.3672864,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12703702467,
+      "lat": 33.8132875,
+      "lon": -84.3416893,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref": "901871",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13019640364,
+      "lat": 33.6889769,
+      "lon": -84.3370548,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Metro Transitional Center",
+        "public_transport": "platform",
+        "ref": "151060"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13305223592,
+      "lat": 33.6891281,
+      "lon": -84.3411919,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13305223593,
+      "lat": 33.6890511,
+      "lon": -84.3410661,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13305303056,
+      "lat": 33.7424692,
+      "lon": -84.4177034,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13305303097,
+      "lat": 33.7423357,
+      "lon": -84.4238683,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13306475079,
+      "lat": 33.7640884,
+      "lon": -84.3821964,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13312511157,
+      "lat": 33.7556314,
+      "lon": -84.4683934,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13314598266,
+      "lat": 33.7502805,
+      "lon": -84.4502575,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13314616037,
+      "lat": 33.7550303,
+      "lon": -84.4459571,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13314616042,
+      "lat": 33.755119,
+      "lon": -84.4473835,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "MARTA",
+        "network:wikidata": "Q1423792",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13648655690,
+      "lat": 33.7573434,
+      "lon": -84.3742695,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "ref": "Bus Stop 903459",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13690421994,
+      "lat": 33.7713792,
+      "lon": -84.382264,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "public_transport": "platform",
+        "ref": "905034",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13925433613,
+      "lat": 33.7398702,
+      "lon": -84.3049325,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13925433614,
+      "lat": 33.7400194,
+      "lon": -84.3049112,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    }
+  ],
+  "display_name_override_source": "OpenStreetMap Nominatim reverse geocoding of the bus-stop node coordinates",
+  "display_name_overrides": {
+    "2400819336": "Lindbergh Drive bus stop",
+    "1273536541": "West Paces Ferry Road Northwest bus stop"
+  }
+}

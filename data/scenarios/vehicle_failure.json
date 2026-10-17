@@ -1,7 +1,7 @@
 {
   "scenario_id": "vehicle_failure",
   "seed": 42,
-  "evaluation_horizon_min": 180,
+  "evaluation_horizon_min": 780,
   "demand_multipliers": {},
   "travel_time_multipliers": {},
   "unavailable_vehicle_ids": [
