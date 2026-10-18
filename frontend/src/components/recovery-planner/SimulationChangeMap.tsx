@@ -136,23 +136,47 @@ export default function SimulationChangeMap({ result, data, loading, error }: Pr
         <span className="rounded-full bg-primary-soft px-3 py-1.5 text-xs font-medium text-primary">{activeRoutes.length} routes · {visibleStops.length} stops</span>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2" aria-label="Select route">
-        <button type="button" onClick={() => setRouteSelection("all")} aria-pressed={selectedRouteId === "all"} className={`min-h-10 rounded-lg border px-3 py-2 text-sm font-medium ${selectedRouteId === "all" ? "border-primary bg-primary text-white" : "border-border bg-white text-foreground"}`}>
+      <div
+        className="flex min-w-0 max-w-full items-center gap-2"
+        aria-label="Select route"
+      >
+        <button
+          type="button"
+          onClick={() => setRouteSelection("all")}
+          aria-pressed={selectedRouteId === "all"}
+          className={`min-h-10 shrink-0 rounded-lg border px-3 py-2 text-sm font-medium ${
+            selectedRouteId === "all"
+              ? "border-primary bg-primary text-white"
+              : "border-border bg-white text-foreground"
+          }`}
+        >
           All routes
         </button>
-        <div className="flex max-h-24 min-w-0 flex-1 flex-wrap gap-2 overflow-y-auto rounded-lg bg-surface-secondary p-2">
+
+        <div className="flex min-w-0 max-w-full flex-1 flex-nowrap items-center gap-2 overflow-x-auto overflow-y-hidden rounded-lg bg-surface-secondary p-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {activeRoutes.map((route) => {
             const selected = selectedRouteId === route.id;
             const color = getRouteColor(route.id);
+
             return (
-              <button key={route.id} type="button" aria-pressed={selected} onClick={() => setRouteSelection(route.id)} className="min-h-10 rounded-lg border px-3 py-2 text-sm font-medium" style={{ borderColor: color, backgroundColor: selected ? color : "#fff", color: selected ? "#fff" : color }}>
+              <button
+                key={route.id}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setRouteSelection(route.id)}
+                className="min-h-10 shrink-0 whitespace-nowrap rounded-lg border px-3 py-2 text-sm font-medium"
+                style={{
+                  borderColor: color,
+                  backgroundColor: selected ? color : "#fff",
+                  color: selected ? "#fff" : color,
+                }}
+              >
                 {routeLabel(route)}
               </button>
             );
           })}
         </div>
       </div>
-
       <div className="flex flex-wrap gap-x-4 gap-y-2 rounded-lg bg-surface-secondary px-3 py-2 text-xs text-secondary" aria-label="Map legend">
         <span className="inline-flex items-center gap-2"><span className="w-7 border-t-[3px] border-dashed border-slate-400" />Baseline</span>
         <span className="inline-flex items-center gap-2"><span className="w-7 border-t-[3px] border-primary" />Optimized</span>

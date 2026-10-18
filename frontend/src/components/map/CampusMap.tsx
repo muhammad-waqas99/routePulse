@@ -210,50 +210,54 @@ export default function CampusMap({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-start gap-2">
-        <button
-          type="button"
-          onClick={() => setSelectedRouteId("all")}
-          className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
-            selectedRouteId === "all"
-              ? "border-primary bg-primary text-white"
-              : "border-border bg-white text-foreground hover:bg-slate-50"
-          }`}
-        >
-          All
-        </button>
+      <div className="min-w-0 space-y-2">
+        <div className="flex min-w-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setSelectedRouteId("all")}
+            className={`min-h-10 shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition ${
+              selectedRouteId === "all"
+                ? "border-primary bg-primary text-white"
+                : "border-border bg-white text-foreground hover:bg-slate-50"
+            }`}
+          >
+            All
+          </button>
 
-        <div className="flex max-h-28 min-w-0 flex-1 flex-wrap gap-2 overflow-y-auto rounded-lg bg-slate-50 p-2">
-        {routes.map((route) => {
-          const color = getRouteColor(route.id);
-          const isSelected = selectedRouteId === route.id;
+          <div
+            className="flex min-w-0 max-w-full flex-1 flex-nowrap items-center gap-2 overflow-x-auto overflow-y-hidden rounded-lg bg-slate-50 p-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Select route"
+          >
+            {routes.map((route) => {
+              const color = getRouteColor(route.id);
+              const isSelected = selectedRouteId === route.id;
 
-          return (
-            <button
-              key={route.id}
-              type="button"
-              title={routeLabel(route)}
-              onClick={() => setSelectedRouteId(route.id)}
-              className="rounded-lg border px-3 py-2 text-sm font-medium transition"
-              style={{
-                borderColor: color,
-                backgroundColor: isSelected ? color : "#FFFFFF",
-                color: isSelected ? "#FFFFFF" : color,
-              }}
-            >
-              {routeLabel(route)}
-            </button>
-          );
-        })}
+              return (
+                <button
+                  key={route.id}
+                  type="button"
+                  title={routeLabel(route)}
+                  onClick={() => setSelectedRouteId(route.id)}
+                  className="min-h-10 shrink-0 whitespace-nowrap rounded-lg border px-3 py-2 text-sm font-medium transition"
+                  style={{
+                    borderColor: color,
+                    backgroundColor: isSelected ? color : "#FFFFFF",
+                    color: isSelected ? "#FFFFFF" : color,
+                  }}
+                >
+                  {routeLabel(route)}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <span className="ml-auto text-xs text-secondary">
+        <span className="block text-xs text-secondary">
           {routes.length} routes · {visibleStops.length} stops · {visibleVehicles.length} buses
         </span>
       </div>
 
-      
-<div className="relative isolate z-0 h-72 w-full overflow-hidden rounded-xl border border-border sm:h-80 lg:h-105">
+      <div className="relative isolate z-0 h-72 w-full overflow-hidden rounded-xl border border-border sm:h-80 lg:h-105">
 
         <MapContainer
           center={networkMapConfig.center}
