@@ -1,0 +1,82 @@
+[
+  {
+    "vehicle_id": "BUS01",
+    "timestamp_min": 480,
+    "lat": 33.822888,
+    "lon": -84.387672,
+    "route_id": "R01",
+    "segment_index": 0
+  },
+  {
+    "vehicle_id": "BUS04",
+    "timestamp_min": 483,
+    "lat": 33.791926,
+    "lon": -84.353648,
+    "route_id": "R02",
+    "segment_index": 1
+  },
+  {
+    "vehicle_id": "BUS07",
+    "timestamp_min": 486,
+    "lat": 33.764959,
+    "lon": -84.349386,
+    "route_id": "R03",
+    "segment_index": 2
+  },
+  {
+    "vehicle_id": "BUS10",
+    "timestamp_min": 489,
+    "lat": 33.790574,
+    "lon": -84.320963,
+    "route_id": "R04",
+    "segment_index": 3
+  },
+  {
+    "vehicle_id": "BUS13",
+    "timestamp_min": 492,
+    "lat": 33.729437,
+    "lon": -84.364479,
+    "route_id": "R05",
+    "segment_index": 0
+  },
+  {
+    "vehicle_id": "BUS16",
+    "timestamp_min": 495,
+    "lat": 33.737012,
+    "lon": -84.39979,
+    "route_id": "R06",
+    "segment_index": 1
+  },
+  {
+    "vehicle_id": "BUS18",
+    "timestamp_min": 498,
+    "lat": 33.742469,
+    "lon": -84.417627,
+    "route_id": "R07",
+    "segment_index": 2
+  },
+  {
+    "vehicle_id": "BUS20",
+    "timestamp_min": 501,
+    "lat": 33.777244,
+    "lon": -84.450425,
+    "route_id": "R08",
+    "segment_index": 3
+  },
+  {
+    "vehicle_id": "BUS22",
+    "timestamp_min": 504,
+    "lat": 33.849164,
+    "lon": -84.429483,
+    "route_id": "R09",
+    "segment_index": 0
+  },
+  {
+    "vehicle_id": "BUS24",
+    "timestamp_min": 507,
+    "lat": 33.770166,
+    "lon": -84.391824,
+    "route_id": "R10",
+    "segment_index": 1
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "scenario_id": "normal",
+  "seed": 42,
+  "evaluation_horizon_min": 780,
+  "demand_multipliers": {},
+  "travel_time_multipliers": {},
+  "unavailable_vehicle_ids": [],
+  "vehicle_delays_min": {}
+}

@@ -1,0 +1,12 @@
+{
+  "scenario_id": "demand_surge",
+  "seed": 42,
+  "evaluation_horizon_min": 780,
+  "demand_multipliers": {
+    "S14": 1.8,
+    "S34": 1.8
+  },
+  "travel_time_multipliers": {},
+  "unavailable_vehicle_ids": [],
+  "vehicle_delays_min": {}
+}

@@ -1,0 +1,5402 @@
+[
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1140,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 960,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 630,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1140,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 930,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 600,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 930,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 600,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 960,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1050,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S17",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 600,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S22",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 930,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S35",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 720,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S19",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 630,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 840,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 660,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S30",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1020,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S38",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S02",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1080,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S04",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 810,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 630,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S33",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S27",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S11",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S07",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1050,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1080,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 660,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S18",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 540,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 720,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 690,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S20",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 780,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S39",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S12",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 450,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 810,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 1110,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S23",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 930,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S37",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S24",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 540,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S34",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 480,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S26",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S15",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 570,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S25",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S32",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 780,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S13",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 600,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S28",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 990,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S14",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1020,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 900,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S05",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 3
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 510,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 750,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S09",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 1110,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S31",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S29",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 570,
+    "passengers": 4
+  },
+  {
+    "stop_id": "S16",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 960,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S21",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 990,
+    "passengers": 10
+  },
+  {
+    "stop_id": "S10",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 870,
+    "passengers": 1
+  },
+  {
+    "stop_id": "S03",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 420,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S06",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 2
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 480,
+    "passengers": 8
+  },
+  {
+    "stop_id": "S40",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 750,
+    "passengers": 5
+  },
+  {
+    "stop_id": "S36",
+    "day_type": "WEEKEND",
+    "time_bucket_min": 450,
+    "passengers": 6
+  },
+  {
+    "stop_id": "S08",
+    "day_type": "WEEKDAY",
+    "time_bucket_min": 840,
+    "passengers": 2
+  }
+]

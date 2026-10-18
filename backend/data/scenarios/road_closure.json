@@ -1,0 +1,12 @@
+{
+  "scenario_id": "road_closure",
+  "seed": 42,
+  "evaluation_horizon_min": 780,
+  "demand_multipliers": {},
+  "travel_time_multipliers": {
+    "R03": 1.5,
+    "R09": 1.5
+  },
+  "unavailable_vehicle_ids": [],
+  "vehicle_delays_min": {}
+}
