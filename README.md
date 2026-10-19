@@ -1,5 +1,7 @@
 # RoutePulse
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://routepulse-frontend.vercel.app/)
+
 **Campus Transportation Planning & Optimization** \
 A data-driven platform for campus shuttle operations, disruption recovery, and performance analysis.
 
