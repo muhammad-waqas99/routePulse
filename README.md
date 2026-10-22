@@ -95,7 +95,7 @@ flowchart TD
 
 The frontend handles dashboard presentation, user interaction, maps, and charts. The FastAPI backend manages network data, scenario processing, plan generation, validation, simulation, and evaluation.
 
-For detailed module organization and API contracts, see [ARCHITECTURE.md](ARCHITECTURE.md).
+For detailed module organization and API contracts, see [ARCHITECTURE.md](docs/architecture).
 
 ## How It Works
 
